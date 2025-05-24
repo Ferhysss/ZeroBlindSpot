@@ -1,0 +1,61 @@
+
+#ВЕСЬ ПРОЕКТ ДОЛЖЕН БЫТЬ  ЧИСТЫМ БЕЗ СТАРЫХ БИБЛИОТЕК И ТОЛЬКО PYTHON 3.10 
+
+#удаление всех библиотек: (usera поменяешь на своего но путь в целом такой же должен быть)
+
+1. Проверка версии (оставляем только 310):
+dir C:\Users\Lev\AppData\Local\Programs\Python
+
+2. проверка библиотек
+C:\Users\Lev\AppData\Local\Programs\Python\Python313\python.exe -m pip list
+
+3.удаление библиотек 
+C:\Users\Lev\AppData\Local\Programs\Python\Python313\python.exe -m pip freeze > requirements.txt
+C:\Users\Lev\AppData\Local\Programs\Python\Python313\python.exe -m pip uninstall -r requirements.txt -y
+C:\Users\Lev\AppData\Local\Programs\Python\Python313\python.exe -m pip cache purge
+
+4.Удаление ненужного питона (313 у меня был у тебя наверное тоже)
+Win + R -> appwiz.cpl
+
+ищешь Python 3.13.2 (64-bit) или какой у тебя и удаляешь 
+
+next:
+
+Remove-Item -Path C:\Users\Lev\AppData\Local\Programs\Python\Python313 -Recurse -Force
+
+5.Проверка (должен либо остаться 310 (если устанавливал ранее) либо ничего (главное чтобы не было других версий))
+dir C:\Users\Lev\AppData\Local\Programs\Python
+
+6. Установка нужной версии:
+https://www.python.org/downloads/release/python-31012/
+
+при установке ВАЖНО Поставь галочку "Add Python 3.10 to PATH"
+
+проверить установилась ли версия:
+python --version
+
+доп проверка (должен быть только 310):
+dir C:\Users\Lev\AppData\Local\Programs\Python
+
+
+
+#для запуска окружения перед началом работы введи следующее:
+
+
+.\venv\Scripts\Activate.ps1
+
+
+#выгрузка базы
+
+git add .
+git commit -m "Что сделал"
+git push origin main
+
+
+(git add . - "." выгрузит все измененные файоы, если ты хочешь выгрузить только один то вместо точки пишешь название файла например git add main.py ,
+ если файлов несколько git add пишешь несколько раз меняя файлы)
+
+#Загрузка базы 
+git pull origin main
+
+dsgdgs
