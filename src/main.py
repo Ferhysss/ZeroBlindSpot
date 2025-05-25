@@ -4,23 +4,32 @@ import cv2
 import numpy as np
 import torch
 import yaml
-from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QVBoxLayout, QPushButton, QFileDialog, QLabel, QComboBox, QProgressBar
+from datetime import datetime
+from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QVBoxLayout, QPushButton, QFileDialog, QLabel, QComboBox, QProgressBar, QScrollArea, QHBoxLayout
 from PyQt5.QtCore import Qt, QThread, pyqtSignal
+from PyQt5.QtGui import QImage, QPixmap
 import ffmpeg
 from ultralytics import YOLO
 import logging
+from logging.handlers import TimedRotatingFileHandler
 
 # Настройка логирования
-logging.basicConfig(
-    filename='logs/app.log',
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s'
-)
+def setup_logging(project_name="default"):
+    log_dir = f"logs/{project_name}"
+    os.makedirs(log_dir, exist_ok=True)
+    log_file = f"{log_dir}/app_{datetime.now().strftime('%Y-%m-%d')}.log"
+    handler = TimedRotatingFileHandler(log_file, when="midnight", backupCount=30)
+    handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
+    logger = logging.getLogger()
+    logger.setLevel(logging.INFO)
+    logger.addHandler(handler)
+setup_logging()
 
 class VideoProcessor(QThread):
     progress = pyqtSignal(int)
     status = pyqtSignal(str)
     finished = pyqtSignal()
+    frame_processed = pyqtSignal(str, list)  # frame_file, [(x, y, w, h, conf)]
 
     def __init__(self, video_path, yolo_model, config):
         super().__init__()
@@ -58,7 +67,10 @@ class VideoProcessor(QThread):
                 results = self.yolo_model(frame)
                 boxes = results[0].boxes.xywh.cpu().numpy()
                 confidences = results[0].boxes.conf.cpu().numpy()
+                frame_annotations = []
                 for box, conf in zip(boxes, confidences):
+                    if conf < self.config.get("yolo_conf_threshold", 0.5):
+                        continue
                     x, y, w, h = box
                     x1, y1 = int(x - w/2), int(y - h/2)
                     x2, y2 = int(x + w/2), int(y + h/2)
@@ -66,13 +78,14 @@ class VideoProcessor(QThread):
                         logging.warning(f"Invalid box {box} in {frame_file}")
                         continue
 
+                    frame_annotations.append((x, y, w, h, conf))
                     # Сохранение аннотаций
                     os.makedirs("data/annotations", exist_ok=True)
                     with open("data/annotations/yolo.txt", "a") as f:
                         f.write(f"{frame_file}: bucket ({x},{y},{w},{h}), conf: {conf:.2f}\n")
                     logging.info(f"Processed frame {frame_file}: bucket, conf: {conf:.2f}")
 
-                # Обновление прогресса
+                self.frame_processed.emit(frame_path, frame_annotations)
                 self.progress.emit(int((i + 1) / total_frames * 100))
 
             self.status.emit("Обработка завершена!")
@@ -83,38 +96,83 @@ class VideoProcessor(QThread):
         finally:
             self.finished.emit()
 
+class FrameViewer(QWidget):
+    def __init__(self):
+        super().__init__()
+        self.layout = QVBoxLayout(self)
+        self.image_label = QLabel("Нет кадра")
+        self.image_label.setAlignment(Qt.AlignCenter)
+        self.layout.addWidget(self.image_label)
+        self.annotation_label = QLabel("Аннотации: отсутствуют")
+        self.layout.addWidget(self.annotation_label)
+        self.current_frame_path = None
+        self.current_annotations = []
+
+    def update_frame(self, frame_path, annotations):
+        if not frame_path:  # Очистка просмотра
+            self.image_label.setPixmap(QPixmap())
+            self.annotation_label.setText("Аннотации: отсутствуют")
+            self.current_frame_path = None
+            self.current_annotations = []
+            return
+
+        self.current_frame_path = frame_path
+        self.current_annotations = annotations
+        frame = cv2.imread(frame_path)
+        for x, y, w, h, conf in annotations:
+            x1, y1 = int(x - w/2), int(y - h/2)
+            x2, y2 = int(x + w/2), int(y + h/2)
+            cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 2)
+            cv2.putText(frame, f"bucket: {conf:.2f}", (x1, y1 - 10),
+                        cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
+
+        frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+        h, w, ch = frame.shape
+        bytes_per_line = ch * w
+        q_image = QImage(frame.data, w, h, bytes_per_line, QImage.Format_RGB888)
+        self.image_label.setPixmap(QPixmap.fromImage(q_image).scaled(640, 480, Qt.KeepAspectRatio))
+        self.annotation_label.setText(f"Аннотации: {len(annotations)} box(es)")
+
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("ZeroBlindSpot")
-        self.setGeometry(100, 100, 800, 600)
+        self.setGeometry(100, 100, 1000, 600)
 
         # Главный виджет и макет
         central_widget = QWidget()
         self.setCentralWidget(central_widget)
-        layout = QVBoxLayout(central_widget)
+        main_layout = QHBoxLayout(central_widget)
 
-        # Метка для статуса
+        # Левая панель: управление
+        control_widget = QWidget()
+        control_layout = QVBoxLayout(control_widget)
         self.status_label = QLabel("Ожидание загрузки видео...")
-        layout.addWidget(self.status_label)
+        control_layout.addWidget(self.status_label)
 
-        # Прогресс-бар
         self.progress_bar = QProgressBar()
         self.progress_bar.setValue(0)
-        layout.addWidget(self.progress_bar)
+        control_layout.addWidget(self.progress_bar)
 
-        # Выбор устройства
         self.device_combo = QComboBox()
         self.device_combo.addItems(["auto", "cpu"])
         if torch.cuda.is_available():
             self.device_combo.addItem("cuda")
         self.device_combo.currentTextChanged.connect(self.update_device)
-        layout.addWidget(self.device_combo)
+        control_layout.addWidget(self.device_combo)
 
-        # Кнопка загрузки видео
         self.load_button = QPushButton("Загрузить видео")
         self.load_button.clicked.connect(self.load_video)
-        layout.addWidget(self.load_button)
+        control_layout.addWidget(self.load_button)
+
+        main_layout.addWidget(control_widget, 1)
+
+        # Правая панель: просмотр кадров
+        self.frame_viewer = FrameViewer()
+        scroll_area = QScrollArea()
+        scroll_area.setWidget(self.frame_viewer)
+        scroll_area.setWidgetResizable(True)
+        main_layout.addWidget(scroll_area, 3)
 
         # Загрузка конфигурации
         self.config = self.load_config()
@@ -123,7 +181,6 @@ class MainWindow(QMainWindow):
 
         # Инициализация моделей
         self.yolo_model = None
-        self.cnn_model = None
         try:
             self.yolo_model = YOLO("models/model.pt")
             logging.info("YOLO model loaded successfully")
@@ -131,7 +188,8 @@ class MainWindow(QMainWindow):
             logging.error(f"Failed to load YOLO model: {str(e)}")
             self.status_label.setText(f"Ошибка загрузки YOLO: {str(e)}")
 
-        # CNN временно отключена
+        # CNN отключена
+        self.cnn_model = None
         logging.info("CNN model disabled until architecture is provided")
 
         # Применение стилей
@@ -147,7 +205,9 @@ class MainWindow(QMainWindow):
             "device": "auto",
             "frame_rate": 1,
             "cnn_input_size": [224, 224],
-            "use_cnn": False
+            "use_cnn": False,
+            "yolo_conf_threshold": 0.5,
+            "project_name": "default"
         }
         try:
             with open(config_path, "r") as f:
@@ -177,6 +237,7 @@ class MainWindow(QMainWindow):
         if file_name:
             self.status_label.setText(f"Загружено: {file_name}")
             self.progress_bar.setValue(0)
+            self.frame_viewer.update_frame("", [])  # Очистить просмотр
             logging.info(f"Selected video: {file_name}")
             self.process_video(file_name)
 
@@ -189,7 +250,9 @@ class MainWindow(QMainWindow):
         self.processor = VideoProcessor(video_path, self.yolo_model, self.config)
         self.processor.progress.connect(self.progress_bar.setValue)
         self.processor.status.connect(self.status_label.setText)
+        self.processor.frame_processed.connect(self.frame_viewer.update_frame)
         self.processor.finished.connect(self.on_processing_finished)
+        self.load_button.setEnabled(False)
         self.processor.start()
 
     def on_processing_finished(self):

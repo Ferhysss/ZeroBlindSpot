@@ -749,3 +749,9 @@
 2025-05-25 18:12:02,975 - INFO - Processed frame frame_0902.jpg: bucket, conf: 0.46
 2025-05-25 18:12:03,288 - INFO - Processed frame frame_0905.jpg: bucket, conf: 0.46
 2025-05-25 18:12:03,500 - INFO - Video processing completed
+2025-05-25 18:22:35,317 - INFO - Device updated to cpu
+2025-05-25 18:22:35,480 - INFO - YOLO model loaded successfully
+2025-05-25 18:22:35,480 - INFO - CNN model disabled until architecture is provided
+2025-05-25 18:22:54,971 - INFO - Device updated to cpu
+2025-05-25 18:22:55,135 - INFO - YOLO model loaded successfully
+2025-05-25 18:22:55,135 - INFO - CNN model disabled until architecture is provided
