@@ -1,0 +1,8 @@
+data/
+pycache/
+*.pyc
+*.db
+*.exe
+dist/
+build/
+venv/
