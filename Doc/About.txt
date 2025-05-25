@@ -1,0 +1,109 @@
+ZeroBlindSpot: Документация проекта
+==================================
+
+
+### Структура папок
+
+data/
+├── YYYY-MM-DD_HH-MM-SS/  # Папка проекта для каждого видео (автогенерация по времени)
+│   ├── frames/           # Кадры с детектированным ковшом (для дообучения)
+│   ├── no_bucket/       # Кадры без ковша (для ручной аннотации)
+│   ├── deleted_frames/  # Удалённые кадры (ошибочные детекции)
+│   └── annotations/     # Аннотации и результаты
+│       ├── yolo.txt     # Координаты box’ов (x, y, w, h, conf), формат: "frame.jpg: bucket (x,y,w,h), conf: 0.XX (manual/confirmed)"
+│       ├── cnn.csv      # Состояния ковша (scoop/medium/neutral), формат: "frame,state,state_label"
+│       └── review.txt   # Результаты проверки, формат: "frame: correct/error, boxes: [...]"
+
+logs/
+├── default/             # Логи приложения (по датам)
+│   └── app_YYYY-MM-DD_HH-MM-SS.log  # Лог-файл с действиями и ошибками
+
+models/
+├── model.pt             # Модель YOLO для детекции ковша
+└── bucket_cnn.pth       # Модель CNN для классификации ковша
+
+config/
+└── config.yaml          # Настройки (device, frame_rate, use_cnn, yolo_conf_threshold)
+
+ui/
+└── styles.qss           # Стили для GUI (опционально)
+
+src/
+└── main.py              # Основной скрипт приложения
+
+
+
+
+==========
+Более подробное описание работы файлов и самого приложения
+==========
+
+### Описание файлов
+
+- config/config.yaml
+  Настройки проекта. Поля:
+  - device: "auto"/"cpu"/"cuda" (выбор устройства).
+  - frame_rate: Частота извлечения кадров (по умолчанию 1 fps).
+  - cnn_input_size: Размер входа CNN ([224, 224]).
+  - use_cnn: Включить CNN (True/False).
+  - yolo_conf_threshold: Порог уверенности YOLO (по умолчанию 0.5).
+  - last_project: Путь к последнему проекту.
+
+- src/main.py
+  Основной скрипт. Содержит:
+  - SimpleCNN: Модель CNN (3 класса: scoop=0, medium=1, neutral=2).
+  - VideoProcessor: Разбивает видео на кадры, применяет YOLO и CNN, сохраняет аннотации.
+  - FrameViewer: Отображает кадры, поддерживает аннотацию (OpenCV) и проверку.
+  - MainWindow: GUI с кнопками (загрузка, аннотация, проверка) и статусом.
+
+- data/YYYY-MM-DD_HH-MM-SS/annotations/yolo.txt
+  Хранит координаты box’ов ковша. Формат:
+  "frame_0001.jpg: bucket (x,y,w,h), conf: 0.XX (manual/confirmed)"
+  - manual: Ручная аннотация.
+  - confirmed: Подтверждённая детекция.
+
+- data/YYYY-MM-DD_HH-MM-SS/annotations/cnn.csv
+  Состояние ковша для каждого кадра. Формат:
+  "frame_0001.jpg,state,state_label"
+  - state: 0 (scoop), 1 (medium), 2 (neutral).
+  - state_label: Текстовое описание.
+
+- data/YYYY-MM-DD_HH-MM-SS/annotations/review.txt
+  Результаты проверки детекций. Формат:
+  "frame_0001.jpg: correct/error, boxes: [(x,y,w,h,conf), ...]"
+
+- logs/default/app_YYYY-MM-DD_HH-MM-SS.log
+  Логи действий и ошибок (INFO, WARNING, ERROR).
+
+
+  ### Как работает приложение
+
+1. **Загрузка видео/проекта**:
+   - Кнопки "Загрузить видео" или "Выбрать проект" в GUI.
+   - Видео разбивается на кадры (ffmpeg, 1 fps).
+   - Кадры сохраняются в data/YYYY-MM-DD_HH-MM-SS/frames или no_bucket.
+
+2. **Обработка**:
+   - YOLO детектирует ковш (models/model.pt).
+   - CNN классифицирует состояние (models/bucket_cnn.pth, если use_cnn: True).
+   - Кадры без ковша → no_bucket.
+   - Кадры с conf < 0.6 → low_conf_frames (для проверки).
+
+3. **Аннотация**:
+   - Режим аннотации (кнопка "Режим аннотации").
+   - В OpenCV окне:
+     - ЛКМ: Рисовать box.
+     - a/←: Предыдущий кадр.
+     - d/→: Следующий кадр.
+     - s: Сохранить.
+     - q: Выйти.
+   - Аннотации сохраняются в yolo.txt (manual).
+
+4. **Проверка**:
+   - Режим проверки (кнопка "Проверка детекций"): Для low_conf_frames.
+   - Ручная проверка (кнопка "Проверить ручные аннотации"): Для кадров с (manual) в yolo.txt.
+   - Действия: "Верно" (→ frames), "Ошибка" (→ deleted_frames).
+
+5. **Статус**:
+   - Показывает количество no_bucket_frames в status_label.
+   - Обновляется после сохранения аннотаций.

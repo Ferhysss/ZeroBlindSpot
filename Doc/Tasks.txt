@@ -1,2 +1,24 @@
-запустить main.py хоть как-то хоть криво / done или ne done
+
+Баги:
+1.Бинды в OpenCV: Починить a, d, q, s (добавить стрелки, логирование). FrameViewer.annotate_frame. 
+2.Сохранение аннотаций: Устранить пропадание box’ов, убрать дубли в yolo.txt. FrameViewer.save_annotations.
+3.cnn.csv: Создавать для всех кадров, проверить use_cnn. VideoProcessor.run.
+4.Корректно обновлять no_bucket_frames. FrameViewer.show_frame, delete_frame.
+
+
+Доработать:
+1.CNN: Проверить классификацию, уведомлять об ошибках. VideoProcessor.run.
+2.Ручные аннотации: Кэшировать yolo.txt, проверить загрузку. FrameViewer.load_manual_frames.
+3.Оптимизация: Ускорить чтение yolo.txt. MainWindow.load_project.
+
+Разработать
+1.Скрипт дообучения CNN: train_cnn.py (аналог YOLO). Новый файл.
+2.Экспорт: ZIP для yolo.txt, cnn.csv. MainWindow.export_results.
+3.Статистика: График кадров (correct/error). MainWindow.show_stats.
+
+Тестирование
+1.Интеграция: Тест на видео (10 сек, 1 мин). Все режимы.
+
+
+
 
