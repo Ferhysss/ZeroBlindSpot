@@ -1,0 +1,1664 @@
+2025-05-25 21:59:57,283 - INFO - Logging initialized successfully
+2025-05-25 21:59:57,524 - INFO - Device updated to cpu
+2025-05-25 21:59:57,688 - INFO - YOLO model loaded successfully
+2025-05-25 21:59:57,689 - INFO - CNN model disabled
+2025-05-25 22:00:05,566 - INFO - Selected video: C:/Users/Lev/Desktop/covsh/test/videos/7.mp4
+2025-05-25 22:00:24,142 - INFO - Video split into frames in data/2025-05-25_22-00-05/frames
+2025-05-25 22:00:26,025 - INFO - Moved frame frame_0001.jpg to no_bucket
+2025-05-25 22:00:26,025 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0001.jpg
+2025-05-25 22:00:26,132 - INFO - Moved frame frame_0002.jpg to no_bucket
+2025-05-25 22:00:26,132 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0002.jpg
+2025-05-25 22:00:26,250 - INFO - Moved frame frame_0003.jpg to no_bucket
+2025-05-25 22:00:26,251 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0003.jpg
+2025-05-25 22:00:26,360 - INFO - Moved frame frame_0004.jpg to no_bucket
+2025-05-25 22:00:26,360 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0004.jpg
+2025-05-25 22:00:26,485 - INFO - Moved frame frame_0005.jpg to no_bucket
+2025-05-25 22:00:26,485 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0005.jpg
+2025-05-25 22:00:26,600 - INFO - Moved frame frame_0006.jpg to no_bucket
+2025-05-25 22:00:26,600 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0006.jpg
+2025-05-25 22:00:26,713 - INFO - Moved frame frame_0007.jpg to no_bucket
+2025-05-25 22:00:26,713 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0007.jpg
+2025-05-25 22:00:26,822 - INFO - Moved frame frame_0008.jpg to no_bucket
+2025-05-25 22:00:26,822 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0008.jpg
+2025-05-25 22:00:26,950 - INFO - Processed frame frame_0009.jpg: bucket, conf: 0.73
+2025-05-25 22:00:27,071 - INFO - Moved frame frame_0010.jpg to no_bucket
+2025-05-25 22:00:27,071 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0010.jpg
+2025-05-25 22:00:27,185 - INFO - Moved frame frame_0011.jpg to no_bucket
+2025-05-25 22:00:27,185 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0011.jpg
+2025-05-25 22:00:27,289 - INFO - Moved frame frame_0012.jpg to no_bucket
+2025-05-25 22:00:27,289 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0012.jpg
+2025-05-25 22:00:27,393 - INFO - Moved frame frame_0013.jpg to no_bucket
+2025-05-25 22:00:27,394 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0013.jpg
+2025-05-25 22:00:27,495 - INFO - Moved frame frame_0014.jpg to no_bucket
+2025-05-25 22:00:27,495 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0014.jpg
+2025-05-25 22:00:27,607 - INFO - Moved frame frame_0015.jpg to no_bucket
+2025-05-25 22:00:27,607 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0015.jpg
+2025-05-25 22:00:27,716 - INFO - Moved frame frame_0016.jpg to no_bucket
+2025-05-25 22:00:27,716 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0016.jpg
+2025-05-25 22:00:27,821 - INFO - Moved frame frame_0017.jpg to no_bucket
+2025-05-25 22:00:27,821 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0017.jpg
+2025-05-25 22:00:27,927 - INFO - Moved frame frame_0018.jpg to no_bucket
+2025-05-25 22:00:27,928 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0018.jpg
+2025-05-25 22:00:28,036 - INFO - Processed frame frame_0019.jpg: bucket, conf: 0.88
+2025-05-25 22:00:28,149 - INFO - Processed frame frame_0020.jpg: bucket, conf: 0.86
+2025-05-25 22:00:28,253 - INFO - Moved frame frame_0021.jpg to no_bucket
+2025-05-25 22:00:28,253 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0021.jpg
+2025-05-25 22:00:28,357 - INFO - Moved frame frame_0022.jpg to no_bucket
+2025-05-25 22:00:28,357 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0022.jpg
+2025-05-25 22:00:28,463 - INFO - Moved frame frame_0023.jpg to no_bucket
+2025-05-25 22:00:28,463 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0023.jpg
+2025-05-25 22:00:28,571 - INFO - Moved frame frame_0024.jpg to no_bucket
+2025-05-25 22:00:28,571 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0024.jpg
+2025-05-25 22:00:28,688 - INFO - Moved frame frame_0025.jpg to no_bucket
+2025-05-25 22:00:28,689 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0025.jpg
+2025-05-25 22:00:28,792 - INFO - Moved frame frame_0026.jpg to no_bucket
+2025-05-25 22:00:28,793 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0026.jpg
+2025-05-25 22:00:28,897 - INFO - Moved frame frame_0027.jpg to no_bucket
+2025-05-25 22:00:28,897 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0027.jpg
+2025-05-25 22:00:29,001 - INFO - Moved frame frame_0028.jpg to no_bucket
+2025-05-25 22:00:29,001 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0028.jpg
+2025-05-25 22:00:29,117 - INFO - Moved frame frame_0029.jpg to no_bucket
+2025-05-25 22:00:29,117 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0029.jpg
+2025-05-25 22:00:29,218 - INFO - Moved frame frame_0030.jpg to no_bucket
+2025-05-25 22:00:29,218 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0030.jpg
+2025-05-25 22:00:29,319 - INFO - Moved frame frame_0031.jpg to no_bucket
+2025-05-25 22:00:29,319 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0031.jpg
+2025-05-25 22:00:29,421 - INFO - Moved frame frame_0032.jpg to no_bucket
+2025-05-25 22:00:29,422 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0032.jpg
+2025-05-25 22:00:29,524 - INFO - Moved frame frame_0033.jpg to no_bucket
+2025-05-25 22:00:29,524 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0033.jpg
+2025-05-25 22:00:29,628 - INFO - Moved frame frame_0034.jpg to no_bucket
+2025-05-25 22:00:29,628 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0034.jpg
+2025-05-25 22:00:29,729 - INFO - Moved frame frame_0035.jpg to no_bucket
+2025-05-25 22:00:29,729 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0035.jpg
+2025-05-25 22:00:29,829 - INFO - Moved frame frame_0036.jpg to no_bucket
+2025-05-25 22:00:29,829 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0036.jpg
+2025-05-25 22:00:29,945 - INFO - Moved frame frame_0037.jpg to no_bucket
+2025-05-25 22:00:29,945 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0037.jpg
+2025-05-25 22:00:30,098 - INFO - Moved frame frame_0038.jpg to no_bucket
+2025-05-25 22:00:30,098 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0038.jpg
+2025-05-25 22:00:30,210 - INFO - Moved frame frame_0039.jpg to no_bucket
+2025-05-25 22:00:30,210 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0039.jpg
+2025-05-25 22:00:30,319 - INFO - Processed frame frame_0040.jpg: bucket, conf: 0.71
+2025-05-25 22:00:30,426 - INFO - Processed frame frame_0041.jpg: bucket, conf: 0.67
+2025-05-25 22:00:30,532 - INFO - Moved frame frame_0042.jpg to no_bucket
+2025-05-25 22:00:30,532 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0042.jpg
+2025-05-25 22:00:30,636 - INFO - Moved frame frame_0043.jpg to no_bucket
+2025-05-25 22:00:30,637 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0043.jpg
+2025-05-25 22:00:30,743 - INFO - Processed frame frame_0044.jpg: bucket, conf: 0.63
+2025-05-25 22:00:30,851 - INFO - Moved frame frame_0045.jpg to no_bucket
+2025-05-25 22:00:30,851 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0045.jpg
+2025-05-25 22:00:30,951 - INFO - Moved frame frame_0046.jpg to no_bucket
+2025-05-25 22:00:30,951 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0046.jpg
+2025-05-25 22:00:31,050 - INFO - Moved frame frame_0047.jpg to no_bucket
+2025-05-25 22:00:31,050 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0047.jpg
+2025-05-25 22:00:31,153 - INFO - Moved frame frame_0048.jpg to no_bucket
+2025-05-25 22:00:31,153 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0048.jpg
+2025-05-25 22:00:31,257 - INFO - Moved frame frame_0049.jpg to no_bucket
+2025-05-25 22:00:31,257 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0049.jpg
+2025-05-25 22:00:31,359 - INFO - Moved frame frame_0050.jpg to no_bucket
+2025-05-25 22:00:31,359 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0050.jpg
+2025-05-25 22:00:31,465 - INFO - Moved frame frame_0051.jpg to no_bucket
+2025-05-25 22:00:31,465 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0051.jpg
+2025-05-25 22:00:31,560 - INFO - Moved frame frame_0052.jpg to no_bucket
+2025-05-25 22:00:31,560 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0052.jpg
+2025-05-25 22:00:31,667 - INFO - Processed frame frame_0053.jpg: bucket, conf: 0.57
+2025-05-25 22:00:31,668 - INFO - Added low-conf frame: data/2025-05-25_22-00-05/frames\frame_0053.jpg
+2025-05-25 22:00:31,776 - INFO - Moved frame frame_0054.jpg to no_bucket
+2025-05-25 22:00:31,776 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0054.jpg
+2025-05-25 22:00:31,880 - INFO - Processed frame frame_0055.jpg: bucket, conf: 0.50
+2025-05-25 22:00:31,881 - INFO - Added low-conf frame: data/2025-05-25_22-00-05/frames\frame_0055.jpg
+2025-05-25 22:00:31,984 - INFO - Processed frame frame_0056.jpg: bucket, conf: 0.69
+2025-05-25 22:00:32,091 - INFO - Moved frame frame_0057.jpg to no_bucket
+2025-05-25 22:00:32,091 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0057.jpg
+2025-05-25 22:00:32,197 - INFO - Moved frame frame_0058.jpg to no_bucket
+2025-05-25 22:00:32,197 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0058.jpg
+2025-05-25 22:00:32,303 - INFO - Moved frame frame_0059.jpg to no_bucket
+2025-05-25 22:00:32,303 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0059.jpg
+2025-05-25 22:00:32,406 - INFO - Moved frame frame_0060.jpg to no_bucket
+2025-05-25 22:00:32,406 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0060.jpg
+2025-05-25 22:00:32,507 - INFO - Moved frame frame_0061.jpg to no_bucket
+2025-05-25 22:00:32,507 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0061.jpg
+2025-05-25 22:00:32,615 - INFO - Moved frame frame_0062.jpg to no_bucket
+2025-05-25 22:00:32,615 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0062.jpg
+2025-05-25 22:00:32,719 - INFO - Moved frame frame_0063.jpg to no_bucket
+2025-05-25 22:00:32,719 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0063.jpg
+2025-05-25 22:00:32,823 - INFO - Moved frame frame_0064.jpg to no_bucket
+2025-05-25 22:00:32,823 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0064.jpg
+2025-05-25 22:00:32,925 - INFO - Moved frame frame_0065.jpg to no_bucket
+2025-05-25 22:00:32,926 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0065.jpg
+2025-05-25 22:00:33,031 - INFO - Processed frame frame_0066.jpg: bucket, conf: 0.83
+2025-05-25 22:00:33,140 - INFO - Processed frame frame_0067.jpg: bucket, conf: 0.90
+2025-05-25 22:00:33,245 - INFO - Processed frame frame_0068.jpg: bucket, conf: 0.83
+2025-05-25 22:00:33,352 - INFO - Moved frame frame_0069.jpg to no_bucket
+2025-05-25 22:00:33,353 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0069.jpg
+2025-05-25 22:00:33,472 - INFO - Moved frame frame_0070.jpg to no_bucket
+2025-05-25 22:00:33,472 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0070.jpg
+2025-05-25 22:00:33,586 - INFO - Moved frame frame_0071.jpg to no_bucket
+2025-05-25 22:00:33,586 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0071.jpg
+2025-05-25 22:00:33,693 - INFO - Moved frame frame_0072.jpg to no_bucket
+2025-05-25 22:00:33,693 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0072.jpg
+2025-05-25 22:00:33,801 - INFO - Processed frame frame_0073.jpg: bucket, conf: 0.79
+2025-05-25 22:00:33,909 - INFO - Moved frame frame_0074.jpg to no_bucket
+2025-05-25 22:00:33,909 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0074.jpg
+2025-05-25 22:00:34,009 - INFO - Moved frame frame_0075.jpg to no_bucket
+2025-05-25 22:00:34,009 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0075.jpg
+2025-05-25 22:00:34,112 - INFO - Moved frame frame_0076.jpg to no_bucket
+2025-05-25 22:00:34,112 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0076.jpg
+2025-05-25 22:00:34,215 - INFO - Moved frame frame_0077.jpg to no_bucket
+2025-05-25 22:00:34,215 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0077.jpg
+2025-05-25 22:00:34,317 - INFO - Processed frame frame_0078.jpg: bucket, conf: 0.75
+2025-05-25 22:00:34,426 - INFO - Processed frame frame_0079.jpg: bucket, conf: 0.66
+2025-05-25 22:00:34,528 - INFO - Moved frame frame_0080.jpg to no_bucket
+2025-05-25 22:00:34,528 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0080.jpg
+2025-05-25 22:00:34,630 - INFO - Processed frame frame_0081.jpg: bucket, conf: 0.84
+2025-05-25 22:00:34,736 - INFO - Moved frame frame_0082.jpg to no_bucket
+2025-05-25 22:00:34,736 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0082.jpg
+2025-05-25 22:00:34,842 - INFO - Moved frame frame_0083.jpg to no_bucket
+2025-05-25 22:00:34,843 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0083.jpg
+2025-05-25 22:00:34,966 - INFO - Moved frame frame_0084.jpg to no_bucket
+2025-05-25 22:00:34,966 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0084.jpg
+2025-05-25 22:00:35,067 - INFO - Processed frame frame_0085.jpg: bucket, conf: 0.81
+2025-05-25 22:00:35,172 - INFO - Moved frame frame_0086.jpg to no_bucket
+2025-05-25 22:00:35,172 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0086.jpg
+2025-05-25 22:00:35,275 - INFO - Processed frame frame_0087.jpg: bucket, conf: 0.55
+2025-05-25 22:00:35,276 - INFO - Added low-conf frame: data/2025-05-25_22-00-05/frames\frame_0087.jpg
+2025-05-25 22:00:35,386 - INFO - Moved frame frame_0088.jpg to no_bucket
+2025-05-25 22:00:35,386 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0088.jpg
+2025-05-25 22:00:35,490 - INFO - Moved frame frame_0089.jpg to no_bucket
+2025-05-25 22:00:35,490 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0089.jpg
+2025-05-25 22:00:35,591 - INFO - Moved frame frame_0090.jpg to no_bucket
+2025-05-25 22:00:35,591 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0090.jpg
+2025-05-25 22:00:35,696 - INFO - Moved frame frame_0091.jpg to no_bucket
+2025-05-25 22:00:35,696 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0091.jpg
+2025-05-25 22:00:35,801 - INFO - Moved frame frame_0092.jpg to no_bucket
+2025-05-25 22:00:35,801 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0092.jpg
+2025-05-25 22:00:35,903 - INFO - Processed frame frame_0093.jpg: bucket, conf: 0.68
+2025-05-25 22:00:36,013 - INFO - Moved frame frame_0094.jpg to no_bucket
+2025-05-25 22:00:36,013 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0094.jpg
+2025-05-25 22:00:36,119 - INFO - Moved frame frame_0095.jpg to no_bucket
+2025-05-25 22:00:36,120 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0095.jpg
+2025-05-25 22:00:36,225 - INFO - Processed frame frame_0096.jpg: bucket, conf: 0.85
+2025-05-25 22:00:36,334 - INFO - Processed frame frame_0097.jpg: bucket, conf: 0.89
+2025-05-25 22:00:36,439 - INFO - Moved frame frame_0098.jpg to no_bucket
+2025-05-25 22:00:36,439 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0098.jpg
+2025-05-25 22:00:36,541 - INFO - Moved frame frame_0099.jpg to no_bucket
+2025-05-25 22:00:36,541 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0099.jpg
+2025-05-25 22:00:36,641 - INFO - Moved frame frame_0100.jpg to no_bucket
+2025-05-25 22:00:36,641 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0100.jpg
+2025-05-25 22:00:36,746 - INFO - Moved frame frame_0101.jpg to no_bucket
+2025-05-25 22:00:36,746 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0101.jpg
+2025-05-25 22:00:36,842 - INFO - Processed frame frame_0102.jpg: bucket, conf: 0.66
+2025-05-25 22:00:36,955 - INFO - Processed frame frame_0103.jpg: bucket, conf: 0.76
+2025-05-25 22:00:37,077 - INFO - Moved frame frame_0104.jpg to no_bucket
+2025-05-25 22:00:37,078 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0104.jpg
+2025-05-25 22:00:37,187 - INFO - Moved frame frame_0105.jpg to no_bucket
+2025-05-25 22:00:37,187 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0105.jpg
+2025-05-25 22:00:37,297 - INFO - Processed frame frame_0106.jpg: bucket, conf: 0.83
+2025-05-25 22:00:37,409 - INFO - Processed frame frame_0107.jpg: bucket, conf: 0.87
+2025-05-25 22:00:37,514 - INFO - Processed frame frame_0108.jpg: bucket, conf: 0.85
+2025-05-25 22:00:37,618 - INFO - Processed frame frame_0109.jpg: bucket, conf: 0.87
+2025-05-25 22:00:37,722 - INFO - Processed frame frame_0110.jpg: bucket, conf: 0.89
+2025-05-25 22:00:37,826 - INFO - Processed frame frame_0111.jpg: bucket, conf: 0.87
+2025-05-25 22:00:37,934 - INFO - Processed frame frame_0112.jpg: bucket, conf: 0.84
+2025-05-25 22:00:38,042 - INFO - Processed frame frame_0113.jpg: bucket, conf: 0.88
+2025-05-25 22:00:38,146 - INFO - Processed frame frame_0114.jpg: bucket, conf: 0.88
+2025-05-25 22:00:38,252 - INFO - Processed frame frame_0115.jpg: bucket, conf: 0.87
+2025-05-25 22:00:38,361 - INFO - Processed frame frame_0116.jpg: bucket, conf: 0.83
+2025-05-25 22:00:38,467 - INFO - Moved frame frame_0117.jpg to no_bucket
+2025-05-25 22:00:38,467 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0117.jpg
+2025-05-25 22:00:38,570 - INFO - Moved frame frame_0118.jpg to no_bucket
+2025-05-25 22:00:38,570 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0118.jpg
+2025-05-25 22:00:38,674 - INFO - Moved frame frame_0119.jpg to no_bucket
+2025-05-25 22:00:38,674 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0119.jpg
+2025-05-25 22:00:38,776 - INFO - Moved frame frame_0120.jpg to no_bucket
+2025-05-25 22:00:38,776 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0120.jpg
+2025-05-25 22:00:38,882 - INFO - Moved frame frame_0121.jpg to no_bucket
+2025-05-25 22:00:38,882 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0121.jpg
+2025-05-25 22:00:38,993 - INFO - Processed frame frame_0122.jpg: bucket, conf: 0.61
+2025-05-25 22:00:39,120 - INFO - Moved frame frame_0123.jpg to no_bucket
+2025-05-25 22:00:39,120 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0123.jpg
+2025-05-25 22:00:39,236 - INFO - Moved frame frame_0124.jpg to no_bucket
+2025-05-25 22:00:39,236 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0124.jpg
+2025-05-25 22:00:39,345 - INFO - Moved frame frame_0125.jpg to no_bucket
+2025-05-25 22:00:39,346 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0125.jpg
+2025-05-25 22:00:39,450 - INFO - Processed frame frame_0126.jpg: bucket, conf: 0.84
+2025-05-25 22:00:39,556 - INFO - Processed frame frame_0127.jpg: bucket, conf: 0.82
+2025-05-25 22:00:39,663 - INFO - Moved frame frame_0128.jpg to no_bucket
+2025-05-25 22:00:39,663 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0128.jpg
+2025-05-25 22:00:39,783 - INFO - Moved frame frame_0129.jpg to no_bucket
+2025-05-25 22:00:39,783 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0129.jpg
+2025-05-25 22:00:39,888 - INFO - Moved frame frame_0130.jpg to no_bucket
+2025-05-25 22:00:39,888 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0130.jpg
+2025-05-25 22:00:39,989 - INFO - Moved frame frame_0131.jpg to no_bucket
+2025-05-25 22:00:39,990 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0131.jpg
+2025-05-25 22:00:40,094 - INFO - Processed frame frame_0132.jpg: bucket, conf: 0.78
+2025-05-25 22:00:40,201 - INFO - Processed frame frame_0133.jpg: bucket, conf: 0.53
+2025-05-25 22:00:40,202 - INFO - Added low-conf frame: data/2025-05-25_22-00-05/frames\frame_0133.jpg
+2025-05-25 22:00:40,309 - INFO - Moved frame frame_0134.jpg to no_bucket
+2025-05-25 22:00:40,309 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0134.jpg
+2025-05-25 22:00:40,413 - INFO - Moved frame frame_0135.jpg to no_bucket
+2025-05-25 22:00:40,413 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0135.jpg
+2025-05-25 22:00:40,515 - INFO - Processed frame frame_0136.jpg: bucket, conf: 0.88
+2025-05-25 22:00:40,621 - INFO - Processed frame frame_0137.jpg: bucket, conf: 0.88
+2025-05-25 22:00:40,730 - INFO - Processed frame frame_0138.jpg: bucket, conf: 0.72
+2025-05-25 22:00:40,833 - INFO - Moved frame frame_0139.jpg to no_bucket
+2025-05-25 22:00:40,833 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0139.jpg
+2025-05-25 22:00:40,937 - INFO - Moved frame frame_0140.jpg to no_bucket
+2025-05-25 22:00:40,937 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0140.jpg
+2025-05-25 22:00:41,037 - INFO - Moved frame frame_0141.jpg to no_bucket
+2025-05-25 22:00:41,037 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0141.jpg
+2025-05-25 22:00:41,138 - INFO - Moved frame frame_0142.jpg to no_bucket
+2025-05-25 22:00:41,138 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0142.jpg
+2025-05-25 22:00:41,240 - INFO - Moved frame frame_0143.jpg to no_bucket
+2025-05-25 22:00:41,240 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0143.jpg
+2025-05-25 22:00:41,345 - INFO - Moved frame frame_0144.jpg to no_bucket
+2025-05-25 22:00:41,345 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0144.jpg
+2025-05-25 22:00:41,446 - INFO - Processed frame frame_0145.jpg: bucket, conf: 0.51
+2025-05-25 22:00:41,447 - INFO - Added low-conf frame: data/2025-05-25_22-00-05/frames\frame_0145.jpg
+2025-05-25 22:00:41,552 - INFO - Moved frame frame_0146.jpg to no_bucket
+2025-05-25 22:00:41,552 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0146.jpg
+2025-05-25 22:00:41,657 - INFO - Moved frame frame_0147.jpg to no_bucket
+2025-05-25 22:00:41,657 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0147.jpg
+2025-05-25 22:00:41,760 - INFO - Moved frame frame_0148.jpg to no_bucket
+2025-05-25 22:00:41,760 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0148.jpg
+2025-05-25 22:00:41,862 - INFO - Processed frame frame_0149.jpg: bucket, conf: 0.87
+2025-05-25 22:00:41,980 - INFO - Moved frame frame_0150.jpg to no_bucket
+2025-05-25 22:00:41,980 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0150.jpg
+2025-05-25 22:00:42,098 - INFO - Moved frame frame_0151.jpg to no_bucket
+2025-05-25 22:00:42,098 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0151.jpg
+2025-05-25 22:00:42,210 - INFO - Moved frame frame_0152.jpg to no_bucket
+2025-05-25 22:00:42,210 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0152.jpg
+2025-05-25 22:00:42,319 - INFO - Moved frame frame_0153.jpg to no_bucket
+2025-05-25 22:00:42,319 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0153.jpg
+2025-05-25 22:00:42,421 - INFO - Processed frame frame_0154.jpg: bucket, conf: 0.79
+2025-05-25 22:00:42,529 - INFO - Moved frame frame_0155.jpg to no_bucket
+2025-05-25 22:00:42,530 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0155.jpg
+2025-05-25 22:00:42,638 - INFO - Processed frame frame_0156.jpg: bucket, conf: 0.54
+2025-05-25 22:00:42,638 - INFO - Added low-conf frame: data/2025-05-25_22-00-05/frames\frame_0156.jpg
+2025-05-25 22:00:42,747 - INFO - Processed frame frame_0157.jpg: bucket, conf: 0.74
+2025-05-25 22:00:42,854 - INFO - Processed frame frame_0158.jpg: bucket, conf: 0.85
+2025-05-25 22:00:42,963 - INFO - Processed frame frame_0159.jpg: bucket, conf: 0.53
+2025-05-25 22:00:42,964 - INFO - Added low-conf frame: data/2025-05-25_22-00-05/frames\frame_0159.jpg
+2025-05-25 22:00:43,073 - INFO - Moved frame frame_0160.jpg to no_bucket
+2025-05-25 22:00:43,073 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0160.jpg
+2025-05-25 22:00:43,173 - INFO - Processed frame frame_0161.jpg: bucket, conf: 0.58
+2025-05-25 22:00:43,173 - INFO - Added low-conf frame: data/2025-05-25_22-00-05/frames\frame_0161.jpg
+2025-05-25 22:00:43,301 - INFO - Moved frame frame_0162.jpg to no_bucket
+2025-05-25 22:00:43,301 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0162.jpg
+2025-05-25 22:00:43,405 - INFO - Processed frame frame_0163.jpg: bucket, conf: 0.50
+2025-05-25 22:00:43,405 - INFO - Added low-conf frame: data/2025-05-25_22-00-05/frames\frame_0163.jpg
+2025-05-25 22:00:43,510 - INFO - Moved frame frame_0164.jpg to no_bucket
+2025-05-25 22:00:43,510 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0164.jpg
+2025-05-25 22:00:43,611 - INFO - Moved frame frame_0165.jpg to no_bucket
+2025-05-25 22:00:43,612 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0165.jpg
+2025-05-25 22:00:43,716 - INFO - Moved frame frame_0166.jpg to no_bucket
+2025-05-25 22:00:43,717 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0166.jpg
+2025-05-25 22:00:43,815 - INFO - Moved frame frame_0167.jpg to no_bucket
+2025-05-25 22:00:43,815 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0167.jpg
+2025-05-25 22:00:43,919 - INFO - Moved frame frame_0168.jpg to no_bucket
+2025-05-25 22:00:43,919 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0168.jpg
+2025-05-25 22:00:44,023 - INFO - Moved frame frame_0169.jpg to no_bucket
+2025-05-25 22:00:44,023 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0169.jpg
+2025-05-25 22:00:44,125 - INFO - Moved frame frame_0170.jpg to no_bucket
+2025-05-25 22:00:44,125 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0170.jpg
+2025-05-25 22:00:44,227 - INFO - Moved frame frame_0171.jpg to no_bucket
+2025-05-25 22:00:44,227 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0171.jpg
+2025-05-25 22:00:44,327 - INFO - Moved frame frame_0172.jpg to no_bucket
+2025-05-25 22:00:44,327 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0172.jpg
+2025-05-25 22:00:44,430 - INFO - Moved frame frame_0173.jpg to no_bucket
+2025-05-25 22:00:44,430 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0173.jpg
+2025-05-25 22:00:44,532 - INFO - Moved frame frame_0174.jpg to no_bucket
+2025-05-25 22:00:44,532 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0174.jpg
+2025-05-25 22:00:44,636 - INFO - Processed frame frame_0175.jpg: bucket, conf: 0.76
+2025-05-25 22:00:44,740 - INFO - Processed frame frame_0176.jpg: bucket, conf: 0.79
+2025-05-25 22:00:44,845 - INFO - Moved frame frame_0177.jpg to no_bucket
+2025-05-25 22:00:44,846 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0177.jpg
+2025-05-25 22:00:44,939 - INFO - Moved frame frame_0178.jpg to no_bucket
+2025-05-25 22:00:44,939 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0178.jpg
+2025-05-25 22:00:45,042 - INFO - Moved frame frame_0179.jpg to no_bucket
+2025-05-25 22:00:45,042 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0179.jpg
+2025-05-25 22:00:45,142 - INFO - Processed frame frame_0180.jpg: bucket, conf: 0.68
+2025-05-25 22:00:45,250 - INFO - Processed frame frame_0181.jpg: bucket, conf: 0.72
+2025-05-25 22:00:45,355 - INFO - Processed frame frame_0182.jpg: bucket, conf: 0.80
+2025-05-25 22:00:45,462 - INFO - Processed frame frame_0183.jpg: bucket, conf: 0.79
+2025-05-25 22:00:45,588 - INFO - Moved frame frame_0184.jpg to no_bucket
+2025-05-25 22:00:45,588 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0184.jpg
+2025-05-25 22:00:45,700 - INFO - Moved frame frame_0185.jpg to no_bucket
+2025-05-25 22:00:45,700 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0185.jpg
+2025-05-25 22:00:45,809 - INFO - Moved frame frame_0186.jpg to no_bucket
+2025-05-25 22:00:45,809 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0186.jpg
+2025-05-25 22:00:45,912 - INFO - Processed frame frame_0187.jpg: bucket, conf: 0.61
+2025-05-25 22:00:46,022 - INFO - Moved frame frame_0188.jpg to no_bucket
+2025-05-25 22:00:46,023 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0188.jpg
+2025-05-25 22:00:46,125 - INFO - Moved frame frame_0189.jpg to no_bucket
+2025-05-25 22:00:46,125 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0189.jpg
+2025-05-25 22:00:46,227 - INFO - Moved frame frame_0190.jpg to no_bucket
+2025-05-25 22:00:46,227 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0190.jpg
+2025-05-25 22:00:46,331 - INFO - Processed frame frame_0191.jpg: bucket, conf: 0.56
+2025-05-25 22:00:46,331 - INFO - Added low-conf frame: data/2025-05-25_22-00-05/frames\frame_0191.jpg
+2025-05-25 22:00:46,439 - INFO - Moved frame frame_0192.jpg to no_bucket
+2025-05-25 22:00:46,439 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0192.jpg
+2025-05-25 22:00:46,543 - INFO - Processed frame frame_0193.jpg: bucket, conf: 0.84
+2025-05-25 22:00:46,645 - INFO - Processed frame frame_0194.jpg: bucket, conf: 0.83
+2025-05-25 22:00:46,752 - INFO - Moved frame frame_0195.jpg to no_bucket
+2025-05-25 22:00:46,753 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0195.jpg
+2025-05-25 22:00:46,844 - INFO - Moved frame frame_0196.jpg to no_bucket
+2025-05-25 22:00:46,844 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0196.jpg
+2025-05-25 22:00:46,944 - INFO - Moved frame frame_0197.jpg to no_bucket
+2025-05-25 22:00:46,944 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0197.jpg
+2025-05-25 22:00:47,050 - INFO - Processed frame frame_0198.jpg: bucket, conf: 0.67
+2025-05-25 22:00:47,160 - INFO - Processed frame frame_0199.jpg: bucket, conf: 0.89
+2025-05-25 22:00:47,267 - INFO - Moved frame frame_0200.jpg to no_bucket
+2025-05-25 22:00:47,267 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0200.jpg
+2025-05-25 22:00:47,373 - INFO - Moved frame frame_0201.jpg to no_bucket
+2025-05-25 22:00:47,373 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0201.jpg
+2025-05-25 22:00:47,473 - INFO - Moved frame frame_0202.jpg to no_bucket
+2025-05-25 22:00:47,473 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0202.jpg
+2025-05-25 22:00:47,574 - INFO - Moved frame frame_0203.jpg to no_bucket
+2025-05-25 22:00:47,574 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0203.jpg
+2025-05-25 22:00:47,673 - INFO - Moved frame frame_0204.jpg to no_bucket
+2025-05-25 22:00:47,674 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0204.jpg
+2025-05-25 22:00:47,768 - INFO - Processed frame frame_0205.jpg: bucket, conf: 0.84
+2025-05-25 22:00:47,869 - INFO - Moved frame frame_0206.jpg to no_bucket
+2025-05-25 22:00:47,869 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0206.jpg
+2025-05-25 22:00:47,987 - INFO - Moved frame frame_0207.jpg to no_bucket
+2025-05-25 22:00:47,987 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0207.jpg
+2025-05-25 22:00:48,089 - INFO - Moved frame frame_0208.jpg to no_bucket
+2025-05-25 22:00:48,089 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0208.jpg
+2025-05-25 22:00:48,194 - INFO - Moved frame frame_0209.jpg to no_bucket
+2025-05-25 22:00:48,194 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0209.jpg
+2025-05-25 22:00:48,296 - INFO - Moved frame frame_0210.jpg to no_bucket
+2025-05-25 22:00:48,296 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0210.jpg
+2025-05-25 22:00:48,400 - INFO - Processed frame frame_0211.jpg: bucket, conf: 0.83
+2025-05-25 22:00:48,507 - INFO - Moved frame frame_0212.jpg to no_bucket
+2025-05-25 22:00:48,507 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0212.jpg
+2025-05-25 22:00:48,610 - INFO - Moved frame frame_0213.jpg to no_bucket
+2025-05-25 22:00:48,610 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0213.jpg
+2025-05-25 22:00:48,710 - INFO - Moved frame frame_0214.jpg to no_bucket
+2025-05-25 22:00:48,710 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0214.jpg
+2025-05-25 22:00:48,814 - INFO - Moved frame frame_0215.jpg to no_bucket
+2025-05-25 22:00:48,814 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0215.jpg
+2025-05-25 22:00:48,916 - INFO - Processed frame frame_0216.jpg: bucket, conf: 0.88
+2025-05-25 22:00:49,038 - INFO - Moved frame frame_0217.jpg to no_bucket
+2025-05-25 22:00:49,038 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0217.jpg
+2025-05-25 22:00:49,157 - INFO - Processed frame frame_0218.jpg: bucket, conf: 0.54
+2025-05-25 22:00:49,158 - INFO - Added low-conf frame: data/2025-05-25_22-00-05/frames\frame_0218.jpg
+2025-05-25 22:00:49,271 - INFO - Moved frame frame_0219.jpg to no_bucket
+2025-05-25 22:00:49,271 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0219.jpg
+2025-05-25 22:00:49,377 - INFO - Moved frame frame_0220.jpg to no_bucket
+2025-05-25 22:00:49,377 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0220.jpg
+2025-05-25 22:00:49,472 - INFO - Moved frame frame_0221.jpg to no_bucket
+2025-05-25 22:00:49,472 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0221.jpg
+2025-05-25 22:00:49,572 - INFO - Moved frame frame_0222.jpg to no_bucket
+2025-05-25 22:00:49,573 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0222.jpg
+2025-05-25 22:00:49,675 - INFO - Moved frame frame_0223.jpg to no_bucket
+2025-05-25 22:00:49,675 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0223.jpg
+2025-05-25 22:00:49,777 - INFO - Moved frame frame_0224.jpg to no_bucket
+2025-05-25 22:00:49,777 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0224.jpg
+2025-05-25 22:00:49,881 - INFO - Processed frame frame_0225.jpg: bucket, conf: 0.68
+2025-05-25 22:00:49,990 - INFO - Moved frame frame_0226.jpg to no_bucket
+2025-05-25 22:00:49,990 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0226.jpg
+2025-05-25 22:00:50,089 - INFO - Moved frame frame_0227.jpg to no_bucket
+2025-05-25 22:00:50,089 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0227.jpg
+2025-05-25 22:00:50,190 - INFO - Processed frame frame_0228.jpg: bucket, conf: 0.52
+2025-05-25 22:00:50,191 - INFO - Added low-conf frame: data/2025-05-25_22-00-05/frames\frame_0228.jpg
+2025-05-25 22:00:50,292 - INFO - Moved frame frame_0229.jpg to no_bucket
+2025-05-25 22:00:50,292 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0229.jpg
+2025-05-25 22:00:50,394 - INFO - Moved frame frame_0230.jpg to no_bucket
+2025-05-25 22:00:50,394 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0230.jpg
+2025-05-25 22:00:50,499 - INFO - Moved frame frame_0231.jpg to no_bucket
+2025-05-25 22:00:50,499 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0231.jpg
+2025-05-25 22:00:50,597 - INFO - Moved frame frame_0232.jpg to no_bucket
+2025-05-25 22:00:50,597 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0232.jpg
+2025-05-25 22:00:50,703 - INFO - Moved frame frame_0233.jpg to no_bucket
+2025-05-25 22:00:50,703 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0233.jpg
+2025-05-25 22:00:50,808 - INFO - Moved frame frame_0234.jpg to no_bucket
+2025-05-25 22:00:50,808 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0234.jpg
+2025-05-25 22:00:50,906 - INFO - Moved frame frame_0235.jpg to no_bucket
+2025-05-25 22:00:50,906 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0235.jpg
+2025-05-25 22:00:51,012 - INFO - Moved frame frame_0236.jpg to no_bucket
+2025-05-25 22:00:51,012 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0236.jpg
+2025-05-25 22:00:51,116 - INFO - Moved frame frame_0237.jpg to no_bucket
+2025-05-25 22:00:51,117 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0237.jpg
+2025-05-25 22:00:51,219 - INFO - Moved frame frame_0238.jpg to no_bucket
+2025-05-25 22:00:51,219 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0238.jpg
+2025-05-25 22:00:51,320 - INFO - Processed frame frame_0239.jpg: bucket, conf: 0.85
+2025-05-25 22:00:51,430 - INFO - Moved frame frame_0240.jpg to no_bucket
+2025-05-25 22:00:51,430 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0240.jpg
+2025-05-25 22:00:51,535 - INFO - Moved frame frame_0241.jpg to no_bucket
+2025-05-25 22:00:51,535 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0241.jpg
+2025-05-25 22:00:51,619 - INFO - Moved frame frame_0242.jpg to no_bucket
+2025-05-25 22:00:51,620 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0242.jpg
+2025-05-25 22:00:51,724 - INFO - Moved frame frame_0243.jpg to no_bucket
+2025-05-25 22:00:51,724 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0243.jpg
+2025-05-25 22:00:51,828 - INFO - Processed frame frame_0244.jpg: bucket, conf: 0.59
+2025-05-25 22:00:51,828 - INFO - Added low-conf frame: data/2025-05-25_22-00-05/frames\frame_0244.jpg
+2025-05-25 22:00:51,935 - INFO - Moved frame frame_0245.jpg to no_bucket
+2025-05-25 22:00:51,936 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0245.jpg
+2025-05-25 22:00:52,038 - INFO - Moved frame frame_0246.jpg to no_bucket
+2025-05-25 22:00:52,038 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0246.jpg
+2025-05-25 22:00:52,140 - INFO - Processed frame frame_0247.jpg: bucket, conf: 0.76
+2025-05-25 22:00:52,244 - INFO - Moved frame frame_0248.jpg to no_bucket
+2025-05-25 22:00:52,244 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0248.jpg
+2025-05-25 22:00:52,346 - INFO - Moved frame frame_0249.jpg to no_bucket
+2025-05-25 22:00:52,346 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0249.jpg
+2025-05-25 22:00:52,449 - INFO - Moved frame frame_0250.jpg to no_bucket
+2025-05-25 22:00:52,449 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0250.jpg
+2025-05-25 22:00:52,570 - INFO - Moved frame frame_0251.jpg to no_bucket
+2025-05-25 22:00:52,570 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0251.jpg
+2025-05-25 22:00:52,684 - INFO - Moved frame frame_0252.jpg to no_bucket
+2025-05-25 22:00:52,684 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0252.jpg
+2025-05-25 22:00:52,826 - INFO - Processed frame frame_0253.jpg: bucket, conf: 0.82
+2025-05-25 22:00:52,934 - INFO - Processed frame frame_0254.jpg: bucket, conf: 0.58
+2025-05-25 22:00:52,934 - INFO - Added low-conf frame: data/2025-05-25_22-00-05/frames\frame_0254.jpg
+2025-05-25 22:00:53,044 - INFO - Moved frame frame_0255.jpg to no_bucket
+2025-05-25 22:00:53,044 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0255.jpg
+2025-05-25 22:00:53,150 - INFO - Moved frame frame_0256.jpg to no_bucket
+2025-05-25 22:00:53,150 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0256.jpg
+2025-05-25 22:00:53,259 - INFO - Moved frame frame_0257.jpg to no_bucket
+2025-05-25 22:00:53,259 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0257.jpg
+2025-05-25 22:00:53,366 - INFO - Moved frame frame_0258.jpg to no_bucket
+2025-05-25 22:00:53,366 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0258.jpg
+2025-05-25 22:00:53,465 - INFO - Moved frame frame_0259.jpg to no_bucket
+2025-05-25 22:00:53,465 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0259.jpg
+2025-05-25 22:00:53,568 - INFO - Processed frame frame_0260.jpg: bucket, conf: 0.64
+2025-05-25 22:00:53,678 - INFO - Moved frame frame_0261.jpg to no_bucket
+2025-05-25 22:00:53,678 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0261.jpg
+2025-05-25 22:00:53,779 - INFO - Moved frame frame_0262.jpg to no_bucket
+2025-05-25 22:00:53,779 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0262.jpg
+2025-05-25 22:00:53,873 - INFO - Moved frame frame_0263.jpg to no_bucket
+2025-05-25 22:00:53,873 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0263.jpg
+2025-05-25 22:00:53,977 - INFO - Moved frame frame_0264.jpg to no_bucket
+2025-05-25 22:00:53,978 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0264.jpg
+2025-05-25 22:00:54,082 - INFO - Processed frame frame_0265.jpg: bucket, conf: 0.89
+2025-05-25 22:00:54,188 - INFO - Processed frame frame_0266.jpg: bucket, conf: 0.69
+2025-05-25 22:00:54,294 - INFO - Moved frame frame_0267.jpg to no_bucket
+2025-05-25 22:00:54,294 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0267.jpg
+2025-05-25 22:00:54,400 - INFO - Moved frame frame_0268.jpg to no_bucket
+2025-05-25 22:00:54,400 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0268.jpg
+2025-05-25 22:00:54,503 - INFO - Moved frame frame_0269.jpg to no_bucket
+2025-05-25 22:00:54,503 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0269.jpg
+2025-05-25 22:00:54,602 - INFO - Moved frame frame_0270.jpg to no_bucket
+2025-05-25 22:00:54,602 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0270.jpg
+2025-05-25 22:00:54,704 - INFO - Moved frame frame_0271.jpg to no_bucket
+2025-05-25 22:00:54,704 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0271.jpg
+2025-05-25 22:00:54,809 - INFO - Moved frame frame_0272.jpg to no_bucket
+2025-05-25 22:00:54,809 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0272.jpg
+2025-05-25 22:00:54,905 - INFO - Moved frame frame_0273.jpg to no_bucket
+2025-05-25 22:00:54,905 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0273.jpg
+2025-05-25 22:00:55,004 - INFO - Moved frame frame_0274.jpg to no_bucket
+2025-05-25 22:00:55,004 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0274.jpg
+2025-05-25 22:00:55,107 - INFO - Moved frame frame_0275.jpg to no_bucket
+2025-05-25 22:00:55,107 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0275.jpg
+2025-05-25 22:00:55,210 - INFO - Moved frame frame_0276.jpg to no_bucket
+2025-05-25 22:00:55,210 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0276.jpg
+2025-05-25 22:00:55,313 - INFO - Moved frame frame_0277.jpg to no_bucket
+2025-05-25 22:00:55,313 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0277.jpg
+2025-05-25 22:00:55,419 - INFO - Processed frame frame_0278.jpg: bucket, conf: 0.65
+2025-05-25 22:00:55,529 - INFO - Processed frame frame_0279.jpg: bucket, conf: 0.85
+2025-05-25 22:00:55,633 - INFO - Processed frame frame_0280.jpg: bucket, conf: 0.58
+2025-05-25 22:00:55,633 - INFO - Added low-conf frame: data/2025-05-25_22-00-05/frames\frame_0280.jpg
+2025-05-25 22:00:55,740 - INFO - Moved frame frame_0281.jpg to no_bucket
+2025-05-25 22:00:55,740 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0281.jpg
+2025-05-25 22:00:55,847 - INFO - Moved frame frame_0282.jpg to no_bucket
+2025-05-25 22:00:55,847 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0282.jpg
+2025-05-25 22:00:55,949 - INFO - Processed frame frame_0283.jpg: bucket, conf: 0.75
+2025-05-25 22:00:56,069 - INFO - Processed frame frame_0284.jpg: bucket, conf: 0.76
+2025-05-25 22:00:56,191 - INFO - Processed frame frame_0285.jpg: bucket, conf: 0.88
+2025-05-25 22:00:56,307 - INFO - Moved frame frame_0286.jpg to no_bucket
+2025-05-25 22:00:56,307 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0286.jpg
+2025-05-25 22:00:56,414 - INFO - Processed frame frame_0287.jpg: bucket, conf: 0.67
+2025-05-25 22:00:56,521 - INFO - Processed frame frame_0288.jpg: bucket, conf: 0.78
+2025-05-25 22:00:56,626 - INFO - Processed frame frame_0289.jpg: bucket, conf: 0.83
+2025-05-25 22:00:56,734 - INFO - Processed frame frame_0290.jpg: bucket, conf: 0.76
+2025-05-25 22:00:56,839 - INFO - Moved frame frame_0291.jpg to no_bucket
+2025-05-25 22:00:56,839 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0291.jpg
+2025-05-25 22:00:56,940 - INFO - Processed frame frame_0292.jpg: bucket, conf: 0.89
+2025-05-25 22:00:57,050 - INFO - Processed frame frame_0293.jpg: bucket, conf: 0.76
+2025-05-25 22:00:57,159 - INFO - Processed frame frame_0294.jpg: bucket, conf: 0.81
+2025-05-25 22:00:57,265 - INFO - Moved frame frame_0295.jpg to no_bucket
+2025-05-25 22:00:57,265 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0295.jpg
+2025-05-25 22:00:57,371 - INFO - Moved frame frame_0296.jpg to no_bucket
+2025-05-25 22:00:57,371 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0296.jpg
+2025-05-25 22:00:57,478 - INFO - Processed frame frame_0297.jpg: bucket, conf: 0.66
+2025-05-25 22:00:57,583 - INFO - Processed frame frame_0298.jpg: bucket, conf: 0.50
+2025-05-25 22:00:57,583 - INFO - Added low-conf frame: data/2025-05-25_22-00-05/frames\frame_0298.jpg
+2025-05-25 22:00:57,711 - INFO - Processed frame frame_0299.jpg: bucket, conf: 0.61
+2025-05-25 22:00:57,806 - INFO - Processed frame frame_0300.jpg: bucket, conf: 0.79
+2025-05-25 22:00:57,908 - INFO - Moved frame frame_0301.jpg to no_bucket
+2025-05-25 22:00:57,908 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0301.jpg
+2025-05-25 22:00:58,009 - INFO - Moved frame frame_0302.jpg to no_bucket
+2025-05-25 22:00:58,009 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0302.jpg
+2025-05-25 22:00:58,114 - INFO - Moved frame frame_0303.jpg to no_bucket
+2025-05-25 22:00:58,114 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0303.jpg
+2025-05-25 22:00:58,216 - INFO - Moved frame frame_0304.jpg to no_bucket
+2025-05-25 22:00:58,217 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0304.jpg
+2025-05-25 22:00:58,322 - INFO - Moved frame frame_0305.jpg to no_bucket
+2025-05-25 22:00:58,322 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0305.jpg
+2025-05-25 22:00:58,425 - INFO - Moved frame frame_0306.jpg to no_bucket
+2025-05-25 22:00:58,425 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0306.jpg
+2025-05-25 22:00:58,509 - INFO - Moved frame frame_0307.jpg to no_bucket
+2025-05-25 22:00:58,509 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0307.jpg
+2025-05-25 22:00:58,613 - INFO - Moved frame frame_0308.jpg to no_bucket
+2025-05-25 22:00:58,613 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0308.jpg
+2025-05-25 22:00:58,729 - INFO - Moved frame frame_0309.jpg to no_bucket
+2025-05-25 22:00:58,729 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0309.jpg
+2025-05-25 22:00:58,840 - INFO - Moved frame frame_0310.jpg to no_bucket
+2025-05-25 22:00:58,840 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0310.jpg
+2025-05-25 22:00:58,946 - INFO - Processed frame frame_0311.jpg: bucket, conf: 0.55
+2025-05-25 22:00:58,947 - INFO - Added low-conf frame: data/2025-05-25_22-00-05/frames\frame_0311.jpg
+2025-05-25 22:00:59,054 - INFO - Moved frame frame_0312.jpg to no_bucket
+2025-05-25 22:00:59,054 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0312.jpg
+2025-05-25 22:00:59,154 - INFO - Moved frame frame_0313.jpg to no_bucket
+2025-05-25 22:00:59,154 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0313.jpg
+2025-05-25 22:00:59,255 - INFO - Moved frame frame_0314.jpg to no_bucket
+2025-05-25 22:00:59,255 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0314.jpg
+2025-05-25 22:00:59,354 - INFO - Moved frame frame_0315.jpg to no_bucket
+2025-05-25 22:00:59,354 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0315.jpg
+2025-05-25 22:00:59,458 - INFO - Moved frame frame_0316.jpg to no_bucket
+2025-05-25 22:00:59,458 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0316.jpg
+2025-05-25 22:00:59,559 - INFO - Processed frame frame_0317.jpg: bucket, conf: 0.57
+2025-05-25 22:00:59,560 - INFO - Added low-conf frame: data/2025-05-25_22-00-05/frames\frame_0317.jpg
+2025-05-25 22:00:59,660 - INFO - Processed frame frame_0318.jpg: bucket, conf: 0.81
+2025-05-25 22:00:59,762 - INFO - Moved frame frame_0319.jpg to no_bucket
+2025-05-25 22:00:59,763 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0319.jpg
+2025-05-25 22:00:59,864 - INFO - Moved frame frame_0320.jpg to no_bucket
+2025-05-25 22:00:59,864 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0320.jpg
+2025-05-25 22:00:59,964 - INFO - Moved frame frame_0321.jpg to no_bucket
+2025-05-25 22:00:59,965 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0321.jpg
+2025-05-25 22:01:00,068 - INFO - Moved frame frame_0322.jpg to no_bucket
+2025-05-25 22:01:00,068 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0322.jpg
+2025-05-25 22:01:00,169 - INFO - Moved frame frame_0323.jpg to no_bucket
+2025-05-25 22:01:00,169 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0323.jpg
+2025-05-25 22:01:00,271 - INFO - Moved frame frame_0324.jpg to no_bucket
+2025-05-25 22:01:00,271 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0324.jpg
+2025-05-25 22:01:00,373 - INFO - Moved frame frame_0325.jpg to no_bucket
+2025-05-25 22:01:00,373 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0325.jpg
+2025-05-25 22:01:00,475 - INFO - Processed frame frame_0326.jpg: bucket, conf: 0.66
+2025-05-25 22:01:00,580 - INFO - Moved frame frame_0327.jpg to no_bucket
+2025-05-25 22:01:00,581 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0327.jpg
+2025-05-25 22:01:00,676 - INFO - Moved frame frame_0328.jpg to no_bucket
+2025-05-25 22:01:00,676 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0328.jpg
+2025-05-25 22:01:00,783 - INFO - Processed frame frame_0329.jpg: bucket, conf: 0.81
+2025-05-25 22:01:00,889 - INFO - Processed frame frame_0330.jpg: bucket, conf: 0.85
+2025-05-25 22:01:00,993 - INFO - Moved frame frame_0331.jpg to no_bucket
+2025-05-25 22:01:00,993 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0331.jpg
+2025-05-25 22:01:01,099 - INFO - Moved frame frame_0332.jpg to no_bucket
+2025-05-25 22:01:01,099 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0332.jpg
+2025-05-25 22:01:01,199 - INFO - Moved frame frame_0333.jpg to no_bucket
+2025-05-25 22:01:01,199 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0333.jpg
+2025-05-25 22:01:01,304 - INFO - Processed frame frame_0334.jpg: bucket, conf: 0.66
+2025-05-25 22:01:01,411 - INFO - Moved frame frame_0335.jpg to no_bucket
+2025-05-25 22:01:01,411 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0335.jpg
+2025-05-25 22:01:01,517 - INFO - Moved frame frame_0336.jpg to no_bucket
+2025-05-25 22:01:01,517 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0336.jpg
+2025-05-25 22:01:01,625 - INFO - Moved frame frame_0337.jpg to no_bucket
+2025-05-25 22:01:01,625 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0337.jpg
+2025-05-25 22:01:01,747 - INFO - Moved frame frame_0338.jpg to no_bucket
+2025-05-25 22:01:01,747 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0338.jpg
+2025-05-25 22:01:01,860 - INFO - Processed frame frame_0339.jpg: bucket, conf: 0.84
+2025-05-25 22:01:01,973 - INFO - Moved frame frame_0340.jpg to no_bucket
+2025-05-25 22:01:01,973 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0340.jpg
+2025-05-25 22:01:02,076 - INFO - Moved frame frame_0341.jpg to no_bucket
+2025-05-25 22:01:02,076 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0341.jpg
+2025-05-25 22:01:02,183 - INFO - Moved frame frame_0342.jpg to no_bucket
+2025-05-25 22:01:02,183 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0342.jpg
+2025-05-25 22:01:02,288 - INFO - Moved frame frame_0343.jpg to no_bucket
+2025-05-25 22:01:02,288 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0343.jpg
+2025-05-25 22:01:02,388 - INFO - Processed frame frame_0344.jpg: bucket, conf: 0.76
+2025-05-25 22:01:02,513 - INFO - Moved frame frame_0345.jpg to no_bucket
+2025-05-25 22:01:02,513 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0345.jpg
+2025-05-25 22:01:02,614 - INFO - Moved frame frame_0346.jpg to no_bucket
+2025-05-25 22:01:02,614 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0346.jpg
+2025-05-25 22:01:02,714 - INFO - Moved frame frame_0347.jpg to no_bucket
+2025-05-25 22:01:02,714 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0347.jpg
+2025-05-25 22:01:02,816 - INFO - Moved frame frame_0348.jpg to no_bucket
+2025-05-25 22:01:02,816 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0348.jpg
+2025-05-25 22:01:02,919 - INFO - Moved frame frame_0349.jpg to no_bucket
+2025-05-25 22:01:02,920 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0349.jpg
+2025-05-25 22:01:03,019 - INFO - Moved frame frame_0350.jpg to no_bucket
+2025-05-25 22:01:03,019 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0350.jpg
+2025-05-25 22:01:03,121 - INFO - Moved frame frame_0351.jpg to no_bucket
+2025-05-25 22:01:03,121 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0351.jpg
+2025-05-25 22:01:03,222 - INFO - Moved frame frame_0352.jpg to no_bucket
+2025-05-25 22:01:03,222 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0352.jpg
+2025-05-25 22:01:03,325 - INFO - Moved frame frame_0353.jpg to no_bucket
+2025-05-25 22:01:03,325 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0353.jpg
+2025-05-25 22:01:03,432 - INFO - Processed frame frame_0354.jpg: bucket, conf: 0.68
+2025-05-25 22:01:03,536 - INFO - Moved frame frame_0355.jpg to no_bucket
+2025-05-25 22:01:03,536 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0355.jpg
+2025-05-25 22:01:03,641 - INFO - Moved frame frame_0356.jpg to no_bucket
+2025-05-25 22:01:03,641 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0356.jpg
+2025-05-25 22:01:03,746 - INFO - Moved frame frame_0357.jpg to no_bucket
+2025-05-25 22:01:03,746 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0357.jpg
+2025-05-25 22:01:03,849 - INFO - Moved frame frame_0358.jpg to no_bucket
+2025-05-25 22:01:03,849 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0358.jpg
+2025-05-25 22:01:03,951 - INFO - Moved frame frame_0359.jpg to no_bucket
+2025-05-25 22:01:03,951 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0359.jpg
+2025-05-25 22:01:04,051 - INFO - Moved frame frame_0360.jpg to no_bucket
+2025-05-25 22:01:04,051 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0360.jpg
+2025-05-25 22:01:04,154 - INFO - Moved frame frame_0361.jpg to no_bucket
+2025-05-25 22:01:04,154 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0361.jpg
+2025-05-25 22:01:04,260 - INFO - Moved frame frame_0362.jpg to no_bucket
+2025-05-25 22:01:04,261 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0362.jpg
+2025-05-25 22:01:04,362 - INFO - Moved frame frame_0363.jpg to no_bucket
+2025-05-25 22:01:04,362 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0363.jpg
+2025-05-25 22:01:04,463 - INFO - Moved frame frame_0364.jpg to no_bucket
+2025-05-25 22:01:04,463 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0364.jpg
+2025-05-25 22:01:04,568 - INFO - Moved frame frame_0365.jpg to no_bucket
+2025-05-25 22:01:04,568 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0365.jpg
+2025-05-25 22:01:04,675 - INFO - Processed frame frame_0366.jpg: bucket, conf: 0.88
+2025-05-25 22:01:04,779 - INFO - Moved frame frame_0367.jpg to no_bucket
+2025-05-25 22:01:04,779 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0367.jpg
+2025-05-25 22:01:04,876 - INFO - Moved frame frame_0368.jpg to no_bucket
+2025-05-25 22:01:04,876 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0368.jpg
+2025-05-25 22:01:04,981 - INFO - Moved frame frame_0369.jpg to no_bucket
+2025-05-25 22:01:04,981 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0369.jpg
+2025-05-25 22:01:05,087 - INFO - Moved frame frame_0370.jpg to no_bucket
+2025-05-25 22:01:05,088 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0370.jpg
+2025-05-25 22:01:05,205 - INFO - Moved frame frame_0371.jpg to no_bucket
+2025-05-25 22:01:05,205 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0371.jpg
+2025-05-25 22:01:05,321 - INFO - Moved frame frame_0372.jpg to no_bucket
+2025-05-25 22:01:05,321 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0372.jpg
+2025-05-25 22:01:05,432 - INFO - Processed frame frame_0373.jpg: bucket, conf: 0.67
+2025-05-25 22:01:05,542 - INFO - Processed frame frame_0374.jpg: bucket, conf: 0.54
+2025-05-25 22:01:05,542 - INFO - Added low-conf frame: data/2025-05-25_22-00-05/frames\frame_0374.jpg
+2025-05-25 22:01:05,650 - INFO - Processed frame frame_0375.jpg: bucket, conf: 0.71
+2025-05-25 22:01:05,757 - INFO - Processed frame frame_0376.jpg: bucket, conf: 0.84
+2025-05-25 22:01:05,861 - INFO - Processed frame frame_0377.jpg: bucket, conf: 0.62
+2025-05-25 22:01:05,964 - INFO - Processed frame frame_0378.jpg: bucket, conf: 0.69
+2025-05-25 22:01:06,071 - INFO - Processed frame frame_0379.jpg: bucket, conf: 0.84
+2025-05-25 22:01:06,184 - INFO - Processed frame frame_0380.jpg: bucket, conf: 0.79
+2025-05-25 22:01:06,289 - INFO - Moved frame frame_0381.jpg to no_bucket
+2025-05-25 22:01:06,289 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0381.jpg
+2025-05-25 22:01:06,396 - INFO - Moved frame frame_0382.jpg to no_bucket
+2025-05-25 22:01:06,396 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0382.jpg
+2025-05-25 22:01:06,501 - INFO - Processed frame frame_0383.jpg: bucket, conf: 0.85
+2025-05-25 22:01:06,606 - INFO - Processed frame frame_0384.jpg: bucket, conf: 0.80
+2025-05-25 22:01:06,708 - INFO - Processed frame frame_0385.jpg: bucket, conf: 0.83
+2025-05-25 22:01:06,812 - INFO - Moved frame frame_0386.jpg to no_bucket
+2025-05-25 22:01:06,812 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0386.jpg
+2025-05-25 22:01:06,914 - INFO - Processed frame frame_0387.jpg: bucket, conf: 0.88
+2025-05-25 22:01:07,020 - INFO - Processed frame frame_0388.jpg: bucket, conf: 0.79
+2025-05-25 22:01:07,124 - INFO - Processed frame frame_0389.jpg: bucket, conf: 0.87
+2025-05-25 22:01:07,226 - INFO - Moved frame frame_0390.jpg to no_bucket
+2025-05-25 22:01:07,226 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0390.jpg
+2025-05-25 22:01:07,352 - INFO - Processed frame frame_0391.jpg: bucket, conf: 0.55
+2025-05-25 22:01:07,353 - INFO - Added low-conf frame: data/2025-05-25_22-00-05/frames\frame_0391.jpg
+2025-05-25 22:01:07,461 - INFO - Processed frame frame_0392.jpg: bucket, conf: 0.62
+2025-05-25 22:01:07,565 - INFO - Processed frame frame_0393.jpg: bucket, conf: 0.76
+2025-05-25 22:01:07,566 - INFO - Processed frame frame_0393.jpg: bucket, conf: 0.64
+2025-05-25 22:01:07,672 - INFO - Moved frame frame_0394.jpg to no_bucket
+2025-05-25 22:01:07,672 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0394.jpg
+2025-05-25 22:01:07,775 - INFO - Moved frame frame_0395.jpg to no_bucket
+2025-05-25 22:01:07,775 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0395.jpg
+2025-05-25 22:01:07,877 - INFO - Processed frame frame_0396.jpg: bucket, conf: 0.85
+2025-05-25 22:01:07,984 - INFO - Processed frame frame_0397.jpg: bucket, conf: 0.87
+2025-05-25 22:01:08,090 - INFO - Processed frame frame_0398.jpg: bucket, conf: 0.84
+2025-05-25 22:01:08,195 - INFO - Processed frame frame_0399.jpg: bucket, conf: 0.86
+2025-05-25 22:01:08,303 - INFO - Processed frame frame_0400.jpg: bucket, conf: 0.54
+2025-05-25 22:01:08,304 - INFO - Added low-conf frame: data/2025-05-25_22-00-05/frames\frame_0400.jpg
+2025-05-25 22:01:08,407 - INFO - Moved frame frame_0401.jpg to no_bucket
+2025-05-25 22:01:08,407 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0401.jpg
+2025-05-25 22:01:08,507 - INFO - Moved frame frame_0402.jpg to no_bucket
+2025-05-25 22:01:08,507 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0402.jpg
+2025-05-25 22:01:08,611 - INFO - Processed frame frame_0403.jpg: bucket, conf: 0.76
+2025-05-25 22:01:08,737 - INFO - Moved frame frame_0404.jpg to no_bucket
+2025-05-25 22:01:08,737 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0404.jpg
+2025-05-25 22:01:08,850 - INFO - Moved frame frame_0405.jpg to no_bucket
+2025-05-25 22:01:08,850 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0405.jpg
+2025-05-25 22:01:08,961 - INFO - Processed frame frame_0406.jpg: bucket, conf: 0.77
+2025-05-25 22:01:09,067 - INFO - Processed frame frame_0407.jpg: bucket, conf: 0.84
+2025-05-25 22:01:09,163 - INFO - Processed frame frame_0408.jpg: bucket, conf: 0.82
+2025-05-25 22:01:09,270 - INFO - Moved frame frame_0409.jpg to no_bucket
+2025-05-25 22:01:09,270 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0409.jpg
+2025-05-25 22:01:09,369 - INFO - Moved frame frame_0410.jpg to no_bucket
+2025-05-25 22:01:09,369 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0410.jpg
+2025-05-25 22:01:09,476 - INFO - Moved frame frame_0411.jpg to no_bucket
+2025-05-25 22:01:09,476 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0411.jpg
+2025-05-25 22:01:09,575 - INFO - Moved frame frame_0412.jpg to no_bucket
+2025-05-25 22:01:09,575 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0412.jpg
+2025-05-25 22:01:09,681 - INFO - Moved frame frame_0413.jpg to no_bucket
+2025-05-25 22:01:09,681 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0413.jpg
+2025-05-25 22:01:09,781 - INFO - Moved frame frame_0414.jpg to no_bucket
+2025-05-25 22:01:09,781 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0414.jpg
+2025-05-25 22:01:09,886 - INFO - Moved frame frame_0415.jpg to no_bucket
+2025-05-25 22:01:09,886 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0415.jpg
+2025-05-25 22:01:09,987 - INFO - Processed frame frame_0416.jpg: bucket, conf: 0.79
+2025-05-25 22:01:10,093 - INFO - Moved frame frame_0417.jpg to no_bucket
+2025-05-25 22:01:10,093 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0417.jpg
+2025-05-25 22:01:10,195 - INFO - Processed frame frame_0418.jpg: bucket, conf: 0.69
+2025-05-25 22:01:10,304 - INFO - Processed frame frame_0419.jpg: bucket, conf: 0.79
+2025-05-25 22:01:10,413 - INFO - Processed frame frame_0420.jpg: bucket, conf: 0.79
+2025-05-25 22:01:10,521 - INFO - Processed frame frame_0421.jpg: bucket, conf: 0.55
+2025-05-25 22:01:10,521 - INFO - Added low-conf frame: data/2025-05-25_22-00-05/frames\frame_0421.jpg
+2025-05-25 22:01:10,624 - INFO - Moved frame frame_0422.jpg to no_bucket
+2025-05-25 22:01:10,624 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0422.jpg
+2025-05-25 22:01:10,728 - INFO - Moved frame frame_0423.jpg to no_bucket
+2025-05-25 22:01:10,729 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0423.jpg
+2025-05-25 22:01:10,826 - INFO - Moved frame frame_0424.jpg to no_bucket
+2025-05-25 22:01:10,826 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0424.jpg
+2025-05-25 22:01:10,928 - INFO - Processed frame frame_0425.jpg: bucket, conf: 0.67
+2025-05-25 22:01:11,037 - INFO - Moved frame frame_0426.jpg to no_bucket
+2025-05-25 22:01:11,037 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0426.jpg
+2025-05-25 22:01:11,140 - INFO - Moved frame frame_0427.jpg to no_bucket
+2025-05-25 22:01:11,140 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0427.jpg
+2025-05-25 22:01:11,240 - INFO - Processed frame frame_0428.jpg: bucket, conf: 0.52
+2025-05-25 22:01:11,240 - INFO - Added low-conf frame: data/2025-05-25_22-00-05/frames\frame_0428.jpg
+2025-05-25 22:01:11,348 - INFO - Processed frame frame_0429.jpg: bucket, conf: 0.80
+2025-05-25 22:01:11,454 - INFO - Processed frame frame_0430.jpg: bucket, conf: 0.67
+2025-05-25 22:01:11,560 - INFO - Moved frame frame_0431.jpg to no_bucket
+2025-05-25 22:01:11,560 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0431.jpg
+2025-05-25 22:01:11,665 - INFO - Processed frame frame_0432.jpg: bucket, conf: 0.74
+2025-05-25 22:01:11,773 - INFO - Processed frame frame_0433.jpg: bucket, conf: 0.85
+2025-05-25 22:01:11,878 - INFO - Moved frame frame_0434.jpg to no_bucket
+2025-05-25 22:01:11,878 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0434.jpg
+2025-05-25 22:01:11,981 - INFO - Processed frame frame_0435.jpg: bucket, conf: 0.83
+2025-05-25 22:01:12,109 - INFO - Moved frame frame_0436.jpg to no_bucket
+2025-05-25 22:01:12,109 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0436.jpg
+2025-05-25 22:01:12,213 - INFO - Moved frame frame_0437.jpg to no_bucket
+2025-05-25 22:01:12,213 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0437.jpg
+2025-05-25 22:01:12,315 - INFO - Moved frame frame_0438.jpg to no_bucket
+2025-05-25 22:01:12,315 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0438.jpg
+2025-05-25 22:01:12,420 - INFO - Moved frame frame_0439.jpg to no_bucket
+2025-05-25 22:01:12,421 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0439.jpg
+2025-05-25 22:01:12,523 - INFO - Processed frame frame_0440.jpg: bucket, conf: 0.78
+2025-05-25 22:01:12,626 - INFO - Processed frame frame_0441.jpg: bucket, conf: 0.77
+2025-05-25 22:01:12,750 - INFO - Processed frame frame_0442.jpg: bucket, conf: 0.89
+2025-05-25 22:01:12,868 - INFO - Processed frame frame_0443.jpg: bucket, conf: 0.86
+2025-05-25 22:01:12,983 - INFO - Processed frame frame_0444.jpg: bucket, conf: 0.88
+2025-05-25 22:01:13,093 - INFO - Processed frame frame_0445.jpg: bucket, conf: 0.80
+2025-05-25 22:01:13,205 - INFO - Processed frame frame_0446.jpg: bucket, conf: 0.88
+2025-05-25 22:01:13,311 - INFO - Processed frame frame_0447.jpg: bucket, conf: 0.77
+2025-05-25 22:01:13,423 - INFO - Processed frame frame_0448.jpg: bucket, conf: 0.89
+2025-05-25 22:01:13,536 - INFO - Processed frame frame_0449.jpg: bucket, conf: 0.81
+2025-05-25 22:01:13,643 - INFO - Moved frame frame_0450.jpg to no_bucket
+2025-05-25 22:01:13,643 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0450.jpg
+2025-05-25 22:01:13,743 - INFO - Processed frame frame_0451.jpg: bucket, conf: 0.86
+2025-05-25 22:01:13,845 - INFO - Moved frame frame_0452.jpg to no_bucket
+2025-05-25 22:01:13,845 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0452.jpg
+2025-05-25 22:01:13,948 - INFO - Moved frame frame_0453.jpg to no_bucket
+2025-05-25 22:01:13,948 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0453.jpg
+2025-05-25 22:01:14,052 - INFO - Moved frame frame_0454.jpg to no_bucket
+2025-05-25 22:01:14,052 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0454.jpg
+2025-05-25 22:01:14,150 - INFO - Moved frame frame_0455.jpg to no_bucket
+2025-05-25 22:01:14,150 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0455.jpg
+2025-05-25 22:01:14,254 - INFO - Moved frame frame_0456.jpg to no_bucket
+2025-05-25 22:01:14,254 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0456.jpg
+2025-05-25 22:01:14,361 - INFO - Processed frame frame_0457.jpg: bucket, conf: 0.67
+2025-05-25 22:01:14,467 - INFO - Processed frame frame_0458.jpg: bucket, conf: 0.85
+2025-05-25 22:01:14,572 - INFO - Processed frame frame_0459.jpg: bucket, conf: 0.78
+2025-05-25 22:01:14,676 - INFO - Moved frame frame_0460.jpg to no_bucket
+2025-05-25 22:01:14,676 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0460.jpg
+2025-05-25 22:01:14,774 - INFO - Moved frame frame_0461.jpg to no_bucket
+2025-05-25 22:01:14,774 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0461.jpg
+2025-05-25 22:01:14,878 - INFO - Processed frame frame_0462.jpg: bucket, conf: 0.61
+2025-05-25 22:01:14,984 - INFO - Processed frame frame_0463.jpg: bucket, conf: 0.52
+2025-05-25 22:01:14,984 - INFO - Added low-conf frame: data/2025-05-25_22-00-05/frames\frame_0463.jpg
+2025-05-25 22:01:15,091 - INFO - Moved frame frame_0464.jpg to no_bucket
+2025-05-25 22:01:15,091 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0464.jpg
+2025-05-25 22:01:15,197 - INFO - Processed frame frame_0465.jpg: bucket, conf: 0.66
+2025-05-25 22:01:15,306 - INFO - Moved frame frame_0466.jpg to no_bucket
+2025-05-25 22:01:15,306 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0466.jpg
+2025-05-25 22:01:15,413 - INFO - Moved frame frame_0467.jpg to no_bucket
+2025-05-25 22:01:15,413 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0467.jpg
+2025-05-25 22:01:15,519 - INFO - Processed frame frame_0468.jpg: bucket, conf: 0.70
+2025-05-25 22:01:15,626 - INFO - Moved frame frame_0469.jpg to no_bucket
+2025-05-25 22:01:15,626 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0469.jpg
+2025-05-25 22:01:15,729 - INFO - Processed frame frame_0470.jpg: bucket, conf: 0.77
+2025-05-25 22:01:15,838 - INFO - Processed frame frame_0471.jpg: bucket, conf: 0.78
+2025-05-25 22:01:15,942 - INFO - Moved frame frame_0472.jpg to no_bucket
+2025-05-25 22:01:15,942 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0472.jpg
+2025-05-25 22:01:16,069 - INFO - Moved frame frame_0473.jpg to no_bucket
+2025-05-25 22:01:16,069 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0473.jpg
+2025-05-25 22:01:16,173 - INFO - Moved frame frame_0474.jpg to no_bucket
+2025-05-25 22:01:16,173 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0474.jpg
+2025-05-25 22:01:16,279 - INFO - Processed frame frame_0475.jpg: bucket, conf: 0.86
+2025-05-25 22:01:16,386 - INFO - Processed frame frame_0476.jpg: bucket, conf: 0.85
+2025-05-25 22:01:16,494 - INFO - Processed frame frame_0477.jpg: bucket, conf: 0.68
+2025-05-25 22:01:16,598 - INFO - Moved frame frame_0478.jpg to no_bucket
+2025-05-25 22:01:16,598 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0478.jpg
+2025-05-25 22:01:16,684 - INFO - Moved frame frame_0479.jpg to no_bucket
+2025-05-25 22:01:16,684 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0479.jpg
+2025-05-25 22:01:16,787 - INFO - Moved frame frame_0480.jpg to no_bucket
+2025-05-25 22:01:16,787 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0480.jpg
+2025-05-25 22:01:16,888 - INFO - Moved frame frame_0481.jpg to no_bucket
+2025-05-25 22:01:16,888 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0481.jpg
+2025-05-25 22:01:16,994 - INFO - Processed frame frame_0482.jpg: bucket, conf: 0.73
+2025-05-25 22:01:17,101 - INFO - Processed frame frame_0483.jpg: bucket, conf: 0.52
+2025-05-25 22:01:17,101 - INFO - Added low-conf frame: data/2025-05-25_22-00-05/frames\frame_0483.jpg
+2025-05-25 22:01:17,211 - INFO - Moved frame frame_0484.jpg to no_bucket
+2025-05-25 22:01:17,212 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0484.jpg
+2025-05-25 22:01:17,332 - INFO - Moved frame frame_0485.jpg to no_bucket
+2025-05-25 22:01:17,333 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0485.jpg
+2025-05-25 22:01:17,448 - INFO - Processed frame frame_0486.jpg: bucket, conf: 0.81
+2025-05-25 22:01:17,563 - INFO - Processed frame frame_0487.jpg: bucket, conf: 0.80
+2025-05-25 22:01:17,672 - INFO - Moved frame frame_0488.jpg to no_bucket
+2025-05-25 22:01:17,672 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0488.jpg
+2025-05-25 22:01:17,777 - INFO - Processed frame frame_0489.jpg: bucket, conf: 0.84
+2025-05-25 22:01:17,887 - INFO - Moved frame frame_0490.jpg to no_bucket
+2025-05-25 22:01:17,887 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0490.jpg
+2025-05-25 22:01:17,981 - INFO - Moved frame frame_0491.jpg to no_bucket
+2025-05-25 22:01:17,981 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0491.jpg
+2025-05-25 22:01:18,089 - INFO - Processed frame frame_0492.jpg: bucket, conf: 0.81
+2025-05-25 22:01:18,196 - INFO - Processed frame frame_0493.jpg: bucket, conf: 0.83
+2025-05-25 22:01:18,306 - INFO - Moved frame frame_0494.jpg to no_bucket
+2025-05-25 22:01:18,306 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0494.jpg
+2025-05-25 22:01:18,414 - INFO - Processed frame frame_0495.jpg: bucket, conf: 0.72
+2025-05-25 22:01:18,524 - INFO - Moved frame frame_0496.jpg to no_bucket
+2025-05-25 22:01:18,525 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0496.jpg
+2025-05-25 22:01:18,632 - INFO - Processed frame frame_0497.jpg: bucket, conf: 0.66
+2025-05-25 22:01:18,741 - INFO - Processed frame frame_0498.jpg: bucket, conf: 0.75
+2025-05-25 22:01:18,846 - INFO - Processed frame frame_0499.jpg: bucket, conf: 0.89
+2025-05-25 22:01:18,945 - INFO - Processed frame frame_0500.jpg: bucket, conf: 0.91
+2025-05-25 22:01:19,050 - INFO - Processed frame frame_0501.jpg: bucket, conf: 0.89
+2025-05-25 22:01:19,158 - INFO - Processed frame frame_0502.jpg: bucket, conf: 0.89
+2025-05-25 22:01:19,265 - INFO - Processed frame frame_0503.jpg: bucket, conf: 0.88
+2025-05-25 22:01:19,373 - INFO - Moved frame frame_0504.jpg to no_bucket
+2025-05-25 22:01:19,373 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0504.jpg
+2025-05-25 22:01:19,477 - INFO - Moved frame frame_0505.jpg to no_bucket
+2025-05-25 22:01:19,478 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0505.jpg
+2025-05-25 22:01:19,581 - INFO - Moved frame frame_0506.jpg to no_bucket
+2025-05-25 22:01:19,581 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0506.jpg
+2025-05-25 22:01:19,687 - INFO - Moved frame frame_0507.jpg to no_bucket
+2025-05-25 22:01:19,687 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0507.jpg
+2025-05-25 22:01:19,792 - INFO - Moved frame frame_0508.jpg to no_bucket
+2025-05-25 22:01:19,792 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0508.jpg
+2025-05-25 22:01:19,896 - INFO - Moved frame frame_0509.jpg to no_bucket
+2025-05-25 22:01:19,896 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0509.jpg
+2025-05-25 22:01:19,996 - INFO - Moved frame frame_0510.jpg to no_bucket
+2025-05-25 22:01:19,996 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0510.jpg
+2025-05-25 22:01:20,101 - INFO - Moved frame frame_0511.jpg to no_bucket
+2025-05-25 22:01:20,101 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0511.jpg
+2025-05-25 22:01:20,210 - INFO - Moved frame frame_0512.jpg to no_bucket
+2025-05-25 22:01:20,211 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0512.jpg
+2025-05-25 22:01:20,311 - INFO - Moved frame frame_0513.jpg to no_bucket
+2025-05-25 22:01:20,311 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0513.jpg
+2025-05-25 22:01:20,416 - INFO - Processed frame frame_0514.jpg: bucket, conf: 0.59
+2025-05-25 22:01:20,417 - INFO - Added low-conf frame: data/2025-05-25_22-00-05/frames\frame_0514.jpg
+2025-05-25 22:01:20,524 - INFO - Processed frame frame_0515.jpg: bucket, conf: 0.70
+2025-05-25 22:01:20,630 - INFO - Processed frame frame_0516.jpg: bucket, conf: 0.71
+2025-05-25 22:01:20,728 - INFO - Moved frame frame_0517.jpg to no_bucket
+2025-05-25 22:01:20,728 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0517.jpg
+2025-05-25 22:01:20,830 - INFO - Processed frame frame_0518.jpg: bucket, conf: 0.54
+2025-05-25 22:01:20,831 - INFO - Added low-conf frame: data/2025-05-25_22-00-05/frames\frame_0518.jpg
+2025-05-25 22:01:20,934 - INFO - Moved frame frame_0519.jpg to no_bucket
+2025-05-25 22:01:20,934 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0519.jpg
+2025-05-25 22:01:21,059 - INFO - Moved frame frame_0520.jpg to no_bucket
+2025-05-25 22:01:21,059 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0520.jpg
+2025-05-25 22:01:21,162 - INFO - Moved frame frame_0521.jpg to no_bucket
+2025-05-25 22:01:21,162 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0521.jpg
+2025-05-25 22:01:21,280 - INFO - Moved frame frame_0522.jpg to no_bucket
+2025-05-25 22:01:21,280 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0522.jpg
+2025-05-25 22:01:21,397 - INFO - Moved frame frame_0523.jpg to no_bucket
+2025-05-25 22:01:21,397 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0523.jpg
+2025-05-25 22:01:21,508 - INFO - Moved frame frame_0524.jpg to no_bucket
+2025-05-25 22:01:21,508 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0524.jpg
+2025-05-25 22:01:21,613 - INFO - Processed frame frame_0525.jpg: bucket, conf: 0.84
+2025-05-25 22:01:21,719 - INFO - Processed frame frame_0526.jpg: bucket, conf: 0.89
+2025-05-25 22:01:21,829 - INFO - Moved frame frame_0527.jpg to no_bucket
+2025-05-25 22:01:21,829 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0527.jpg
+2025-05-25 22:01:21,935 - INFO - Moved frame frame_0528.jpg to no_bucket
+2025-05-25 22:01:21,935 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0528.jpg
+2025-05-25 22:01:22,043 - INFO - Processed frame frame_0529.jpg: bucket, conf: 0.91
+2025-05-25 22:01:22,141 - INFO - Processed frame frame_0530.jpg: bucket, conf: 0.91
+2025-05-25 22:01:22,246 - INFO - Processed frame frame_0531.jpg: bucket, conf: 0.90
+2025-05-25 22:01:22,350 - INFO - Processed frame frame_0532.jpg: bucket, conf: 0.91
+2025-05-25 22:01:22,454 - INFO - Moved frame frame_0533.jpg to no_bucket
+2025-05-25 22:01:22,455 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0533.jpg
+2025-05-25 22:01:22,560 - INFO - Moved frame frame_0534.jpg to no_bucket
+2025-05-25 22:01:22,560 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0534.jpg
+2025-05-25 22:01:22,662 - INFO - Moved frame frame_0535.jpg to no_bucket
+2025-05-25 22:01:22,662 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0535.jpg
+2025-05-25 22:01:22,764 - INFO - Moved frame frame_0536.jpg to no_bucket
+2025-05-25 22:01:22,764 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0536.jpg
+2025-05-25 22:01:22,864 - INFO - Processed frame frame_0537.jpg: bucket, conf: 0.81
+2025-05-25 22:01:22,865 - INFO - Processed frame frame_0537.jpg: bucket, conf: 0.77
+2025-05-25 22:01:22,973 - INFO - Processed frame frame_0538.jpg: bucket, conf: 0.90
+2025-05-25 22:01:22,974 - INFO - Processed frame frame_0538.jpg: bucket, conf: 0.80
+2025-05-25 22:01:23,078 - INFO - Processed frame frame_0539.jpg: bucket, conf: 0.86
+2025-05-25 22:01:23,184 - INFO - Processed frame frame_0540.jpg: bucket, conf: 0.67
+2025-05-25 22:01:23,291 - INFO - Moved frame frame_0541.jpg to no_bucket
+2025-05-25 22:01:23,291 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0541.jpg
+2025-05-25 22:01:23,394 - INFO - Moved frame frame_0542.jpg to no_bucket
+2025-05-25 22:01:23,394 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0542.jpg
+2025-05-25 22:01:23,495 - INFO - Moved frame frame_0543.jpg to no_bucket
+2025-05-25 22:01:23,495 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0543.jpg
+2025-05-25 22:01:23,598 - INFO - Moved frame frame_0544.jpg to no_bucket
+2025-05-25 22:01:23,598 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0544.jpg
+2025-05-25 22:01:23,705 - INFO - Moved frame frame_0545.jpg to no_bucket
+2025-05-25 22:01:23,705 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0545.jpg
+2025-05-25 22:01:23,804 - INFO - Moved frame frame_0546.jpg to no_bucket
+2025-05-25 22:01:23,805 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0546.jpg
+2025-05-25 22:01:23,906 - INFO - Moved frame frame_0547.jpg to no_bucket
+2025-05-25 22:01:23,906 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0547.jpg
+2025-05-25 22:01:24,008 - INFO - Moved frame frame_0548.jpg to no_bucket
+2025-05-25 22:01:24,008 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0548.jpg
+2025-05-25 22:01:24,107 - INFO - Moved frame frame_0549.jpg to no_bucket
+2025-05-25 22:01:24,108 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0549.jpg
+2025-05-25 22:01:24,208 - INFO - Moved frame frame_0550.jpg to no_bucket
+2025-05-25 22:01:24,208 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0550.jpg
+2025-05-25 22:01:24,311 - INFO - Moved frame frame_0551.jpg to no_bucket
+2025-05-25 22:01:24,311 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0551.jpg
+2025-05-25 22:01:24,412 - INFO - Moved frame frame_0552.jpg to no_bucket
+2025-05-25 22:01:24,412 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0552.jpg
+2025-05-25 22:01:24,516 - INFO - Moved frame frame_0553.jpg to no_bucket
+2025-05-25 22:01:24,516 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0553.jpg
+2025-05-25 22:01:24,616 - INFO - Moved frame frame_0554.jpg to no_bucket
+2025-05-25 22:01:24,616 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0554.jpg
+2025-05-25 22:01:24,721 - INFO - Moved frame frame_0555.jpg to no_bucket
+2025-05-25 22:01:24,722 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0555.jpg
+2025-05-25 22:01:24,844 - INFO - Moved frame frame_0556.jpg to no_bucket
+2025-05-25 22:01:24,844 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0556.jpg
+2025-05-25 22:01:24,958 - INFO - Moved frame frame_0557.jpg to no_bucket
+2025-05-25 22:01:24,958 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0557.jpg
+2025-05-25 22:01:25,067 - INFO - Moved frame frame_0558.jpg to no_bucket
+2025-05-25 22:01:25,067 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0558.jpg
+2025-05-25 22:01:25,175 - INFO - Moved frame frame_0559.jpg to no_bucket
+2025-05-25 22:01:25,175 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0559.jpg
+2025-05-25 22:01:25,282 - INFO - Moved frame frame_0560.jpg to no_bucket
+2025-05-25 22:01:25,282 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0560.jpg
+2025-05-25 22:01:25,401 - INFO - Moved frame frame_0561.jpg to no_bucket
+2025-05-25 22:01:25,402 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0561.jpg
+2025-05-25 22:01:25,511 - INFO - Moved frame frame_0562.jpg to no_bucket
+2025-05-25 22:01:25,511 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0562.jpg
+2025-05-25 22:01:25,619 - INFO - Moved frame frame_0563.jpg to no_bucket
+2025-05-25 22:01:25,619 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0563.jpg
+2025-05-25 22:01:25,723 - INFO - Moved frame frame_0564.jpg to no_bucket
+2025-05-25 22:01:25,724 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0564.jpg
+2025-05-25 22:01:25,826 - INFO - Moved frame frame_0565.jpg to no_bucket
+2025-05-25 22:01:25,826 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0565.jpg
+2025-05-25 22:01:25,928 - INFO - Moved frame frame_0566.jpg to no_bucket
+2025-05-25 22:01:25,928 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0566.jpg
+2025-05-25 22:01:26,033 - INFO - Moved frame frame_0567.jpg to no_bucket
+2025-05-25 22:01:26,034 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0567.jpg
+2025-05-25 22:01:26,157 - INFO - Processed frame frame_0568.jpg: bucket, conf: 0.74
+2025-05-25 22:01:26,260 - INFO - Moved frame frame_0569.jpg to no_bucket
+2025-05-25 22:01:26,260 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0569.jpg
+2025-05-25 22:01:26,360 - INFO - Moved frame frame_0570.jpg to no_bucket
+2025-05-25 22:01:26,360 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0570.jpg
+2025-05-25 22:01:26,458 - INFO - Moved frame frame_0571.jpg to no_bucket
+2025-05-25 22:01:26,458 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0571.jpg
+2025-05-25 22:01:26,564 - INFO - Moved frame frame_0572.jpg to no_bucket
+2025-05-25 22:01:26,564 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0572.jpg
+2025-05-25 22:01:26,666 - INFO - Moved frame frame_0573.jpg to no_bucket
+2025-05-25 22:01:26,666 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0573.jpg
+2025-05-25 22:01:26,770 - INFO - Moved frame frame_0574.jpg to no_bucket
+2025-05-25 22:01:26,770 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0574.jpg
+2025-05-25 22:01:26,875 - INFO - Processed frame frame_0575.jpg: bucket, conf: 0.77
+2025-05-25 22:01:26,976 - INFO - Moved frame frame_0576.jpg to no_bucket
+2025-05-25 22:01:26,976 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0576.jpg
+2025-05-25 22:01:27,079 - INFO - Processed frame frame_0577.jpg: bucket, conf: 0.77
+2025-05-25 22:01:27,187 - INFO - Moved frame frame_0578.jpg to no_bucket
+2025-05-25 22:01:27,187 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0578.jpg
+2025-05-25 22:01:27,293 - INFO - Moved frame frame_0579.jpg to no_bucket
+2025-05-25 22:01:27,294 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0579.jpg
+2025-05-25 22:01:27,402 - INFO - Moved frame frame_0580.jpg to no_bucket
+2025-05-25 22:01:27,402 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0580.jpg
+2025-05-25 22:01:27,509 - INFO - Moved frame frame_0581.jpg to no_bucket
+2025-05-25 22:01:27,509 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0581.jpg
+2025-05-25 22:01:27,614 - INFO - Moved frame frame_0582.jpg to no_bucket
+2025-05-25 22:01:27,614 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0582.jpg
+2025-05-25 22:01:27,717 - INFO - Processed frame frame_0583.jpg: bucket, conf: 0.54
+2025-05-25 22:01:27,717 - INFO - Added low-conf frame: data/2025-05-25_22-00-05/frames\frame_0583.jpg
+2025-05-25 22:01:27,820 - INFO - Processed frame frame_0584.jpg: bucket, conf: 0.71
+2025-05-25 22:01:27,925 - INFO - Processed frame frame_0585.jpg: bucket, conf: 0.61
+2025-05-25 22:01:28,027 - INFO - Moved frame frame_0586.jpg to no_bucket
+2025-05-25 22:01:28,027 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0586.jpg
+2025-05-25 22:01:28,128 - INFO - Moved frame frame_0587.jpg to no_bucket
+2025-05-25 22:01:28,128 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0587.jpg
+2025-05-25 22:01:28,222 - INFO - Moved frame frame_0588.jpg to no_bucket
+2025-05-25 22:01:28,223 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0588.jpg
+2025-05-25 22:01:28,343 - INFO - Moved frame frame_0589.jpg to no_bucket
+2025-05-25 22:01:28,344 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0589.jpg
+2025-05-25 22:01:28,456 - INFO - Moved frame frame_0590.jpg to no_bucket
+2025-05-25 22:01:28,457 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0590.jpg
+2025-05-25 22:01:28,566 - INFO - Moved frame frame_0591.jpg to no_bucket
+2025-05-25 22:01:28,566 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0591.jpg
+2025-05-25 22:01:28,674 - INFO - Moved frame frame_0592.jpg to no_bucket
+2025-05-25 22:01:28,675 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0592.jpg
+2025-05-25 22:01:28,777 - INFO - Moved frame frame_0593.jpg to no_bucket
+2025-05-25 22:01:28,777 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0593.jpg
+2025-05-25 22:01:28,878 - INFO - Moved frame frame_0594.jpg to no_bucket
+2025-05-25 22:01:28,878 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0594.jpg
+2025-05-25 22:01:28,979 - INFO - Moved frame frame_0595.jpg to no_bucket
+2025-05-25 22:01:28,980 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0595.jpg
+2025-05-25 22:01:29,080 - INFO - Moved frame frame_0596.jpg to no_bucket
+2025-05-25 22:01:29,080 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0596.jpg
+2025-05-25 22:01:29,180 - INFO - Moved frame frame_0597.jpg to no_bucket
+2025-05-25 22:01:29,181 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0597.jpg
+2025-05-25 22:01:29,281 - INFO - Moved frame frame_0598.jpg to no_bucket
+2025-05-25 22:01:29,281 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0598.jpg
+2025-05-25 22:01:29,384 - INFO - Moved frame frame_0599.jpg to no_bucket
+2025-05-25 22:01:29,384 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0599.jpg
+2025-05-25 22:01:29,488 - INFO - Moved frame frame_0600.jpg to no_bucket
+2025-05-25 22:01:29,488 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0600.jpg
+2025-05-25 22:01:29,590 - INFO - Moved frame frame_0601.jpg to no_bucket
+2025-05-25 22:01:29,590 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0601.jpg
+2025-05-25 22:01:29,692 - INFO - Moved frame frame_0602.jpg to no_bucket
+2025-05-25 22:01:29,692 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0602.jpg
+2025-05-25 22:01:29,796 - INFO - Moved frame frame_0603.jpg to no_bucket
+2025-05-25 22:01:29,797 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0603.jpg
+2025-05-25 22:01:29,903 - INFO - Moved frame frame_0604.jpg to no_bucket
+2025-05-25 22:01:29,903 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0604.jpg
+2025-05-25 22:01:30,008 - INFO - Moved frame frame_0605.jpg to no_bucket
+2025-05-25 22:01:30,008 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0605.jpg
+2025-05-25 22:01:30,106 - INFO - Moved frame frame_0606.jpg to no_bucket
+2025-05-25 22:01:30,106 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0606.jpg
+2025-05-25 22:01:30,214 - INFO - Moved frame frame_0607.jpg to no_bucket
+2025-05-25 22:01:30,214 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0607.jpg
+2025-05-25 22:01:30,320 - INFO - Moved frame frame_0608.jpg to no_bucket
+2025-05-25 22:01:30,320 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0608.jpg
+2025-05-25 22:01:30,423 - INFO - Moved frame frame_0609.jpg to no_bucket
+2025-05-25 22:01:30,423 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0609.jpg
+2025-05-25 22:01:30,525 - INFO - Moved frame frame_0610.jpg to no_bucket
+2025-05-25 22:01:30,525 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0610.jpg
+2025-05-25 22:01:30,626 - INFO - Processed frame frame_0611.jpg: bucket, conf: 0.54
+2025-05-25 22:01:30,626 - INFO - Added low-conf frame: data/2025-05-25_22-00-05/frames\frame_0611.jpg
+2025-05-25 22:01:30,730 - INFO - Moved frame frame_0612.jpg to no_bucket
+2025-05-25 22:01:30,730 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0612.jpg
+2025-05-25 22:01:30,833 - INFO - Moved frame frame_0613.jpg to no_bucket
+2025-05-25 22:01:30,833 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0613.jpg
+2025-05-25 22:01:30,920 - INFO - Moved frame frame_0614.jpg to no_bucket
+2025-05-25 22:01:30,920 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0614.jpg
+2025-05-25 22:01:31,037 - INFO - Moved frame frame_0615.jpg to no_bucket
+2025-05-25 22:01:31,038 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0615.jpg
+2025-05-25 22:01:31,140 - INFO - Moved frame frame_0616.jpg to no_bucket
+2025-05-25 22:01:31,140 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0616.jpg
+2025-05-25 22:01:31,240 - INFO - Moved frame frame_0617.jpg to no_bucket
+2025-05-25 22:01:31,240 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0617.jpg
+2025-05-25 22:01:31,341 - INFO - Moved frame frame_0618.jpg to no_bucket
+2025-05-25 22:01:31,341 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0618.jpg
+2025-05-25 22:01:31,441 - INFO - Moved frame frame_0619.jpg to no_bucket
+2025-05-25 22:01:31,441 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0619.jpg
+2025-05-25 22:01:31,544 - INFO - Moved frame frame_0620.jpg to no_bucket
+2025-05-25 22:01:31,544 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0620.jpg
+2025-05-25 22:01:31,644 - INFO - Moved frame frame_0621.jpg to no_bucket
+2025-05-25 22:01:31,644 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0621.jpg
+2025-05-25 22:01:31,752 - INFO - Moved frame frame_0622.jpg to no_bucket
+2025-05-25 22:01:31,752 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0622.jpg
+2025-05-25 22:01:31,882 - INFO - Moved frame frame_0623.jpg to no_bucket
+2025-05-25 22:01:31,882 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0623.jpg
+2025-05-25 22:01:31,994 - INFO - Moved frame frame_0624.jpg to no_bucket
+2025-05-25 22:01:31,994 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0624.jpg
+2025-05-25 22:01:32,105 - INFO - Moved frame frame_0625.jpg to no_bucket
+2025-05-25 22:01:32,105 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0625.jpg
+2025-05-25 22:01:32,210 - INFO - Moved frame frame_0626.jpg to no_bucket
+2025-05-25 22:01:32,210 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0626.jpg
+2025-05-25 22:01:32,323 - INFO - Moved frame frame_0627.jpg to no_bucket
+2025-05-25 22:01:32,323 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0627.jpg
+2025-05-25 22:01:32,451 - INFO - Moved frame frame_0628.jpg to no_bucket
+2025-05-25 22:01:32,451 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0628.jpg
+2025-05-25 22:01:32,566 - INFO - Moved frame frame_0629.jpg to no_bucket
+2025-05-25 22:01:32,566 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0629.jpg
+2025-05-25 22:01:32,681 - INFO - Moved frame frame_0630.jpg to no_bucket
+2025-05-25 22:01:32,681 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0630.jpg
+2025-05-25 22:01:32,787 - INFO - Moved frame frame_0631.jpg to no_bucket
+2025-05-25 22:01:32,787 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0631.jpg
+2025-05-25 22:01:32,892 - INFO - Moved frame frame_0632.jpg to no_bucket
+2025-05-25 22:01:32,893 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0632.jpg
+2025-05-25 22:01:33,002 - INFO - Processed frame frame_0633.jpg: bucket, conf: 0.86
+2025-05-25 22:01:33,113 - INFO - Moved frame frame_0634.jpg to no_bucket
+2025-05-25 22:01:33,113 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0634.jpg
+2025-05-25 22:01:33,222 - INFO - Moved frame frame_0635.jpg to no_bucket
+2025-05-25 22:01:33,222 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0635.jpg
+2025-05-25 22:01:33,329 - INFO - Moved frame frame_0636.jpg to no_bucket
+2025-05-25 22:01:33,329 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0636.jpg
+2025-05-25 22:01:33,436 - INFO - Moved frame frame_0637.jpg to no_bucket
+2025-05-25 22:01:33,436 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0637.jpg
+2025-05-25 22:01:33,543 - INFO - Moved frame frame_0638.jpg to no_bucket
+2025-05-25 22:01:33,543 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0638.jpg
+2025-05-25 22:01:33,647 - INFO - Moved frame frame_0639.jpg to no_bucket
+2025-05-25 22:01:33,647 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0639.jpg
+2025-05-25 22:01:33,750 - INFO - Moved frame frame_0640.jpg to no_bucket
+2025-05-25 22:01:33,750 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0640.jpg
+2025-05-25 22:01:33,854 - INFO - Moved frame frame_0641.jpg to no_bucket
+2025-05-25 22:01:33,854 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0641.jpg
+2025-05-25 22:01:33,951 - INFO - Moved frame frame_0642.jpg to no_bucket
+2025-05-25 22:01:33,951 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0642.jpg
+2025-05-25 22:01:34,050 - INFO - Moved frame frame_0643.jpg to no_bucket
+2025-05-25 22:01:34,051 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0643.jpg
+2025-05-25 22:01:34,154 - INFO - Moved frame frame_0644.jpg to no_bucket
+2025-05-25 22:01:34,154 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0644.jpg
+2025-05-25 22:01:34,257 - INFO - Moved frame frame_0645.jpg to no_bucket
+2025-05-25 22:01:34,257 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0645.jpg
+2025-05-25 22:01:34,360 - INFO - Moved frame frame_0646.jpg to no_bucket
+2025-05-25 22:01:34,360 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0646.jpg
+2025-05-25 22:01:34,461 - INFO - Moved frame frame_0647.jpg to no_bucket
+2025-05-25 22:01:34,461 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0647.jpg
+2025-05-25 22:01:34,567 - INFO - Moved frame frame_0648.jpg to no_bucket
+2025-05-25 22:01:34,568 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0648.jpg
+2025-05-25 22:01:34,668 - INFO - Moved frame frame_0649.jpg to no_bucket
+2025-05-25 22:01:34,668 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0649.jpg
+2025-05-25 22:01:34,770 - INFO - Moved frame frame_0650.jpg to no_bucket
+2025-05-25 22:01:34,770 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0650.jpg
+2025-05-25 22:01:34,873 - INFO - Moved frame frame_0651.jpg to no_bucket
+2025-05-25 22:01:34,873 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0651.jpg
+2025-05-25 22:01:34,974 - INFO - Moved frame frame_0652.jpg to no_bucket
+2025-05-25 22:01:34,975 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0652.jpg
+2025-05-25 22:01:35,073 - INFO - Moved frame frame_0653.jpg to no_bucket
+2025-05-25 22:01:35,073 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0653.jpg
+2025-05-25 22:01:35,175 - INFO - Moved frame frame_0654.jpg to no_bucket
+2025-05-25 22:01:35,175 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0654.jpg
+2025-05-25 22:01:35,279 - INFO - Moved frame frame_0655.jpg to no_bucket
+2025-05-25 22:01:35,279 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0655.jpg
+2025-05-25 22:01:35,400 - INFO - Moved frame frame_0656.jpg to no_bucket
+2025-05-25 22:01:35,400 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0656.jpg
+2025-05-25 22:01:35,513 - INFO - Processed frame frame_0657.jpg: bucket, conf: 0.65
+2025-05-25 22:01:35,627 - INFO - Moved frame frame_0658.jpg to no_bucket
+2025-05-25 22:01:35,628 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0658.jpg
+2025-05-25 22:01:35,734 - INFO - Moved frame frame_0659.jpg to no_bucket
+2025-05-25 22:01:35,734 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0659.jpg
+2025-05-25 22:01:35,838 - INFO - Moved frame frame_0660.jpg to no_bucket
+2025-05-25 22:01:35,838 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0660.jpg
+2025-05-25 22:01:35,940 - INFO - Moved frame frame_0661.jpg to no_bucket
+2025-05-25 22:01:35,940 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0661.jpg
+2025-05-25 22:01:36,059 - INFO - Moved frame frame_0662.jpg to no_bucket
+2025-05-25 22:01:36,059 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0662.jpg
+2025-05-25 22:01:36,161 - INFO - Moved frame frame_0663.jpg to no_bucket
+2025-05-25 22:01:36,161 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0663.jpg
+2025-05-25 22:01:36,264 - INFO - Moved frame frame_0664.jpg to no_bucket
+2025-05-25 22:01:36,264 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0664.jpg
+2025-05-25 22:01:36,368 - INFO - Moved frame frame_0665.jpg to no_bucket
+2025-05-25 22:01:36,368 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0665.jpg
+2025-05-25 22:01:36,469 - INFO - Moved frame frame_0666.jpg to no_bucket
+2025-05-25 22:01:36,469 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0666.jpg
+2025-05-25 22:01:36,568 - INFO - Moved frame frame_0667.jpg to no_bucket
+2025-05-25 22:01:36,568 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0667.jpg
+2025-05-25 22:01:36,671 - INFO - Moved frame frame_0668.jpg to no_bucket
+2025-05-25 22:01:36,671 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0668.jpg
+2025-05-25 22:01:36,774 - INFO - Processed frame frame_0669.jpg: bucket, conf: 0.68
+2025-05-25 22:01:36,882 - INFO - Moved frame frame_0670.jpg to no_bucket
+2025-05-25 22:01:36,883 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0670.jpg
+2025-05-25 22:01:36,981 - INFO - Moved frame frame_0671.jpg to no_bucket
+2025-05-25 22:01:36,981 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0671.jpg
+2025-05-25 22:01:37,081 - INFO - Processed frame frame_0672.jpg: bucket, conf: 0.51
+2025-05-25 22:01:37,082 - INFO - Added low-conf frame: data/2025-05-25_22-00-05/frames\frame_0672.jpg
+2025-05-25 22:01:37,184 - INFO - Moved frame frame_0673.jpg to no_bucket
+2025-05-25 22:01:37,185 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0673.jpg
+2025-05-25 22:01:37,291 - INFO - Moved frame frame_0674.jpg to no_bucket
+2025-05-25 22:01:37,291 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0674.jpg
+2025-05-25 22:01:37,391 - INFO - Processed frame frame_0675.jpg: bucket, conf: 0.81
+2025-05-25 22:01:37,496 - INFO - Moved frame frame_0676.jpg to no_bucket
+2025-05-25 22:01:37,496 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0676.jpg
+2025-05-25 22:01:37,599 - INFO - Moved frame frame_0677.jpg to no_bucket
+2025-05-25 22:01:37,600 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0677.jpg
+2025-05-25 22:01:37,703 - INFO - Moved frame frame_0678.jpg to no_bucket
+2025-05-25 22:01:37,703 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0678.jpg
+2025-05-25 22:01:37,804 - INFO - Moved frame frame_0679.jpg to no_bucket
+2025-05-25 22:01:37,804 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0679.jpg
+2025-05-25 22:01:37,891 - INFO - Moved frame frame_0680.jpg to no_bucket
+2025-05-25 22:01:37,891 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0680.jpg
+2025-05-25 22:01:37,989 - INFO - Moved frame frame_0681.jpg to no_bucket
+2025-05-25 22:01:37,989 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0681.jpg
+2025-05-25 22:01:38,095 - INFO - Moved frame frame_0682.jpg to no_bucket
+2025-05-25 22:01:38,095 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0682.jpg
+2025-05-25 22:01:38,193 - INFO - Moved frame frame_0683.jpg to no_bucket
+2025-05-25 22:01:38,193 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0683.jpg
+2025-05-25 22:01:38,300 - INFO - Moved frame frame_0684.jpg to no_bucket
+2025-05-25 22:01:38,300 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0684.jpg
+2025-05-25 22:01:38,405 - INFO - Moved frame frame_0685.jpg to no_bucket
+2025-05-25 22:01:38,405 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0685.jpg
+2025-05-25 22:01:38,508 - INFO - Moved frame frame_0686.jpg to no_bucket
+2025-05-25 22:01:38,508 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0686.jpg
+2025-05-25 22:01:38,610 - INFO - Moved frame frame_0687.jpg to no_bucket
+2025-05-25 22:01:38,610 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0687.jpg
+2025-05-25 22:01:38,709 - INFO - Moved frame frame_0688.jpg to no_bucket
+2025-05-25 22:01:38,709 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0688.jpg
+2025-05-25 22:01:38,810 - INFO - Moved frame frame_0689.jpg to no_bucket
+2025-05-25 22:01:38,810 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0689.jpg
+2025-05-25 22:01:38,931 - INFO - Processed frame frame_0690.jpg: bucket, conf: 0.51
+2025-05-25 22:01:38,931 - INFO - Added low-conf frame: data/2025-05-25_22-00-05/frames\frame_0690.jpg
+2025-05-25 22:01:39,046 - INFO - Processed frame frame_0691.jpg: bucket, conf: 0.82
+2025-05-25 22:01:39,159 - INFO - Processed frame frame_0692.jpg: bucket, conf: 0.85
+2025-05-25 22:01:39,265 - INFO - Processed frame frame_0693.jpg: bucket, conf: 0.87
+2025-05-25 22:01:39,374 - INFO - Processed frame frame_0694.jpg: bucket, conf: 0.87
+2025-05-25 22:01:39,479 - INFO - Moved frame frame_0695.jpg to no_bucket
+2025-05-25 22:01:39,479 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0695.jpg
+2025-05-25 22:01:39,580 - INFO - Processed frame frame_0696.jpg: bucket, conf: 0.71
+2025-05-25 22:01:39,690 - INFO - Processed frame frame_0697.jpg: bucket, conf: 0.72
+2025-05-25 22:01:39,795 - INFO - Processed frame frame_0698.jpg: bucket, conf: 0.78
+2025-05-25 22:01:39,899 - INFO - Processed frame frame_0699.jpg: bucket, conf: 0.88
+2025-05-25 22:01:40,010 - INFO - Moved frame frame_0700.jpg to no_bucket
+2025-05-25 22:01:40,010 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0700.jpg
+2025-05-25 22:01:40,113 - INFO - Moved frame frame_0701.jpg to no_bucket
+2025-05-25 22:01:40,113 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0701.jpg
+2025-05-25 22:01:40,217 - INFO - Moved frame frame_0702.jpg to no_bucket
+2025-05-25 22:01:40,217 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0702.jpg
+2025-05-25 22:01:40,323 - INFO - Moved frame frame_0703.jpg to no_bucket
+2025-05-25 22:01:40,323 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0703.jpg
+2025-05-25 22:01:40,426 - INFO - Processed frame frame_0704.jpg: bucket, conf: 0.86
+2025-05-25 22:01:40,532 - INFO - Moved frame frame_0705.jpg to no_bucket
+2025-05-25 22:01:40,532 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0705.jpg
+2025-05-25 22:01:40,635 - INFO - Moved frame frame_0706.jpg to no_bucket
+2025-05-25 22:01:40,635 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0706.jpg
+2025-05-25 22:01:40,733 - INFO - Moved frame frame_0707.jpg to no_bucket
+2025-05-25 22:01:40,734 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0707.jpg
+2025-05-25 22:01:40,839 - INFO - Processed frame frame_0708.jpg: bucket, conf: 0.82
+2025-05-25 22:01:40,948 - INFO - Moved frame frame_0709.jpg to no_bucket
+2025-05-25 22:01:40,949 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0709.jpg
+2025-05-25 22:01:41,078 - INFO - Processed frame frame_0710.jpg: bucket, conf: 0.57
+2025-05-25 22:01:41,078 - INFO - Added low-conf frame: data/2025-05-25_22-00-05/frames\frame_0710.jpg
+2025-05-25 22:01:41,186 - INFO - Moved frame frame_0711.jpg to no_bucket
+2025-05-25 22:01:41,186 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0711.jpg
+2025-05-25 22:01:41,288 - INFO - Moved frame frame_0712.jpg to no_bucket
+2025-05-25 22:01:41,288 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0712.jpg
+2025-05-25 22:01:41,390 - INFO - Moved frame frame_0713.jpg to no_bucket
+2025-05-25 22:01:41,391 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0713.jpg
+2025-05-25 22:01:41,491 - INFO - Processed frame frame_0714.jpg: bucket, conf: 0.71
+2025-05-25 22:01:41,599 - INFO - Moved frame frame_0715.jpg to no_bucket
+2025-05-25 22:01:41,600 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0715.jpg
+2025-05-25 22:01:41,696 - INFO - Moved frame frame_0716.jpg to no_bucket
+2025-05-25 22:01:41,696 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0716.jpg
+2025-05-25 22:01:41,797 - INFO - Moved frame frame_0717.jpg to no_bucket
+2025-05-25 22:01:41,797 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0717.jpg
+2025-05-25 22:01:41,899 - INFO - Moved frame frame_0718.jpg to no_bucket
+2025-05-25 22:01:41,899 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0718.jpg
+2025-05-25 22:01:41,998 - INFO - Moved frame frame_0719.jpg to no_bucket
+2025-05-25 22:01:41,998 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0719.jpg
+2025-05-25 22:01:42,104 - INFO - Moved frame frame_0720.jpg to no_bucket
+2025-05-25 22:01:42,104 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0720.jpg
+2025-05-25 22:01:42,204 - INFO - Moved frame frame_0721.jpg to no_bucket
+2025-05-25 22:01:42,204 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0721.jpg
+2025-05-25 22:01:42,309 - INFO - Processed frame frame_0722.jpg: bucket, conf: 0.55
+2025-05-25 22:01:42,309 - INFO - Added low-conf frame: data/2025-05-25_22-00-05/frames\frame_0722.jpg
+2025-05-25 22:01:42,412 - INFO - Processed frame frame_0723.jpg: bucket, conf: 0.81
+2025-05-25 22:01:42,512 - INFO - Moved frame frame_0724.jpg to no_bucket
+2025-05-25 22:01:42,512 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0724.jpg
+2025-05-25 22:01:42,617 - INFO - Moved frame frame_0725.jpg to no_bucket
+2025-05-25 22:01:42,617 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0725.jpg
+2025-05-25 22:01:42,719 - INFO - Moved frame frame_0726.jpg to no_bucket
+2025-05-25 22:01:42,720 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0726.jpg
+2025-05-25 22:01:42,821 - INFO - Processed frame frame_0727.jpg: bucket, conf: 0.82
+2025-05-25 22:01:42,925 - INFO - Moved frame frame_0728.jpg to no_bucket
+2025-05-25 22:01:42,925 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0728.jpg
+2025-05-25 22:01:43,028 - INFO - Moved frame frame_0729.jpg to no_bucket
+2025-05-25 22:01:43,028 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0729.jpg
+2025-05-25 22:01:43,132 - INFO - Moved frame frame_0730.jpg to no_bucket
+2025-05-25 22:01:43,132 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0730.jpg
+2025-05-25 22:01:43,234 - INFO - Moved frame frame_0731.jpg to no_bucket
+2025-05-25 22:01:43,234 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0731.jpg
+2025-05-25 22:01:43,341 - INFO - Moved frame frame_0732.jpg to no_bucket
+2025-05-25 22:01:43,341 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0732.jpg
+2025-05-25 22:01:43,463 - INFO - Moved frame frame_0733.jpg to no_bucket
+2025-05-25 22:01:43,464 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0733.jpg
+2025-05-25 22:01:43,573 - INFO - Moved frame frame_0734.jpg to no_bucket
+2025-05-25 22:01:43,573 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0734.jpg
+2025-05-25 22:01:43,684 - INFO - Moved frame frame_0735.jpg to no_bucket
+2025-05-25 22:01:43,684 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0735.jpg
+2025-05-25 22:01:43,784 - INFO - Moved frame frame_0736.jpg to no_bucket
+2025-05-25 22:01:43,784 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0736.jpg
+2025-05-25 22:01:43,891 - INFO - Moved frame frame_0737.jpg to no_bucket
+2025-05-25 22:01:43,891 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0737.jpg
+2025-05-25 22:01:44,008 - INFO - Moved frame frame_0738.jpg to no_bucket
+2025-05-25 22:01:44,008 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0738.jpg
+2025-05-25 22:01:44,118 - INFO - Processed frame frame_0739.jpg: bucket, conf: 0.67
+2025-05-25 22:01:44,231 - INFO - Moved frame frame_0740.jpg to no_bucket
+2025-05-25 22:01:44,231 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0740.jpg
+2025-05-25 22:01:44,330 - INFO - Moved frame frame_0741.jpg to no_bucket
+2025-05-25 22:01:44,330 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0741.jpg
+2025-05-25 22:01:44,433 - INFO - Moved frame frame_0742.jpg to no_bucket
+2025-05-25 22:01:44,434 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0742.jpg
+2025-05-25 22:01:44,537 - INFO - Moved frame frame_0743.jpg to no_bucket
+2025-05-25 22:01:44,537 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0743.jpg
+2025-05-25 22:01:44,641 - INFO - Moved frame frame_0744.jpg to no_bucket
+2025-05-25 22:01:44,641 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0744.jpg
+2025-05-25 22:01:44,747 - INFO - Moved frame frame_0745.jpg to no_bucket
+2025-05-25 22:01:44,748 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0745.jpg
+2025-05-25 22:01:44,849 - INFO - Moved frame frame_0746.jpg to no_bucket
+2025-05-25 22:01:44,849 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0746.jpg
+2025-05-25 22:01:44,952 - INFO - Moved frame frame_0747.jpg to no_bucket
+2025-05-25 22:01:44,953 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0747.jpg
+2025-05-25 22:01:45,052 - INFO - Processed frame frame_0748.jpg: bucket, conf: 0.87
+2025-05-25 22:01:45,156 - INFO - Moved frame frame_0749.jpg to no_bucket
+2025-05-25 22:01:45,156 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0749.jpg
+2025-05-25 22:01:45,255 - INFO - Moved frame frame_0750.jpg to no_bucket
+2025-05-25 22:01:45,255 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0750.jpg
+2025-05-25 22:01:45,353 - INFO - Moved frame frame_0751.jpg to no_bucket
+2025-05-25 22:01:45,353 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0751.jpg
+2025-05-25 22:01:45,456 - INFO - Moved frame frame_0752.jpg to no_bucket
+2025-05-25 22:01:45,456 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0752.jpg
+2025-05-25 22:01:45,560 - INFO - Moved frame frame_0753.jpg to no_bucket
+2025-05-25 22:01:45,560 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0753.jpg
+2025-05-25 22:01:45,663 - INFO - Moved frame frame_0754.jpg to no_bucket
+2025-05-25 22:01:45,663 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0754.jpg
+2025-05-25 22:01:45,763 - INFO - Moved frame frame_0755.jpg to no_bucket
+2025-05-25 22:01:45,763 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0755.jpg
+2025-05-25 22:01:45,865 - INFO - Moved frame frame_0756.jpg to no_bucket
+2025-05-25 22:01:45,865 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0756.jpg
+2025-05-25 22:01:45,985 - INFO - Moved frame frame_0757.jpg to no_bucket
+2025-05-25 22:01:45,985 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0757.jpg
+2025-05-25 22:01:46,081 - INFO - Moved frame frame_0758.jpg to no_bucket
+2025-05-25 22:01:46,082 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0758.jpg
+2025-05-25 22:01:46,180 - INFO - Moved frame frame_0759.jpg to no_bucket
+2025-05-25 22:01:46,180 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0759.jpg
+2025-05-25 22:01:46,275 - INFO - Moved frame frame_0760.jpg to no_bucket
+2025-05-25 22:01:46,275 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0760.jpg
+2025-05-25 22:01:46,379 - INFO - Moved frame frame_0761.jpg to no_bucket
+2025-05-25 22:01:46,379 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0761.jpg
+2025-05-25 22:01:46,484 - INFO - Moved frame frame_0762.jpg to no_bucket
+2025-05-25 22:01:46,484 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0762.jpg
+2025-05-25 22:01:46,585 - INFO - Moved frame frame_0763.jpg to no_bucket
+2025-05-25 22:01:46,585 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0763.jpg
+2025-05-25 22:01:46,687 - INFO - Moved frame frame_0764.jpg to no_bucket
+2025-05-25 22:01:46,687 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0764.jpg
+2025-05-25 22:01:46,792 - INFO - Moved frame frame_0765.jpg to no_bucket
+2025-05-25 22:01:46,792 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0765.jpg
+2025-05-25 22:01:46,907 - INFO - Moved frame frame_0766.jpg to no_bucket
+2025-05-25 22:01:46,907 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0766.jpg
+2025-05-25 22:01:47,026 - INFO - Moved frame frame_0767.jpg to no_bucket
+2025-05-25 22:01:47,026 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0767.jpg
+2025-05-25 22:01:47,136 - INFO - Moved frame frame_0768.jpg to no_bucket
+2025-05-25 22:01:47,137 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0768.jpg
+2025-05-25 22:01:47,243 - INFO - Moved frame frame_0769.jpg to no_bucket
+2025-05-25 22:01:47,243 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0769.jpg
+2025-05-25 22:01:47,350 - INFO - Moved frame frame_0770.jpg to no_bucket
+2025-05-25 22:01:47,350 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0770.jpg
+2025-05-25 22:01:47,455 - INFO - Moved frame frame_0771.jpg to no_bucket
+2025-05-25 22:01:47,455 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0771.jpg
+2025-05-25 22:01:47,558 - INFO - Processed frame frame_0772.jpg: bucket, conf: 0.75
+2025-05-25 22:01:47,665 - INFO - Moved frame frame_0773.jpg to no_bucket
+2025-05-25 22:01:47,665 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0773.jpg
+2025-05-25 22:01:47,767 - INFO - Moved frame frame_0774.jpg to no_bucket
+2025-05-25 22:01:47,768 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0774.jpg
+2025-05-25 22:01:47,871 - INFO - Processed frame frame_0775.jpg: bucket, conf: 0.82
+2025-05-25 22:01:47,977 - INFO - Moved frame frame_0776.jpg to no_bucket
+2025-05-25 22:01:47,978 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0776.jpg
+2025-05-25 22:01:48,081 - INFO - Moved frame frame_0777.jpg to no_bucket
+2025-05-25 22:01:48,081 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0777.jpg
+2025-05-25 22:01:48,189 - INFO - Processed frame frame_0778.jpg: bucket, conf: 0.63
+2025-05-25 22:01:48,294 - INFO - Moved frame frame_0779.jpg to no_bucket
+2025-05-25 22:01:48,294 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0779.jpg
+2025-05-25 22:01:48,393 - INFO - Moved frame frame_0780.jpg to no_bucket
+2025-05-25 22:01:48,393 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0780.jpg
+2025-05-25 22:01:48,504 - INFO - Moved frame frame_0781.jpg to no_bucket
+2025-05-25 22:01:48,504 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0781.jpg
+2025-05-25 22:01:48,609 - INFO - Moved frame frame_0782.jpg to no_bucket
+2025-05-25 22:01:48,609 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0782.jpg
+2025-05-25 22:01:48,714 - INFO - Moved frame frame_0783.jpg to no_bucket
+2025-05-25 22:01:48,714 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0783.jpg
+2025-05-25 22:01:48,817 - INFO - Moved frame frame_0784.jpg to no_bucket
+2025-05-25 22:01:48,818 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0784.jpg
+2025-05-25 22:01:48,922 - INFO - Moved frame frame_0785.jpg to no_bucket
+2025-05-25 22:01:48,922 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0785.jpg
+2025-05-25 22:01:49,026 - INFO - Moved frame frame_0786.jpg to no_bucket
+2025-05-25 22:01:49,026 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0786.jpg
+2025-05-25 22:01:49,123 - INFO - Moved frame frame_0787.jpg to no_bucket
+2025-05-25 22:01:49,124 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0787.jpg
+2025-05-25 22:01:49,225 - INFO - Moved frame frame_0788.jpg to no_bucket
+2025-05-25 22:01:49,225 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0788.jpg
+2025-05-25 22:01:49,328 - INFO - Moved frame frame_0789.jpg to no_bucket
+2025-05-25 22:01:49,328 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0789.jpg
+2025-05-25 22:01:49,432 - INFO - Moved frame frame_0790.jpg to no_bucket
+2025-05-25 22:01:49,432 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0790.jpg
+2025-05-25 22:01:49,534 - INFO - Moved frame frame_0791.jpg to no_bucket
+2025-05-25 22:01:49,534 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0791.jpg
+2025-05-25 22:01:49,636 - INFO - Processed frame frame_0792.jpg: bucket, conf: 0.85
+2025-05-25 22:01:49,742 - INFO - Processed frame frame_0793.jpg: bucket, conf: 0.84
+2025-05-25 22:01:49,849 - INFO - Moved frame frame_0794.jpg to no_bucket
+2025-05-25 22:01:49,849 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0794.jpg
+2025-05-25 22:01:49,952 - INFO - Moved frame frame_0795.jpg to no_bucket
+2025-05-25 22:01:49,952 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0795.jpg
+2025-05-25 22:01:50,052 - INFO - Moved frame frame_0796.jpg to no_bucket
+2025-05-25 22:01:50,053 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0796.jpg
+2025-05-25 22:01:50,154 - INFO - Moved frame frame_0797.jpg to no_bucket
+2025-05-25 22:01:50,155 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0797.jpg
+2025-05-25 22:01:50,260 - INFO - Moved frame frame_0798.jpg to no_bucket
+2025-05-25 22:01:50,261 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0798.jpg
+2025-05-25 22:01:50,367 - INFO - Moved frame frame_0799.jpg to no_bucket
+2025-05-25 22:01:50,367 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0799.jpg
+2025-05-25 22:01:50,486 - INFO - Moved frame frame_0800.jpg to no_bucket
+2025-05-25 22:01:50,486 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0800.jpg
+2025-05-25 22:01:50,600 - INFO - Moved frame frame_0801.jpg to no_bucket
+2025-05-25 22:01:50,600 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0801.jpg
+2025-05-25 22:01:50,744 - INFO - Processed frame frame_0802.jpg: bucket, conf: 0.54
+2025-05-25 22:01:50,744 - INFO - Added low-conf frame: data/2025-05-25_22-00-05/frames\frame_0802.jpg
+2025-05-25 22:01:50,848 - INFO - Moved frame frame_0803.jpg to no_bucket
+2025-05-25 22:01:50,848 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0803.jpg
+2025-05-25 22:01:50,949 - INFO - Processed frame frame_0804.jpg: bucket, conf: 0.52
+2025-05-25 22:01:50,950 - INFO - Added low-conf frame: data/2025-05-25_22-00-05/frames\frame_0804.jpg
+2025-05-25 22:01:51,054 - INFO - Moved frame frame_0805.jpg to no_bucket
+2025-05-25 22:01:51,054 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0805.jpg
+2025-05-25 22:01:51,157 - INFO - Moved frame frame_0806.jpg to no_bucket
+2025-05-25 22:01:51,157 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0806.jpg
+2025-05-25 22:01:51,264 - INFO - Moved frame frame_0807.jpg to no_bucket
+2025-05-25 22:01:51,264 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0807.jpg
+2025-05-25 22:01:51,370 - INFO - Moved frame frame_0808.jpg to no_bucket
+2025-05-25 22:01:51,370 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0808.jpg
+2025-05-25 22:01:51,473 - INFO - Moved frame frame_0809.jpg to no_bucket
+2025-05-25 22:01:51,474 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0809.jpg
+2025-05-25 22:01:51,576 - INFO - Moved frame frame_0810.jpg to no_bucket
+2025-05-25 22:01:51,577 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0810.jpg
+2025-05-25 22:01:51,678 - INFO - Moved frame frame_0811.jpg to no_bucket
+2025-05-25 22:01:51,678 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0811.jpg
+2025-05-25 22:01:51,782 - INFO - Moved frame frame_0812.jpg to no_bucket
+2025-05-25 22:01:51,783 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0812.jpg
+2025-05-25 22:01:51,886 - INFO - Moved frame frame_0813.jpg to no_bucket
+2025-05-25 22:01:51,886 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0813.jpg
+2025-05-25 22:01:51,985 - INFO - Moved frame frame_0814.jpg to no_bucket
+2025-05-25 22:01:51,985 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0814.jpg
+2025-05-25 22:01:52,089 - INFO - Moved frame frame_0815.jpg to no_bucket
+2025-05-25 22:01:52,089 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0815.jpg
+2025-05-25 22:01:52,188 - INFO - Moved frame frame_0816.jpg to no_bucket
+2025-05-25 22:01:52,188 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0816.jpg
+2025-05-25 22:01:52,287 - INFO - Moved frame frame_0817.jpg to no_bucket
+2025-05-25 22:01:52,287 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0817.jpg
+2025-05-25 22:01:52,394 - INFO - Moved frame frame_0818.jpg to no_bucket
+2025-05-25 22:01:52,394 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0818.jpg
+2025-05-25 22:01:52,495 - INFO - Moved frame frame_0819.jpg to no_bucket
+2025-05-25 22:01:52,495 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0819.jpg
+2025-05-25 22:01:52,594 - INFO - Moved frame frame_0820.jpg to no_bucket
+2025-05-25 22:01:52,594 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0820.jpg
+2025-05-25 22:01:52,696 - INFO - Moved frame frame_0821.jpg to no_bucket
+2025-05-25 22:01:52,696 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0821.jpg
+2025-05-25 22:01:52,798 - INFO - Moved frame frame_0822.jpg to no_bucket
+2025-05-25 22:01:52,798 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0822.jpg
+2025-05-25 22:01:52,900 - INFO - Moved frame frame_0823.jpg to no_bucket
+2025-05-25 22:01:52,900 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0823.jpg
+2025-05-25 22:01:53,002 - INFO - Moved frame frame_0824.jpg to no_bucket
+2025-05-25 22:01:53,003 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0824.jpg
+2025-05-25 22:01:53,100 - INFO - Moved frame frame_0825.jpg to no_bucket
+2025-05-25 22:01:53,101 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0825.jpg
+2025-05-25 22:01:53,200 - INFO - Moved frame frame_0826.jpg to no_bucket
+2025-05-25 22:01:53,200 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0826.jpg
+2025-05-25 22:01:53,304 - INFO - Moved frame frame_0827.jpg to no_bucket
+2025-05-25 22:01:53,304 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0827.jpg
+2025-05-25 22:01:53,404 - INFO - Moved frame frame_0828.jpg to no_bucket
+2025-05-25 22:01:53,404 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0828.jpg
+2025-05-25 22:01:53,508 - INFO - Moved frame frame_0829.jpg to no_bucket
+2025-05-25 22:01:53,509 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0829.jpg
+2025-05-25 22:01:53,608 - INFO - Moved frame frame_0830.jpg to no_bucket
+2025-05-25 22:01:53,608 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0830.jpg
+2025-05-25 22:01:53,711 - INFO - Moved frame frame_0831.jpg to no_bucket
+2025-05-25 22:01:53,711 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0831.jpg
+2025-05-25 22:01:53,810 - INFO - Moved frame frame_0832.jpg to no_bucket
+2025-05-25 22:01:53,811 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0832.jpg
+2025-05-25 22:01:53,923 - INFO - Moved frame frame_0833.jpg to no_bucket
+2025-05-25 22:01:53,923 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0833.jpg
+2025-05-25 22:01:54,042 - INFO - Moved frame frame_0834.jpg to no_bucket
+2025-05-25 22:01:54,042 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0834.jpg
+2025-05-25 22:01:54,153 - INFO - Moved frame frame_0835.jpg to no_bucket
+2025-05-25 22:01:54,153 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0835.jpg
+2025-05-25 22:01:54,263 - INFO - Moved frame frame_0836.jpg to no_bucket
+2025-05-25 22:01:54,263 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0836.jpg
+2025-05-25 22:01:54,366 - INFO - Moved frame frame_0837.jpg to no_bucket
+2025-05-25 22:01:54,366 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0837.jpg
+2025-05-25 22:01:54,469 - INFO - Moved frame frame_0838.jpg to no_bucket
+2025-05-25 22:01:54,469 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0838.jpg
+2025-05-25 22:01:54,558 - INFO - Moved frame frame_0839.jpg to no_bucket
+2025-05-25 22:01:54,559 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0839.jpg
+2025-05-25 22:01:54,662 - INFO - Moved frame frame_0840.jpg to no_bucket
+2025-05-25 22:01:54,662 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0840.jpg
+2025-05-25 22:01:54,765 - INFO - Moved frame frame_0841.jpg to no_bucket
+2025-05-25 22:01:54,765 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0841.jpg
+2025-05-25 22:01:54,866 - INFO - Moved frame frame_0842.jpg to no_bucket
+2025-05-25 22:01:54,866 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0842.jpg
+2025-05-25 22:01:54,968 - INFO - Moved frame frame_0843.jpg to no_bucket
+2025-05-25 22:01:54,968 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0843.jpg
+2025-05-25 22:01:55,072 - INFO - Moved frame frame_0844.jpg to no_bucket
+2025-05-25 22:01:55,072 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0844.jpg
+2025-05-25 22:01:55,178 - INFO - Moved frame frame_0845.jpg to no_bucket
+2025-05-25 22:01:55,178 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0845.jpg
+2025-05-25 22:01:55,276 - INFO - Moved frame frame_0846.jpg to no_bucket
+2025-05-25 22:01:55,277 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0846.jpg
+2025-05-25 22:01:55,376 - INFO - Moved frame frame_0847.jpg to no_bucket
+2025-05-25 22:01:55,376 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0847.jpg
+2025-05-25 22:01:55,476 - INFO - Moved frame frame_0848.jpg to no_bucket
+2025-05-25 22:01:55,477 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0848.jpg
+2025-05-25 22:01:55,600 - INFO - Moved frame frame_0849.jpg to no_bucket
+2025-05-25 22:01:55,600 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0849.jpg
+2025-05-25 22:01:55,704 - INFO - Moved frame frame_0850.jpg to no_bucket
+2025-05-25 22:01:55,704 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0850.jpg
+2025-05-25 22:01:55,810 - INFO - Moved frame frame_0851.jpg to no_bucket
+2025-05-25 22:01:55,810 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0851.jpg
+2025-05-25 22:01:55,913 - INFO - Processed frame frame_0852.jpg: bucket, conf: 0.79
+2025-05-25 22:01:56,016 - INFO - Processed frame frame_0853.jpg: bucket, conf: 0.54
+2025-05-25 22:01:56,017 - INFO - Added low-conf frame: data/2025-05-25_22-00-05/frames\frame_0853.jpg
+2025-05-25 22:01:56,123 - INFO - Moved frame frame_0854.jpg to no_bucket
+2025-05-25 22:01:56,123 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0854.jpg
+2025-05-25 22:01:56,218 - INFO - Moved frame frame_0855.jpg to no_bucket
+2025-05-25 22:01:56,219 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0855.jpg
+2025-05-25 22:01:56,321 - INFO - Moved frame frame_0856.jpg to no_bucket
+2025-05-25 22:01:56,321 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0856.jpg
+2025-05-25 22:01:56,422 - INFO - Moved frame frame_0857.jpg to no_bucket
+2025-05-25 22:01:56,422 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0857.jpg
+2025-05-25 22:01:56,526 - INFO - Moved frame frame_0858.jpg to no_bucket
+2025-05-25 22:01:56,526 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0858.jpg
+2025-05-25 22:01:56,615 - INFO - Moved frame frame_0859.jpg to no_bucket
+2025-05-25 22:01:56,615 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0859.jpg
+2025-05-25 22:01:56,716 - INFO - Moved frame frame_0860.jpg to no_bucket
+2025-05-25 22:01:56,716 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0860.jpg
+2025-05-25 22:01:56,819 - INFO - Moved frame frame_0861.jpg to no_bucket
+2025-05-25 22:01:56,819 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0861.jpg
+2025-05-25 22:01:56,919 - INFO - Moved frame frame_0862.jpg to no_bucket
+2025-05-25 22:01:56,919 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0862.jpg
+2025-05-25 22:01:57,018 - INFO - Moved frame frame_0863.jpg to no_bucket
+2025-05-25 22:01:57,019 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0863.jpg
+2025-05-25 22:01:57,121 - INFO - Moved frame frame_0864.jpg to no_bucket
+2025-05-25 22:01:57,121 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0864.jpg
+2025-05-25 22:01:57,222 - INFO - Moved frame frame_0865.jpg to no_bucket
+2025-05-25 22:01:57,222 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0865.jpg
+2025-05-25 22:01:57,316 - INFO - Moved frame frame_0866.jpg to no_bucket
+2025-05-25 22:01:57,316 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0866.jpg
+2025-05-25 22:01:57,423 - INFO - Moved frame frame_0867.jpg to no_bucket
+2025-05-25 22:01:57,423 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0867.jpg
+2025-05-25 22:01:57,544 - INFO - Moved frame frame_0868.jpg to no_bucket
+2025-05-25 22:01:57,544 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0868.jpg
+2025-05-25 22:01:57,654 - INFO - Moved frame frame_0869.jpg to no_bucket
+2025-05-25 22:01:57,654 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0869.jpg
+2025-05-25 22:01:57,764 - INFO - Moved frame frame_0870.jpg to no_bucket
+2025-05-25 22:01:57,764 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0870.jpg
+2025-05-25 22:01:57,867 - INFO - Moved frame frame_0871.jpg to no_bucket
+2025-05-25 22:01:57,868 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0871.jpg
+2025-05-25 22:01:57,980 - INFO - Moved frame frame_0872.jpg to no_bucket
+2025-05-25 22:01:57,980 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0872.jpg
+2025-05-25 22:01:58,097 - INFO - Moved frame frame_0873.jpg to no_bucket
+2025-05-25 22:01:58,097 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0873.jpg
+2025-05-25 22:01:58,208 - INFO - Moved frame frame_0874.jpg to no_bucket
+2025-05-25 22:01:58,208 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0874.jpg
+2025-05-25 22:01:58,322 - INFO - Moved frame frame_0875.jpg to no_bucket
+2025-05-25 22:01:58,322 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0875.jpg
+2025-05-25 22:01:58,432 - INFO - Moved frame frame_0876.jpg to no_bucket
+2025-05-25 22:01:58,432 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0876.jpg
+2025-05-25 22:01:58,541 - INFO - Processed frame frame_0877.jpg: bucket, conf: 0.85
+2025-05-25 22:01:58,649 - INFO - Moved frame frame_0878.jpg to no_bucket
+2025-05-25 22:01:58,649 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0878.jpg
+2025-05-25 22:01:58,752 - INFO - Moved frame frame_0879.jpg to no_bucket
+2025-05-25 22:01:58,752 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0879.jpg
+2025-05-25 22:01:58,854 - INFO - Moved frame frame_0880.jpg to no_bucket
+2025-05-25 22:01:58,854 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0880.jpg
+2025-05-25 22:01:58,958 - INFO - Moved frame frame_0881.jpg to no_bucket
+2025-05-25 22:01:58,958 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0881.jpg
+2025-05-25 22:01:59,061 - INFO - Moved frame frame_0882.jpg to no_bucket
+2025-05-25 22:01:59,061 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0882.jpg
+2025-05-25 22:01:59,164 - INFO - Moved frame frame_0883.jpg to no_bucket
+2025-05-25 22:01:59,164 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0883.jpg
+2025-05-25 22:01:59,265 - INFO - Moved frame frame_0884.jpg to no_bucket
+2025-05-25 22:01:59,265 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0884.jpg
+2025-05-25 22:01:59,364 - INFO - Moved frame frame_0885.jpg to no_bucket
+2025-05-25 22:01:59,364 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0885.jpg
+2025-05-25 22:01:59,470 - INFO - Moved frame frame_0886.jpg to no_bucket
+2025-05-25 22:01:59,470 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0886.jpg
+2025-05-25 22:01:59,572 - INFO - Moved frame frame_0887.jpg to no_bucket
+2025-05-25 22:01:59,572 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0887.jpg
+2025-05-25 22:01:59,674 - INFO - Moved frame frame_0888.jpg to no_bucket
+2025-05-25 22:01:59,674 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0888.jpg
+2025-05-25 22:01:59,775 - INFO - Moved frame frame_0889.jpg to no_bucket
+2025-05-25 22:01:59,775 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0889.jpg
+2025-05-25 22:01:59,875 - INFO - Moved frame frame_0890.jpg to no_bucket
+2025-05-25 22:01:59,875 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0890.jpg
+2025-05-25 22:01:59,977 - INFO - Moved frame frame_0891.jpg to no_bucket
+2025-05-25 22:01:59,977 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0891.jpg
+2025-05-25 22:02:00,081 - INFO - Moved frame frame_0892.jpg to no_bucket
+2025-05-25 22:02:00,081 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0892.jpg
+2025-05-25 22:02:00,184 - INFO - Moved frame frame_0893.jpg to no_bucket
+2025-05-25 22:02:00,184 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0893.jpg
+2025-05-25 22:02:00,284 - INFO - Moved frame frame_0894.jpg to no_bucket
+2025-05-25 22:02:00,285 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0894.jpg
+2025-05-25 22:02:00,388 - INFO - Moved frame frame_0895.jpg to no_bucket
+2025-05-25 22:02:00,389 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0895.jpg
+2025-05-25 22:02:00,511 - INFO - Moved frame frame_0896.jpg to no_bucket
+2025-05-25 22:02:00,511 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0896.jpg
+2025-05-25 22:02:00,613 - INFO - Moved frame frame_0897.jpg to no_bucket
+2025-05-25 22:02:00,614 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0897.jpg
+2025-05-25 22:02:00,717 - INFO - Moved frame frame_0898.jpg to no_bucket
+2025-05-25 22:02:00,717 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0898.jpg
+2025-05-25 22:02:00,820 - INFO - Moved frame frame_0899.jpg to no_bucket
+2025-05-25 22:02:00,820 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0899.jpg
+2025-05-25 22:02:00,921 - INFO - Moved frame frame_0900.jpg to no_bucket
+2025-05-25 22:02:00,921 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0900.jpg
+2025-05-25 22:02:01,044 - INFO - Moved frame frame_0901.jpg to no_bucket
+2025-05-25 22:02:01,044 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0901.jpg
+2025-05-25 22:02:01,159 - INFO - Moved frame frame_0902.jpg to no_bucket
+2025-05-25 22:02:01,159 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0902.jpg
+2025-05-25 22:02:01,265 - INFO - Moved frame frame_0903.jpg to no_bucket
+2025-05-25 22:02:01,265 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0903.jpg
+2025-05-25 22:02:01,366 - INFO - Moved frame frame_0904.jpg to no_bucket
+2025-05-25 22:02:01,366 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0904.jpg
+2025-05-25 22:02:01,476 - INFO - Moved frame frame_0905.jpg to no_bucket
+2025-05-25 22:02:01,476 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0905.jpg
+2025-05-25 22:02:01,591 - INFO - Moved frame frame_0906.jpg to no_bucket
+2025-05-25 22:02:01,591 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0906.jpg
+2025-05-25 22:02:01,705 - INFO - Moved frame frame_0907.jpg to no_bucket
+2025-05-25 22:02:01,705 - INFO - Added no-bucket frame: data/2025-05-25_22-00-05/no_bucket\frame_0907.jpg
+2025-05-25 22:02:01,705 - INFO - Video processing completed
+2025-05-25 22:02:28,820 - INFO - Review mode включён
+2025-05-25 22:02:32,183 - INFO - Marked frame_0053.jpg as correct with 1 boxes
+2025-05-25 22:02:32,183 - INFO - Removed frame_0053.jpg from low_conf_frames
+2025-05-25 22:02:50,009 - INFO - Marked frame_0087.jpg as correct with 1 boxes
+2025-05-25 22:02:50,009 - INFO - Removed frame_0087.jpg from low_conf_frames
+2025-05-25 22:02:51,593 - INFO - Marked frame_0145.jpg as correct with 1 boxes
+2025-05-25 22:02:51,594 - INFO - Removed frame_0145.jpg from low_conf_frames
+2025-05-25 22:02:53,036 - INFO - Marked frame_0159.jpg as correct with 1 boxes
+2025-05-25 22:02:53,036 - INFO - Removed frame_0159.jpg from low_conf_frames
+2025-05-25 22:02:54,463 - INFO - Marked frame_0163.jpg as correct with 1 boxes
+2025-05-25 22:02:54,463 - INFO - Removed frame_0163.jpg from low_conf_frames
+2025-05-25 22:02:55,097 - INFO - Marked frame_0218.jpg as correct with 1 boxes
+2025-05-25 22:02:55,097 - INFO - Removed frame_0218.jpg from low_conf_frames
+2025-05-25 22:02:55,818 - INFO - Marked frame_0244.jpg as correct with 1 boxes
+2025-05-25 22:02:55,818 - INFO - Removed frame_0244.jpg from low_conf_frames
+2025-05-25 22:02:56,487 - INFO - Marked frame_0280.jpg as correct with 1 boxes
+2025-05-25 22:02:56,487 - INFO - Removed frame_0280.jpg from low_conf_frames
+2025-05-25 22:02:58,329 - INFO - Marked frame_0311.jpg as correct with 1 boxes
+2025-05-25 22:02:58,329 - INFO - Removed frame_0311.jpg from low_conf_frames
+2025-05-25 22:02:58,941 - INFO - Marked frame_0374.jpg as correct with 1 boxes
+2025-05-25 22:02:58,941 - INFO - Removed frame_0374.jpg from low_conf_frames
+2025-05-25 22:03:02,051 - INFO - Marked frame_0400.jpg as correct with 1 boxes
+2025-05-25 22:03:02,051 - INFO - Removed frame_0400.jpg from low_conf_frames
+2025-05-25 22:03:04,616 - INFO - Marked frame_0428.jpg as error, moved to deleted_frames
+2025-05-25 22:03:04,616 - INFO - Removed frame_0428.jpg from low_conf_frames
+2025-05-25 22:03:07,911 - INFO - Marked frame_0483.jpg as correct with 1 boxes
+2025-05-25 22:03:07,911 - INFO - Removed frame_0483.jpg from low_conf_frames
+2025-05-25 22:03:15,573 - INFO - Marked frame_0518.jpg as correct with 1 boxes
+2025-05-25 22:03:15,574 - INFO - Removed frame_0518.jpg from low_conf_frames
+2025-05-25 22:03:16,261 - INFO - Marked frame_0611.jpg as correct with 1 boxes
+2025-05-25 22:03:16,261 - INFO - Removed frame_0611.jpg from low_conf_frames
+2025-05-25 22:03:16,971 - INFO - Marked frame_0690.jpg as correct with 1 boxes
+2025-05-25 22:03:16,971 - INFO - Removed frame_0690.jpg from low_conf_frames
+2025-05-25 22:03:18,242 - INFO - Marked frame_0722.jpg as correct with 1 boxes
+2025-05-25 22:03:18,242 - INFO - Removed frame_0722.jpg from low_conf_frames
+2025-05-25 22:03:19,996 - INFO - Marked frame_0804.jpg as error, moved to deleted_frames
+2025-05-25 22:03:19,996 - INFO - Removed frame_0804.jpg from low_conf_frames
+2025-05-25 22:03:29,088 - INFO - Annotation mode включён
+2025-05-25 22:03:29,794 - INFO - Review mode включён

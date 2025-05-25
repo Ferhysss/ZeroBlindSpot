@@ -3,4 +3,4 @@ cnn_input_size:
 - 224
 device: cpu
 frame_rate: 1
-last_project: C:/Users/Lev/Desktop/ZeroBlindSpot/data/2025-05-25_20-19-06
+last_project: C:/Users/Lev/Desktop/ZeroBlindSpot/data/2025-05-25_23-15-51

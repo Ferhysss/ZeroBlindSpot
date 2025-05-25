@@ -14,6 +14,11 @@ import ffmpeg
 from ultralytics import YOLO
 import logging
 from logging.handlers import TimedRotatingFileHandler
+from PyQt5.QtGui import QImage, QPixmap, QPainter, QPen
+from PyQt5.QtCore import Qt, QThread, pyqtSignal, QRect, QPoint
+from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QVBoxLayout, QHBoxLayout, QPushButton, QLabel, QFileDialog, QScrollArea, QComboBox, QProgressBar
+
+
 
 # Настройка логирования
 def setup_logging(project_name="default"):
@@ -123,34 +128,41 @@ class VideoProcessor(QThread):
                     logging.info(f"Processed frame {frame_file}: bucket, conf: {conf:.2f}")
 
                     # CNN: классификация ковша
-                    if self.config.get("use_cnn", False):
-                        logging.info(f"Processing CNN for {frame_file}")
-                        state = np.random.randint(0, 3)  # Заглушка
-                        state_label = {0: "scoop", 1: "medium", 2: "neutral"}[state]
-                        if self.cnn_model:
+                    # Внутри цикла обработки кадров, после YOLO:
+                    # Внутри цикла обработки кадров:
+                    logging.info(f"Processing frame: {frame_file}")
+                    state = 2
+                    state_label = "neutral"
+                    if self.config.get("use_cnn", False) and self.cnn_model and frame_annotations:
+                        for box, conf in zip(boxes, confidences):
+                            x, y, w, h = box
+                            x1, y1 = int(x - w/2), int(y - h/2)
+                            x2, y2 = int(x + w/2), int(y + h/2)
                             try:
                                 crop = frame[y1:y2, x1:x2]
-                                logging.info(f"Crop size: {crop.shape if crop.size > 0 else 'empty'}")
                                 if crop.size == 0:
                                     logging.warning(f"Empty crop for box {box} in {frame_file}")
-                                else:
-                                    crop = cv2.resize(crop, tuple(self.config.get("cnn_input_size", [224, 224])))
-                                    crop = torch.from_numpy(crop).permute(2, 0, 1).float() / 255.0
-                                    crop = crop.unsqueeze(0).to(self.config["device"])
-                                    with torch.no_grad():
-                                        output = self.cnn_model(crop)
-                                        state = torch.argmax(output, dim=1).item()
-                                        state_label = {0: "scoop", 1: "medium", 2: "neutral"}[state]
-                                    logging.info(f"CNN classified {frame_file}: {state_label}")
+                                    continue
+                                crop = cv2.resize(crop, tuple(self.config.get("cnn_input_size", [224, 224])))
+                                crop = torch.from_numpy(crop).permute(2, 0, 1).float() / 255.0
+                                crop = crop.unsqueeze(0).to(self.config["device"])
+                                with torch.no_grad():
+                                    output = self.cnn_model(crop)
+                                    state = torch.argmax(output, dim=1).item()
+                                    state_label = {0: "scoop", 1: "medium", 2: "neutral"}[state]
+                                logging.info(f"CNN classified {frame_file}: {state_label}")
                             except Exception as e:
                                 logging.error(f"CNN failed for {frame_file}: {str(e)}")
-                        else:
-                            logging.warning(f"CNN disabled, using dummy: {frame_file}, {state_label}")
-                        os.makedirs(f"{self.output_dir}/annotations", exist_ok=True)
-                        with open(f"{self.output_dir}/annotations/cnn.csv", "a", encoding='utf-8') as f:
-                            f.write(f"{frame_file},{state},{state_label}\n")
-                            logging.info(f"Wrote to cnn.csv: {frame_file},{state},{state_label}")
-
+                                continue
+                    os.makedirs(f"{self.output_dir}/annotations", exist_ok=True)
+                    cnn_file = f"{self.output_dir}/annotations/cnn.csv"
+                    mode = "a" if os.path.exists(cnn_file) else "w"
+                    with open(cnn_file, mode, encoding='utf-8') as f:
+                        if mode == "w":
+                            f.write("frame,state,state_label\n")
+                        f.write(f"{frame_file},{state},{state_label}\n")
+                    logging.info(f"Wrote to cnn.csv: {frame_file},{state},{state_label}")
+                    
                 # Кадры без детекции
                 if not frame_annotations:
                     no_bucket_path = os.path.join(no_bucket_dir, frame_file)
@@ -181,17 +193,15 @@ class FrameViewer(QWidget):
         self.layout = QVBoxLayout(self)
         self.image_label = QLabel("Нет кадра")
         self.image_label.setAlignment(Qt.AlignCenter)
-        self.image_label.setMouseTracking(True)
         self.layout.addWidget(self.image_label)
         self.annotation_label = QLabel("Аннотации: отсутствуют")
         self.layout.addWidget(self.annotation_label)
         self.current_frame_path = None
         self.current_annotations = []
+        self.all_annotations = {}  # {frame_path: [(x, y, w, h, conf), ...]}
         self.annotation_mode = False
         self.review_mode = False
-        self.start_point = None
-        self.end_point = None
-        self.drawing = False
+        self.manual_review_mode = False
         self.no_bucket_frames = []
         self.low_conf_frames = []
         self.current_frame_index = -1
@@ -222,64 +232,90 @@ class FrameViewer(QWidget):
         self.undo_button.clicked.connect(self.undo_annotation)
         self.undo_button.setEnabled(False)
         self.control_layout.addWidget(self.undo_button)
+        self.save_button = QPushButton("Сохранить аннотации")
+        self.save_button.clicked.connect(self.save_annotations)
+        self.save_button.setEnabled(False)
+        self.control_layout.addWidget(self.save_button)
         self.layout.addLayout(self.control_layout)
 
-    def mousePressEvent(self, event):
-        if self.annotation_mode and event.button() == Qt.LeftButton and self.current_frame_path:
-            self.drawing = True
-            self.start_point = event.pos()
-            logging.info(f"Annotation started at {self.start_point}")
+    def annotate_frame(self):
+        if not self.current_frame_path or not self.annotation_mode:
+            return
+        frame = cv2.imread(self.current_frame_path)
+        if frame is None:
+            logging.error(f"Failed to read frame: {self.current_frame_path}")
+            return
+        temp_frame = frame.copy()
+        start_point = None
+        drawing = False
+        annotations = self.all_annotations.get(self.current_frame_path, []).copy()
 
-    def mouseMoveEvent(self, event):
-        if self.annotation_mode and self.drawing:
-            self.end_point = event.pos()
-            self.update()
-
-    def mouseReleaseEvent(self, event):
-        if self.annotation_mode and self.drawing:
-            self.drawing = False
-            self.end_point = event.pos()
-            if self.current_frame_path and self.image_label.pixmap():
-                pixmap = self.image_label.pixmap()
-                img_w, img_h = pixmap.width(), pixmap.height()
-                label_w, label_h = self.image_label.width(), self.image_label.height()
-                scale = min(label_w / img_w, label_h / img_h)
-                offset_x = (label_w - img_w * scale) / 2
-                offset_y = (label_h - img_h * scale) / 2
-                x1 = max(0, min((self.start_point.x() - offset_x) / scale, img_w))
-                y1 = max(0, min((self.start_point.y() - offset_y) / scale, img_h))
-                x2 = max(0, min((self.end_point.x() - offset_x) / scale, img_w))
-                y2 = max(0, min((self.end_point.y() - offset_y) / scale, img_h))
-                x, y = (x1 + x2) / 2, (y1 + y2) / 2
-                w, h = abs(x2 - x1), abs(y2 - y1)
-                if w > 0 and h > 0:
-                    self.current_annotations.append((x, y, w, h, 1.0))
+        def mouse_callback(event, x, y, flags, param):
+            nonlocal start_point, drawing, temp_frame, annotations
+            if event == cv2.EVENT_LBUTTONDOWN:
+                start_point = (x, y)
+                drawing = True
+                logging.info(f"Annotation started at ({x}, {y})")
+            elif event == cv2.EVENT_MOUSEMOVE and drawing:
+                temp_frame = frame.copy()
+                for ann in annotations:
+                    ax, ay, aw, ah, _ = ann
+                    x1, y1 = int(ax - aw/2), int(ay - ah/2)
+                    x2, y2 = int(ax + aw/2), int(ay + ah/2)
+                    cv2.rectangle(temp_frame, (x1, y1), (x2, y2), (0, 255, 0), 2)
+                cv2.rectangle(temp_frame, start_point, (x, y), (0, 255, 0), 2)
+                cv2.imshow("Annotate", temp_frame)
+            elif event == cv2.EVENT_LBUTTONUP and drawing:
+                drawing = False
+                x1, y1 = start_point
+                x2, y2 = x, y
+                x = (x1 + x2) / 2
+                y = (y1 + y2) / 2
+                w = abs(x2 - x1)
+                h = abs(y2 - y1)
+                if w > 5 and h > 5:
+                    annotations.append((x, y, w, h, 1.0))
+                    self.all_annotations[self.current_frame_path] = annotations
+                    self.current_annotations = annotations
+                    self.save_annotations()
                     logging.info(f"Added annotation: ({x}, {y}, {w}, {h})")
-                    frame_file = os.path.basename(self.current_frame_path)
-                    output_dir = os.path.dirname(os.path.dirname(self.current_frame_path))
-                    with open(f"{output_dir}/annotations/yolo.txt", "a", encoding='utf-8') as f:
-                        f.write(f"{frame_file}: bucket ({x},{y},{w},{h}), conf: 1.00\n")
-                    self.update_frame(self.current_frame_path, self.current_annotations)
+                temp_frame = frame.copy()
+                for ann in annotations:
+                    ax, ay, aw, ah, _ = ann
+                    x1, y1 = int(ax - aw/2), int(ay - ah/2)
+                    x2, y2 = int(ax + aw/2), int(ay + ah/2)
+                    cv2.rectangle(temp_frame, (x1, y1), (x2, y2), (0, 255, 0), 2)
+                cv2.imshow("Annotate", temp_frame)
 
-    def paintEvent(self, event):
-        super().paintEvent(event)
-        if self.annotation_mode and self.drawing and self.start_point and self.end_point and self.image_label.pixmap():
-            pixmap = self.image_label.pixmap().copy()
-            label_w, label_h = self.image_label.width(), self.image_label.height()
-            img_w, img_h = pixmap.width(), pixmap.height()
-            scale = min(label_w / img_w, label_h / img_h)
-            offset_x = (label_w - img_w * scale) / 2
-            offset_y = (label_h - img_h * scale) / 2
-            x1 = int((self.start_point.x() - offset_x) / scale)
-            y1 = int((self.start_point.y() - offset_y) / scale)
-            x2 = int((self.end_point.x() - offset_x) / scale)
-            y2 = int((self.end_point.y() - offset_y) / scale)
-            painter = QPainter(pixmap)
-            painter.setPen(Qt.green)
-            painter.drawRect(x1, y1, x2 - x1, y2 - y1)
-            painter.end()
-            self.image_label.setPixmap(pixmap)
-            self.image_label.update()
+        cv2.namedWindow("Annotate")
+        cv2.setMouseCallback("Annotate", mouse_callback)
+        cv2.imshow("Annotate", temp_frame)
+        while True:
+            key = cv2.waitKey(1) & 0xFF
+            if key == ord("q"):
+                cv2.destroyAllWindows()
+                break
+            if key == ord("s"):
+                self.all_annotations[self.current_frame_path] = annotations
+                self.current_annotations = annotations
+                self.save_annotations()
+                cv2.destroyAllWindows()
+                break
+            if key == ord("a"):
+                self.all_annotations[self.current_frame_path] = annotations
+                self.current_annotations = annotations
+                self.save_annotations()
+                cv2.destroyAllWindows()
+                self.prev_frame()
+                break
+            if key == ord("d"):
+                self.all_annotations[self.current_frame_path] = annotations
+                self.current_annotations = annotations
+                self.save_annotations()
+                cv2.destroyAllWindows()
+                self.next_frame()
+                break
+        self.update_frame(self.current_frame_path, self.current_annotations)
 
     def update_frame(self, frame_path, annotations):
         if not frame_path:
@@ -291,10 +327,12 @@ class FrameViewer(QWidget):
             self.correct_button.setEnabled(False)
             self.error_button.setEnabled(False)
             self.undo_button.setEnabled(False)
+            self.save_button.setEnabled(False)
             return
 
         self.current_frame_path = frame_path
         self.current_annotations = annotations
+        self.all_annotations[frame_path] = annotations  # Сохранить
         frame = cv2.imread(frame_path)
         if frame is None:
             logging.error(f"Failed to read frame: {frame_path}")
@@ -313,7 +351,6 @@ class FrameViewer(QWidget):
         self.image_label.setPixmap(QPixmap.fromImage(q_image).scaled(640, 480, Qt.KeepAspectRatio))
         self.annotation_label.setText(f"Аннотации: {len(annotations)} box(es)")
 
-        # Обновление кнопок
         frames = self.no_bucket_frames if self.annotation_mode else [f[0] for f in self.low_conf_frames]
         self.prev_button.setEnabled(self.current_frame_index > 0)
         self.next_button.setEnabled(self.current_frame_index < len(frames) - 1)
@@ -321,6 +358,9 @@ class FrameViewer(QWidget):
         self.correct_button.setEnabled(bool(self.current_frame_path) and self.review_mode)
         self.error_button.setEnabled(bool(self.current_frame_path) and self.review_mode)
         self.undo_button.setEnabled(bool(self.current_frame_path) and self.annotation_mode and len(self.current_annotations) > 0)
+        self.save_button.setEnabled(bool(self.current_frame_path) and self.annotation_mode and len(self.current_annotations) > 0)
+        if self.annotation_mode:
+            self.annotate_frame()
 
     def add_no_bucket_frame(self, frame_path):
         self.no_bucket_frames.append(frame_path)
@@ -330,31 +370,86 @@ class FrameViewer(QWidget):
         self.low_conf_frames.append((frame_path, annotations))
         logging.info(f"Added low-conf frame: {frame_path}")
 
+    def load_manual_frames(self):
+        output_dir = os.path.dirname(os.path.dirname(self.no_bucket_frames[0])) if self.no_bucket_frames else ""
+        if not output_dir:
+            return
+        yolo_file = os.path.join(output_dir, "annotations", "yolo.txt")
+        frame_dir = os.path.join(output_dir, "frames")
+        self.low_conf_frames = []
+        manual_frames = {}
+        if os.path.exists(yolo_file):
+            with open(yolo_file, "r", encoding='utf-8') as f:
+                for line in f:
+                    if "(manual)" in line:
+                        frame_file = line.split(":")[0].strip()
+                        parts = line.split(": bucket (")[1].split(", conf: ")
+                        coords = parts[0].strip("()").split(",")
+                        x, y, w, h = map(float, coords)
+                        conf = float(parts[1].split()[0])
+                        frame_path = os.path.join(frame_dir, frame_file)
+                        if frame_file not in manual_frames:
+                            manual_frames[frame_file] = []
+                        manual_frames[frame_file].append((x, y, w, h, conf))
+        for frame_file, annotations in manual_frames.items():
+            frame_path = os.path.join(frame_dir, frame_file)
+            if os.path.exists(frame_path):
+                self.low_conf_frames.append((frame_path, annotations))
+        logging.info(f"Loaded {len(self.low_conf_frames)} manual annotation frames")
+
     def show_frame(self, index, is_annotation_mode):
         frames = self.no_bucket_frames if is_annotation_mode else [f[0] for f in self.low_conf_frames]
         annotations = [] if is_annotation_mode else self.low_conf_frames[index][1] if index < len(self.low_conf_frames) else []
         if 0 <= index < len(frames):
             self.current_frame_index = index
-            self.update_frame(frames[index], annotations)
-            self.update_status.emit(f"Кадр {index + 1}/{len(frames)} {'без ковша' if is_annotation_mode else 'с низкой уверенностью'}")
+            frame_path = frames[index]
+            output_dir = os.path.dirname(os.path.dirname(frame_path))
+            yolo_file = os.path.join(output_dir, "annotations", "yolo.txt")
+            annotations = self.all_annotations.get(frame_path, [])
+            if os.path.exists(yolo_file):
+                frame_file = os.path.basename(frame_path)
+                with open(yolo_file, "r", encoding='utf-8') as f:
+                    for line in f:
+                        if frame_file in line and ": bucket" in line and "(manual)" in line:
+                            parts = line.split(": bucket (")[1].split(", conf: ")
+                            coords = parts[0].strip("()").split(",")
+                            x, y, w, h = map(float, coords)
+                            conf = float(parts[1].split()[0])
+                            if not any(a[:4] == (x, y, w, h) for a in annotations):
+                                annotations.append((x, y, w, h, conf))
+            self.all_annotations[frame_path] = annotations
+            self.update_frame(frame_path, annotations)
+            status = f"Кадр {index + 1}/{len(frames)} {'без ковша' if is_annotation_mode else 'с низкой уверенностью'}. Фреймов без детекции: {len(self.no_bucket_frames)}"
+            if self.manual_review_mode:
+                status = f"Кадр {index + 1}/{len(frames)} с ручной аннотацией. Фреймов без детекции: {len(self.no_bucket_frames)}"
+            self.update_status.emit(status)
         else:
             self.update_frame("", [])
-            self.update_status.emit(f"Нет кадров {'без ковша' if is_annotation_mode else 'с низкой уверенностью'}")
+            self.update_status.emit(f"Нет кадров {'без ковша' if is_annotation_mode else 'с низкой уверенностью'}. Фреймов без детекции: {len(self.no_bucket_frames)}")
 
     def prev_frame(self):
+        if self.current_frame_path and self.annotation_mode and self.current_annotations:
+            self.save_annotations()
         new_index = self.current_frame_index - 1
         if new_index >= 0:
             self.show_frame(new_index, self.annotation_mode)
+            logging.info(f"Previous frame, index: {new_index}")
         else:
             self.update_status.emit("Нет предыдущих кадров")
 
     def next_frame(self):
-        new_index = self.current_frame_index + 1
+        if self.current_frame_path and self.annotation_mode and self.current_annotations:
+            self.save_annotations()
         frames = self.no_bucket_frames if self.annotation_mode else [f[0] for f in self.low_conf_frames]
-        if new_index < len(frames):
-            self.show_frame(new_index, self.annotation_mode)
+        if self.current_frame_index + 1 < len(frames):
+            self.current_frame_index += 1
+            self.show_frame(self.current_frame_index, self.annotation_mode)
+            logging.info(f"Next frame, index: {self.current_frame_index}, total: {len(frames)}")
         else:
-            self.update_status.emit("Нет следующих кадров")
+            self.current_frame_index = -1
+            self.update_frame("", [])
+            self.update_status.emit(f"Проверка завершена, кадров: {len(frames)}")
+            logging.info(f"Review completed, total frames: {len(frames)}")
 
     def delete_frame(self):
         if self.current_frame_path and self.annotation_mode and self.current_frame_index >= 0:
@@ -378,24 +473,77 @@ class FrameViewer(QWidget):
                 f.write(f"{frame_file}: removed last annotation\n")
         self.undo_button.setEnabled(len(self.current_annotations) > 0)
 
+    def save_annotations(self):
+        if self.current_frame_path and self.current_annotations:
+            frame_file = os.path.basename(self.current_frame_path)
+            output_dir = os.path.dirname(os.path.dirname(self.current_frame_path))
+            frame_dir = os.path.join(output_dir, "frames")
+            no_bucket_dir = os.path.join(output_dir, "no_bucket")
+            os.makedirs(f"{output_dir}/annotations", exist_ok=True)
+            os.makedirs(frame_dir, exist_ok=True)
+            # Сохранить аннотации
+            with open(f"{output_dir}/annotations/yolo.txt", "a", encoding='utf-8') as f:
+                for x, y, w, h, conf in self.current_annotations:
+                    f.write(f"{frame_file}: bucket ({x},{y},{w},{h}), conf: {conf:.2f} (manual)\n")
+            # Переместить фрейм
+            if self.current_frame_path.startswith(no_bucket_dir):
+                new_path = os.path.join(frame_dir, frame_file)
+                shutil.move(self.current_frame_path, new_path)
+                self.current_frame_path = new_path
+                if self.current_frame_index < len(self.no_bucket_frames):
+                    self.no_bucket_frames[self.current_frame_index] = new_path
+                else:
+                    self.no_bucket_frames.append(new_path)
+                logging.info(f"Moved {frame_file} to frames for training")
+            self.all_annotations[self.current_frame_path] = self.current_annotations
+            logging.info(f"Saved annotations for {frame_file}: {len(self.current_annotations)} boxes")
+            self.update_status.emit(f"Аннотации сохранены для {frame_file}. Фреймов без детекции: {len(self.no_bucket_frames)}")
+
     def mark_correct(self):
         if self.current_frame_path and self.review_mode:
             frame_file = os.path.basename(self.current_frame_path)
             output_dir = os.path.dirname(os.path.dirname(self.current_frame_path))
+            frame_dir = os.path.join(output_dir, "frames")
+            no_bucket_dir = os.path.join(output_dir, "no_bucket")
             os.makedirs(f"{output_dir}/annotations", exist_ok=True)
+            os.makedirs(frame_dir, exist_ok=True)
+            # Переместить из no_bucket
+            if self.current_frame_path.startswith(no_bucket_dir):
+                new_path = os.path.join(frame_dir, frame_file)
+                shutil.move(self.current_frame_path, new_path)
+                self.current_frame_path = new_path
+                logging.info(f"Moved {frame_file} from no_bucket to frames")
+            # Обновить yolo.txt
+            with open(f"{output_dir}/annotations/yolo.txt", "a", encoding='utf-8') as f:
+                for x, y, w, h, conf in self.current_annotations:
+                    f.write(f"{frame_file}: bucket ({x},{y},{w},{h}), conf: {conf:.2f} (confirmed)\n")
+            # Сохранить в review.txt
             with open(f"{output_dir}/annotations/review.txt", "a", encoding='utf-8') as f:
                 f.write(f"{frame_file}: correct, boxes: {self.current_annotations}\n")
-            logging.info(f"Marked {frame_file} as correct")
+            logging.info(f"Marked {frame_file} as correct with {len(self.current_annotations)} boxes, index: {self.current_frame_index}")
+            # Удалить из low_conf_frames
+            if self.low_conf_frames and self.current_frame_index < len(self.low_conf_frames):
+                del self.low_conf_frames[self.current_frame_index]
+                self.current_frame_index -= 1  # Компенсировать удаление
             self.next_frame()
 
     def mark_error(self):
         if self.current_frame_path and self.review_mode:
             frame_file = os.path.basename(self.current_frame_path)
             output_dir = os.path.dirname(os.path.dirname(self.current_frame_path))
+            deleted_dir = os.path.join(output_dir, "deleted_frames")
             os.makedirs(f"{output_dir}/annotations", exist_ok=True)
+            os.makedirs(deleted_dir, exist_ok=True)
+            # Переместить в deleted_frames
+            new_path = os.path.join(deleted_dir, frame_file)
+            shutil.move(self.current_frame_path, new_path)
             with open(f"{output_dir}/annotations/review.txt", "a", encoding='utf-8') as f:
                 f.write(f"{frame_file}: error, boxes: {self.current_annotations}\n")
-            logging.info(f"Marked {frame_file} as error")
+            logging.info(f"Marked {frame_file} as error, moved to deleted_frames, index: {self.current_frame_index}")
+            # Удалить из low_conf_frames
+            if self.low_conf_frames and self.current_frame_index < len(self.low_conf_frames):
+                del self.low_conf_frames[self.current_frame_index]
+                self.current_frame_index -= 1  # Компенсировать удаление
             self.next_frame()
 
 class MainWindow(QMainWindow):
@@ -447,6 +595,11 @@ class MainWindow(QMainWindow):
         self.review_button.setEnabled(False)
         self.review_button.clicked.connect(self.toggle_review)
         control_layout.addWidget(self.review_button)
+
+        self.manual_review_button = QPushButton("Проверить ручные аннотации")
+        self.manual_review_button.clicked.connect(self.toggle_manual_review)
+        self.manual_review_button.setEnabled(False)
+        control_layout.addWidget(self.manual_review_button)  # Добавлено в control_layout
 
         main_layout.addWidget(control_widget, 1)
 
@@ -552,6 +705,7 @@ class MainWindow(QMainWindow):
             self.process_video(file_name)
 
     def load_project(self):
+        cv2.destroyAllWindows()  # Закрыть OpenCV
         project_dir = QFileDialog.getExistingDirectory(self, "Выберите папку проекта", "data")
         if project_dir:
             self.status_label.setText(f"Загружен проект: {project_dir}")
@@ -559,33 +713,48 @@ class MainWindow(QMainWindow):
             self.frame_viewer.no_bucket_frames = []
             self.frame_viewer.low_conf_frames = []
             self.frame_viewer.current_frame_index = -1
+            self.frame_viewer.all_annotations = {}  # Сброс аннотаций
             frame_dir = os.path.join(project_dir, "frames")
             no_bucket_dir = os.path.join(project_dir, "no_bucket")
+            deleted_dir = os.path.join(project_dir, "deleted_frames")
+            review_file = os.path.join(project_dir, "annotations", "review.txt")
+            reviewed_frames = set()
+            if os.path.exists(review_file):
+                with open(review_file, "r", encoding='utf-8') as f:
+                    for line in f:
+                        frame_file = line.split(":")[0].strip()
+                        reviewed_frames.add(frame_file)
+            # Загрузить no_bucket
             if os.path.exists(no_bucket_dir):
                 for frame_file in sorted(os.listdir(no_bucket_dir)):
-                    self.frame_viewer.add_no_bucket_frame(os.path.join(no_bucket_dir, frame_file))
+                    if frame_file not in reviewed_frames:
+                        self.frame_viewer.add_no_bucket_frame(os.path.join(no_bucket_dir, frame_file))
+            # Загрузить frames
             if os.path.exists(frame_dir):
                 for frame_file in sorted(os.listdir(frame_dir)):
-                    frame_path = os.path.join(frame_dir, frame_file)
-                    annotations = []
-                    yolo_file = os.path.join(project_dir, "annotations", "yolo.txt")
-                    if os.path.exists(yolo_file):
-                        with open(yolo_file, "r", encoding='utf-8') as f:
-                            for line in f:
-                                if frame_file in line and ": bucket" in line:
-                                    parts = line.split(": bucket (")[1].split(", conf: ")
-                                    coords = parts[0].strip("()").split(",")
-                                    x, y, w, h = map(float, coords)
-                                    conf = float(parts[1])
-                                    annotations.append((x, y, w, h, conf))
-                    if any(conf < 0.6 for _, _, _, _, conf in annotations):
-                        self.frame_viewer.add_low_conf_frame(frame_path, annotations)
-                    self.frame_viewer.update_frame(frame_path, annotations)
+                    if frame_file not in reviewed_frames:
+                        frame_path = os.path.join(frame_dir, frame_file)
+                        annotations = []
+                        yolo_file = os.path.join(project_dir, "annotations", "yolo.txt")
+                        if os.path.exists(yolo_file):
+                            with open(yolo_file, "r", encoding='utf-8') as f:
+                                for line in f:
+                                    if frame_file in line and ": bucket" in line and "(confirmed)" not in line:
+                                        parts = line.split(": bucket (")[1].split(", conf: ")
+                                        coords = parts[0].strip("()").split(",")
+                                        x, y, w, h = map(float, coords)
+                                        conf = float(parts[1].split()[0])
+                                        annotations.append((x, y, w, h, conf))
+                        if annotations and any(conf < 0.6 for _, _, _, _, conf in annotations):
+                            self.frame_viewer.add_low_conf_frame(frame_path, annotations)
+                        self.frame_viewer.update_frame(frame_path, annotations)
             self.annotate_button.setEnabled(True)
             self.review_button.setEnabled(True)
             self.config["last_project"] = project_dir
             with open("config/config.yaml", "w", encoding='utf-8') as f:
                 yaml.safe_dump(self.config, f, allow_unicode=True)
+            logging.info(f"Loaded {len(self.frame_viewer.low_conf_frames)} low-conf frames, {len(self.frame_viewer.no_bucket_frames)} no-bucket frames")
+            self.manual_review_button.setEnabled(True)
 
     def process_video(self, video_path):
         if not self.yolo_model:
@@ -621,8 +790,11 @@ class MainWindow(QMainWindow):
         logging.info(f"Annotation mode {status}")
         if self.frame_viewer.annotation_mode and self.frame_viewer.no_bucket_frames:
             self.frame_viewer.show_frame(0, True)
+            self.frame_viewer.annotate_frame()
         elif self.frame_viewer.annotation_mode:
             self.status_label.setText("Режим аннотации: нет кадров без ковша")
+        else:
+            cv2.destroyAllWindows()  # Закрыть OpenCV
 
     def toggle_review(self):
         self.frame_viewer.annotation_mode = False
@@ -634,6 +806,22 @@ class MainWindow(QMainWindow):
             self.frame_viewer.show_frame(0, False)
         elif self.frame_viewer.review_mode:
             self.status_label.setText("Режим проверки: нет кадров с низкой уверенностью")
+
+    def toggle_manual_review(self):
+        self.frame_viewer.annotation_mode = False
+        self.frame_viewer.review_mode = not self.frame_viewer.review_mode
+        self.frame_viewer.manual_review_mode = self.frame_viewer.review_mode
+        status = "включён" if self.frame_viewer.review_mode else "выключён"
+        self.status_label.setText(f"Режим проверки ручных аннотаций: {status}")
+        logging.info(f"Manual review mode {status}")
+        if self.frame_viewer.review_mode:
+            self.frame_viewer.load_manual_frames()
+            if self.frame_viewer.low_conf_frames:
+                self.frame_viewer.show_frame(0, False)
+            else:
+                self.status_label.setText("Режим проверки ручных аннотаций: нет кадров")
+        else:
+            cv2.destroyAllWindows()
 
     def on_processing_finished(self):
         self.load_button.setEnabled(True)
