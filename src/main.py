@@ -40,6 +40,7 @@ class VideoProcessor(QThread):
     def run(self):
         try:
             # Разбиение видео на кадры
+            self.status.emit("Разбиение видео на кадры...")
             output_dir = "data/frames"
             os.makedirs(output_dir, exist_ok=True)
             frame_rate = self.config.get("frame_rate", 1)
@@ -55,6 +56,7 @@ class VideoProcessor(QThread):
                 return
 
             # Обработка кадров
+            self.status.emit("Обработка кадров...")
             total_frames = len(frame_files)
             for i, frame_file in enumerate(frame_files):
                 frame_path = os.path.join(output_dir, frame_file)
@@ -165,6 +167,11 @@ class MainWindow(QMainWindow):
         self.load_button.clicked.connect(self.load_video)
         control_layout.addWidget(self.load_button)
 
+        self.annotate_button = QPushButton("Режим аннотации")
+        self.annotate_button.setEnabled(False)
+        self.annotate_button.clicked.connect(self.toggle_annotation)
+        control_layout.addWidget(self.annotate_button)
+
         main_layout.addWidget(control_widget, 1)
 
         # Правая панель: просмотр кадров
@@ -253,7 +260,13 @@ class MainWindow(QMainWindow):
         self.processor.frame_processed.connect(self.frame_viewer.update_frame)
         self.processor.finished.connect(self.on_processing_finished)
         self.load_button.setEnabled(False)
+        self.annotate_button.setEnabled(True)
         self.processor.start()
+
+    def toggle_annotation(self):
+        # Заглушка для режима аннотации
+        self.status_label.setText("Режим аннотации: в разработке")
+        logging.info("Annotation mode toggled (not implemented)")
 
     def on_processing_finished(self):
         self.load_button.setEnabled(True)
