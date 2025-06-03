@@ -1,5 +1,5 @@
 from typing import Optional
-from PyQt5.QtWidgets import QMainWindow, QWidget, QVBoxLayout, QHBoxLayout, QPushButton, QFileDialog, QLabel, QProgressBar
+from PyQt5.QtWidgets import QMainWindow, QWidget, QVBoxLayout, QHBoxLayout, QPushButton, QFileDialog, QLabel, QProgressBar, QComboBox
 from PyQt5.QtCore import Qt
 from core.interfaces.module import ModuleInterface
 from core.config import Config
@@ -10,6 +10,7 @@ from core.models.cnn import SimpleCNN
 import torch
 import logging
 from datetime import datetime
+import os
 
 class OperatorModule(QMainWindow, ModuleInterface):
     def __init__(self):
@@ -20,6 +21,11 @@ class OperatorModule(QMainWindow, ModuleInterface):
         self.yolo_model: Optional[YoloModel] = None
         self.cnn_model: Optional[SimpleCNN] = None
         self.device = self._get_device()
+        self.excavators = {
+            "Экскаватор A": 1.5,
+            "Экскаватор B": 2.0,
+            "Экскаватор C": 2.5
+        }
         self._init_models()
         self._init_ui()
 
@@ -28,7 +34,6 @@ class OperatorModule(QMainWindow, ModuleInterface):
         self.setCentralWidget(central_widget)
         main_layout = QHBoxLayout(central_widget)
 
-        # Левая панель
         control_widget = QWidget()
         control_layout = QVBoxLayout(control_widget)
         self.status_label = QLabel("Ожидание загрузки видео...")
@@ -37,17 +42,22 @@ class OperatorModule(QMainWindow, ModuleInterface):
         self.progress_bar = QProgressBar()
         control_layout.addWidget(self.progress_bar)
 
+        self.excavator_combo = QComboBox()
+        self.excavator_combo.addItems(self.excavators.keys())
+        self.excavator_combo.currentTextChanged.connect(self._update_excavator)
+        excavator = self.config.get("excavator", "Экскаватор A")
+        self.excavator_combo.setCurrentText(excavator)
+        control_layout.addWidget(self.excavator_combo)
+
         self.load_button = QPushButton("Загрузить видео")
         self.load_button.clicked.connect(self._load_video)
         control_layout.addWidget(self.load_button)
 
         main_layout.addWidget(control_widget, 1)
 
-        # Правая панель
         self.result_viewer = ResultViewer()
         main_layout.addWidget(self.result_viewer, 3)
 
-        # Стили
         try:
             with open("config/styles.qss", "r", encoding='utf-8') as f:
                 self.setStyleSheet(f.read())
@@ -75,6 +85,11 @@ class OperatorModule(QMainWindow, ModuleInterface):
     def _get_device(self) -> torch.device:
         config_device = self.config.get("device", "auto")
         return torch.device("cuda" if config_device == "auto" and torch.cuda.is_available() else config_device)
+
+    def _update_excavator(self, excavator: str):
+        self.config.update("excavator", excavator)
+        self.config.update("bucket_volume", self.excavators[excavator])
+        logging.info(f"Excavator: {exavator}, Bucket volume: {self.excavators[excavator]} m³")
 
     def _load_video(self):
         file_name, _ = QFileDialog.getOpenFileName(self, "Выберите видео", "", "Video Files (*.mp4)")
