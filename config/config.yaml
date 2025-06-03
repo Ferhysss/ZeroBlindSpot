@@ -1,6 +1,11 @@
+bucket_volume: 1.5
 cnn_input_size:
 - 224
 - 224
-device: cpu
+device: auto
+excavator: Экскаватор A
 frame_rate: 1
-last_project: C:/Users/Lev/Desktop/ZeroBlindSpot/data/2025-05-25_23-15-51
+last_project: ''
+project_name: default
+use_cnn: false
+yolo_conf_threshold: 0.5

@@ -1,0 +1,9 @@
+numpy==1.26.4
+PyQt5==5.15.10
+opencv-python==4.10.0.84
+torch==2.3.0
+torchvision==0.18.0
+ultralytics==8.2.27
+pyyaml==6.0.1
+ffmpeg-python==0.2.0
+pytest==8.2.1

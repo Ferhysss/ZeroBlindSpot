@@ -1,0 +1,3 @@
+2025-06-04 00:01:36,607 - INFO - Logging initialized
+2025-06-04 00:01:36,797 - INFO - YOLO model loaded: models/model.pt
+2025-06-04 00:01:36,798 - INFO - YOLO loaded
