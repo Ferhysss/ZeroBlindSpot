@@ -4,8 +4,8 @@ cnn_input_size:
 - 224
 device: auto
 excavator: Экскаватор A
-frame_rate: 1
-last_project: ''
+frame_rate: 1.0
+last_project: data/1st try
 project_name: default
 use_cnn: false
 yolo_conf_threshold: 0.5

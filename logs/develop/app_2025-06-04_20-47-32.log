@@ -1,0 +1,4 @@
+2025-06-04 20:47:32,647 - INFO - Logging initialized
+2025-06-04 20:47:33,013 - INFO - YOLO model loaded: models/model.pt
+2025-06-04 20:47:33,013 - INFO - YOLO loaded
+2025-06-04 20:47:44,106 - INFO - Video: C:/Users/Lev/Desktop/covsh/test/videos/11.mp4

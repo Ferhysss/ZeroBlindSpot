@@ -1,0 +1,8 @@
+2025-06-04 21:08:43,472 - INFO - Logging initialized
+2025-06-04 21:08:43,634 - INFO - YOLO model loaded: models/model.pt
+2025-06-04 21:08:43,634 - INFO - YOLO loaded
+2025-06-04 21:09:04,789 - INFO - Video: C:/Users/Lev/Desktop/covsh/test/videos/11.mp4
+2025-06-04 21:09:05,976 - INFO - Frames saved in data/2025-06-04_21-09-04/frames
+2025-06-04 21:09:13,867 - INFO - Processing completed
+2025-06-04 21:09:43,987 - INFO - Mouse press at PyQt5.QtCore.QPoint(660, 289)
+2025-06-04 21:09:55,188 - INFO - Mouse press at PyQt5.QtCore.QPoint(658, 257)

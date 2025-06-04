@@ -5,20 +5,26 @@ from core.interfaces.module import ModuleInterface
 from core.config import Config
 from developer.ui.frame_viewer import FrameViewer
 from developer.processor import DeveloperProcessor
+from developer.trainer import Trainer
 from core.models.yolo import YoloModel
 from core.models.cnn import SimpleCNN
 import torch
 import logging
+import os
+import yaml
+from datetime import datetime
 
 class DeveloperModule(QMainWindow, ModuleInterface):
-    def __init__(self):
+    def __init__(self, project_dir: Optional[str] = None, video_path: Optional[str] = None):
         super().__init__()
         self.setWindowTitle("ZeroBlindSpot - Developer")
-        self.setGeometry(100, 100, 1000, 600)
+        self.setMinimumSize(1000, 600)  # Минимальный размер окна
         self.config = Config()
         self.yolo_model: Optional[YoloModel] = None
         self.cnn_model: Optional[SimpleCNN] = None
         self.device = self._get_device()
+        self.project_dir = project_dir
+        self.video_path = video_path
         self.excavators = {
             "Экскаватор A": 1.5,
             "Экскаватор B": 2.0,
@@ -26,13 +32,14 @@ class DeveloperModule(QMainWindow, ModuleInterface):
         }
         self._init_models()
         self._init_ui()
+        if self.project_dir and self.video_path:
+            self._load_project()
 
     def _init_ui(self):
         central_widget = QWidget()
         self.setCentralWidget(central_widget)
         main_layout = QHBoxLayout(central_widget)
 
-        # Левая панель
         control_widget = QWidget()
         control_layout = QVBoxLayout(control_widget)
         self.status_label = QLabel("Ожидание загрузки видео...")
@@ -41,7 +48,6 @@ class DeveloperModule(QMainWindow, ModuleInterface):
         self.progress_bar = QProgressBar()
         control_layout.addWidget(self.progress_bar)
 
-        # Выбор устройства
         self.device_combo = QComboBox()
         self.device_combo.addItems(["auto", "cpu"])
         if torch.cuda.is_available():
@@ -49,7 +55,6 @@ class DeveloperModule(QMainWindow, ModuleInterface):
         self.device_combo.currentTextChanged.connect(self._update_device)
         control_layout.addWidget(self.device_combo)
 
-        # Выбор экскаватора
         self.excavator_combo = QComboBox()
         self.excavator_combo.addItems(self.excavators.keys())
         self.excavator_combo.currentTextChanged.connect(self._update_excavator)
@@ -57,36 +62,40 @@ class DeveloperModule(QMainWindow, ModuleInterface):
         self.excavator_combo.setCurrentText(excavator)
         control_layout.addWidget(self.excavator_combo)
 
-        self.load_button = QPushButton("Загрузить видео")
-        self.load_button.clicked.connect(self._load_video)
-        control_layout.addWidget(self.load_button)
-
-        self.extract_button = QPushButton("Извлечь кадры")
-        self.extract_button.clicked.connect(self._extract_frames)
-        control_layout.addWidget(self.extract_button)
-
         self.class_combo = QComboBox()
-        self.class_combo.addItems(["bucket"])  # Можно добавить другие классы позже
+        self.class_combo.addItems(["bucket"])
         self.class_combo.currentTextChanged.connect(self._update_class)
         control_layout.addWidget(self.class_combo)
 
-        self.train_button = QPushButton("Обучить YOLO")
-        self.train_button.clicked.connect(self._train_yolo)
-        control_layout.addWidget(self.train_button)
+        self.load_button = QPushButton("Загрузить видео")
+        self.load_button.clicked.connect(self._load_video)
+        control_layout.addWidget(self.load_button)
 
         self.annotate_button = QPushButton("Режим аннотации")
         self.annotate_button.setEnabled(False)
         self.annotate_button.clicked.connect(self._toggle_annotation)
         control_layout.addWidget(self.annotate_button)
 
+        self.review_button = QPushButton("Режим ревью")
+        self.review_button.setEnabled(False)
+        self.review_button.clicked.connect(self._toggle_review)
+        control_layout.addWidget(self.review_button)
+
+        self.extract_button = QPushButton("Извлечь кадры")
+        self.extract_button.setToolTip("Извлечь все кадры из видео для ручной аннотации")
+        self.extract_button.clicked.connect(self._extract_frames)
+        control_layout.addWidget(self.extract_button)
+
+        self.train_button = QPushButton("Обучить YOLO")
+        self.train_button.clicked.connect(self._train_yolo)
+        control_layout.addWidget(self.train_button)
+
         main_layout.addWidget(control_widget, 1)
 
-        # Правая панель
         self.frame_viewer = FrameViewer()
         self.frame_viewer.update_status.connect(self.status_label.setText)
         main_layout.addWidget(self.frame_viewer, 3)
 
-        # Стили
         try:
             with open("config/styles.qss", "r", encoding='utf-8') as f:
                 self.setStyleSheet(f.read())
@@ -136,16 +145,40 @@ class DeveloperModule(QMainWindow, ModuleInterface):
     def _load_video(self):
         file_name, _ = QFileDialog.getOpenFileName(self, "Выберите видео", "", "Video Files (*.mp4 *.avi)")
         if file_name:
+            self.video_path = file_name
             self.status_label.setText(f"Загружено: {file_name}")
             self.progress_bar.setValue(0)
             self.frame_viewer.update_frame("", [])
             logging.info(f"Video: {file_name}")
-            self._process_video(file_name)
+            self._process_video()
+
+    def _load_project(self):
+        """Загружает существующий проект."""
+        if not self.project_dir or not os.path.exists(self.project_dir):
+            self.status_label.setText("Ошибка: проект не найден")
+            return
+        project_config_path = os.path.join(self.project_dir, "project.yaml")
+        if os.path.exists(project_config_path):
+            with open(project_config_path, "r", encoding='utf-8') as f:
+                project_config = yaml.safe_load(f)
+                self.config.update("excavator", project_config.get("excavator", "Экскаватор A"))
+                self.config.update("frame_rate", project_config.get("frame_rate", 1))
+                self.excavator_combo.setCurrentText(project_config.get("excavator", "Экскаватор A"))
+            self.status_label.setText(f"Проект загружен: {self.project_dir}")
+            logging.info(f"Project loaded: {self.project_dir}")
+            self._process_video()
+        else:
+            self.status_label.setText("Ошибка: конфигурация проекта не найдена")
+
+    def _extract_frames(self):
+        file_name, _ = QFileDialog.getOpenFileName(self, "Выберите видео", "", "Video Files (*.mp4 *.avi)")
+        if file_name:
+            self.status_label.setText(f"Извлечение кадров: {file_name}")
+            self.processor.extract_frames(file_name)
 
     def _train_yolo(self):
         data_path, _ = QFileDialog.getOpenFileName(self, "Выберите data.yaml", "", "YAML Files (*.yaml)")
         if data_path:
-            from developer.trainer import Trainer
             self.status_label.setText("Обучение YOLO...")
             self.train_button.setEnabled(False)
             trainer = Trainer(self.config)
@@ -156,22 +189,17 @@ class DeveloperModule(QMainWindow, ModuleInterface):
                 self.status_label.setText(f"Ошибка обучения: {str(e)}")
             self.train_button.setEnabled(True)
 
-    def _extract_frames(self):
-        file_name, _ = QFileDialog.getOpenFileName(self, "Выберите видео", "", "Video Files (*.mp4 *.avi)")
-        if file_name:
-            self.status_label.setText(f"Извлечение кадров: {file_name}")
-            self.processor.extract_frames(file_name)
-
-    def _process_video(self, video_path: str):
+    def _process_video(self):
         if not self.yolo_model:
             self.status_label.setText("Ошибка: YOLO не загружен")
             return
-        timestamp = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
-        output_dir = f"data/{timestamp}"
+        if not self.project_dir:
+            self.project_dir = f"data/project_{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}"
+        os.makedirs(self.project_dir, exist_ok=True)
         self.frame_viewer.no_bucket_frames = []
         self.frame_viewer.low_conf_frames = []
         self.frame_viewer.current_frame_index = -1
-        self.processor = DeveloperProcessor(video_path, self.yolo_model, self.cnn_model, self.config, output_dir)
+        self.processor = DeveloperProcessor(self.video_path, self.yolo_model, self.cnn_model, self.config, self.project_dir)
         self.processor.progress.connect(self.progress_bar.setValue)
         self.processor.status.connect(self.status_label.setText)
         self.processor.frame_processed.connect(self.frame_viewer.update_frame)
@@ -180,7 +208,17 @@ class DeveloperModule(QMainWindow, ModuleInterface):
         self.processor.finished.connect(self._on_processing_finished)
         self.load_button.setEnabled(False)
         self.annotate_button.setEnabled(True)
-        self.config.update("last_project", output_dir)
+        self.review_button.setEnabled(True)
+        self.config.update("last_project", self.project_dir)
+        # Сохраняем конфигурацию проекта
+        project_config = {
+            "video_path": self.video_path,
+            "excavator": self.config.get("excavator", "Экскаватор A"),
+            "frame_rate": self.config.get("frame_rate", 1),
+            "project_dir": self.project_dir
+        }
+        with open(os.path.join(self.project_dir, "project.yaml"), "w", encoding='utf-8') as f:
+            yaml.safe_dump(project_config, f)
         self.processor.start()
 
     def _toggle_annotation(self):
@@ -189,10 +227,21 @@ class DeveloperModule(QMainWindow, ModuleInterface):
         status = "включён" if self.frame_viewer.annotation_mode else "выключён"
         self.status_label.setText(f"Режим аннотации: {status}")
         if self.frame_viewer.annotation_mode and self.frame_viewer.no_bucket_frames:
-            self.frame_viewer.show_frame(0, True)
+            self.frame_viewer.show_frame(0, False)
             self.frame_viewer.annotate_frame()
         elif self.frame_viewer.annotation_mode:
             self.status_label.setText("Режим аннотации: нет кадров без ковша")
+
+    def _toggle_review(self):
+        self.frame_viewer.annotation_mode = False
+        self.frame_viewer.review_mode = not self.frame_viewer.review_mode
+        status = "включён" if self.frame_viewer.review_mode else "выключён"
+        self.status_label.setText(f"Режим ревью: {status}")
+        if self.frame_viewer.review_mode and self.frame_viewer.low_conf_frames:
+            self.frame_viewer.show_frame(0, True)
+            self.frame_viewer.annotate_frame()
+        elif self.frame_viewer.review_mode:
+            self.status_label.setText("Режим ревью: нет низкоконфиденциальных кадров")
 
     def _on_processing_finished(self):
         self.load_button.setEnabled(True)

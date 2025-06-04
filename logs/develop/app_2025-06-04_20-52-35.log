@@ -1,0 +1,6 @@
+2025-06-04 20:52:35,230 - INFO - Logging initialized
+2025-06-04 20:52:35,387 - INFO - YOLO model loaded: models/model.pt
+2025-06-04 20:52:35,387 - INFO - YOLO loaded
+2025-06-04 20:52:47,052 - INFO - Video: C:/Users/Lev/Desktop/covsh/test/videos/11.mp4
+2025-06-04 20:52:48,258 - INFO - Frames saved in data/2025-06-04_20-52-47/frames
+2025-06-04 20:52:58,810 - INFO - Processing completed

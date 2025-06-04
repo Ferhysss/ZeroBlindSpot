@@ -1,0 +1,11 @@
+2025-06-04 21:18:43,310 - INFO - Logging initialized
+2025-06-04 21:18:43,479 - INFO - YOLO model loaded: models/model.pt
+2025-06-04 21:18:43,479 - INFO - YOLO loaded
+2025-06-04 21:18:59,689 - INFO - Video: C:/Users/Lev/Desktop/covsh/test/videos/11.mp4
+2025-06-04 21:19:00,804 - INFO - Frames saved in data/2025-06-04_21-18-59/frames
+2025-06-04 21:19:08,737 - INFO - Processing completed
+2025-06-04 21:19:31,206 - INFO - Image scale set to 0.66328125
+2025-06-04 21:19:38,565 - INFO - Mouse press at PyQt5.QtCore.QPoint(656, 288)
+2025-06-04 21:19:39,179 - INFO - Annotation added: x=1136.0188457008244, y=339.97644287396935, w=293.99293286219086, h=188.45700824499409
+2025-06-04 21:19:39,185 - INFO - Mouse release at None
+2025-06-04 21:19:41,982 - INFO - Image scale set to 0.66328125
