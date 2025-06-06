@@ -209,13 +209,21 @@ class FrameViewer(QWidget):
         output_dir = os.path.dirname(os.path.dirname(annotated_frames[0][0]))
         annotation_dir = f"{output_dir}/annotations"
         frames_dir = f"{output_dir}/frames"
+        dataset_dir = os.path.join(os.path.dirname(output_dir), "datasets", "train")
+        dataset_images_dir = os.path.join(dataset_dir, "images")
+        dataset_labels_dir = os.path.join(dataset_dir, "labels")
         os.makedirs(annotation_dir, exist_ok=True)
         os.makedirs(frames_dir, exist_ok=True)
+        os.makedirs(dataset_images_dir, exist_ok=True)
+        os.makedirs(dataset_labels_dir, exist_ok=True)
+        project_id = os.path.basename(output_dir).replace(" ", "_")
         saved_count = 0
         for frame_path, annotations in annotated_frames:
             frame_file = os.path.basename(frame_path)
             annotation_path = f"{annotation_dir}/{frame_file}.txt"
             new_frame_path = f"{frames_dir}/{frame_file}"
+            dataset_image_path = f"{dataset_images_dir}/{project_id}_{frame_file}"
+            dataset_label_path = f"{dataset_labels_dir}/{project_id}_{frame_file}.txt"
             try:
                 img = cv2.imread(frame_path)
                 if img is None:
@@ -229,12 +237,22 @@ class FrameViewer(QWidget):
                         w_norm = w / img_w
                         h_norm = h / img_h
                         f.write(f"{self.class_id} {x_norm:.6f} {y_norm:.6f} {w_norm:.6f} {h_norm:.6f}\n")
+                # Копируем в datasets
+                with open(dataset_label_path, "w", encoding='utf-8') as f:
+                    for x, y, w, h, conf in annotations:
+                        x_norm = x / img_w
+                        y_norm = y / img_h
+                        w_norm = w / img_w
+                        h_norm = h / img_h
+                        f.write(f"{self.class_id} {x_norm:.6f} {y_norm:.6f} {w_norm:.6f} {h_norm:.6f}\n")
+                cv2.imwrite(dataset_image_path, img)
                 # Перемещаем кадр из no_bucket в frames
                 if os.path.exists(new_frame_path):
                     os.remove(new_frame_path)
                 os.rename(frame_path, new_frame_path)
                 logging.info(f"Annotations saved for {frame_file} at {annotation_path}")
                 logging.info(f"Frame moved to {new_frame_path}")
+                logging.info(f"Dataset updated: {dataset_image_path}, {dataset_label_path}")
                 saved_count += 1
                 self.low_conf_frames.append((new_frame_path, annotations))
             except Exception as e:

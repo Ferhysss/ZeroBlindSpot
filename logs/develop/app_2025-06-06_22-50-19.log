@@ -1,0 +1,7 @@
+2025-06-06 22:50:19,395 - INFO - Logging initialized
+2025-06-06 22:50:26,291 - INFO - YOLO model loaded: models/model.pt
+2025-06-06 22:50:26,292 - INFO - YOLO loaded
+2025-06-06 22:50:26,295 - INFO - Excavator: Экскаватор B, Bucket volume: 2.0 m³
+2025-06-06 22:50:26,301 - INFO - Project loaded: C:/Users/Lev/Desktop/ZeroBlindSpot/data/06.06 22_43
+2025-06-06 22:50:26,307 - INFO - Loaded 660 no_bucket, 0 low_conf frames
+2025-06-06 22:50:28,206 - INFO - Image scale set to 0.4190625 for C:/Users/Lev/Desktop/ZeroBlindSpot/data/06.06 22_43\no_bucket\frame_0014.jpg

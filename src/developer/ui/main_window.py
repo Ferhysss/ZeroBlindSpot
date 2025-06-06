@@ -161,7 +161,6 @@ class DeveloperModule(QMainWindow, ModuleInterface):
             self.frame_viewer.low_conf_frames = []
 
             if os.path.exists(frames_dir):
-                # Собираем аннотированные кадры
                 annotated_frames = set()
                 if os.path.exists(annotations_dir):
                     for ann_file in sorted(glob(os.path.join(annotations_dir, "*.txt"))):
@@ -191,7 +190,6 @@ class DeveloperModule(QMainWindow, ModuleInterface):
                             except Exception as e:
                                 logging.error(f"Failed to load annotation {ann_file}: {str(e)}")
 
-                # Загружаем no_bucket_frames, исключая аннотированные
                 if os.path.exists(no_bucket_dir):
                     for frame_path in sorted(glob(os.path.join(no_bucket_dir, "*.jpg"))):
                         frame_name = os.path.basename(frame_path)
@@ -200,7 +198,6 @@ class DeveloperModule(QMainWindow, ModuleInterface):
                         else:
                             logging.info(f"Skipped annotated frame {frame_name} in no_bucket_dir")
 
-                # Проверяем negative
                 if os.path.exists(negative_dir):
                     negative_frames = glob(os.path.join(negative_dir, "*.jpg"))
                     for frame_path in negative_frames:
@@ -229,6 +226,21 @@ class DeveloperModule(QMainWindow, ModuleInterface):
             yaml.safe_dump(project_config, f)
 
     def _extract_frames(self):
+        if not self.video_path:
+            self.status_label.setText("Ошибка: видео не выбрано")
+            logging.error("No video path specified for frame extraction")
+            return
+        if not hasattr(self, 'processor') or self.processor is None:
+            if not self.yolo_model:
+                self.status_label.setText("Ошибка: YOLO не загружен")
+                return
+            self.processor = DeveloperProcessor(self.video_path, self.yolo_model, self.cnn_model, self.config, self.project_dir)
+            self.processor.progress.connect(self.progress_bar.setValue)
+            self.processor.status.connect(self.status_label.setText)
+            self.processor.frame_processed.connect(self.frame_viewer.update_frame)
+            self.processor.no_bucket_frame.connect(self.frame_viewer.add_no_bucket_frame)
+            self.processor.low_conf_frame.connect(self.frame_viewer.add_low_conf_frame)
+            self.processor.finished.connect(self._on_processing_finished)
         self.status_label.setText(f"Извлечение кадров: {self.video_path}")
         self.processor.extract_frames(self.video_path)
 
@@ -252,14 +264,14 @@ class DeveloperModule(QMainWindow, ModuleInterface):
         os.makedirs(self.project_dir, exist_ok=True)
         self.frame_viewer.no_bucket_frames = []
         self.frame_viewer.low_conf_frames = []
-        self.frame_viewer.current_frame_index = 0
+        self.frame_viewer.current_frame_index = -1
         self.processor = DeveloperProcessor(self.video_path, self.yolo_model, self.cnn_model, self.config, self.project_dir)
-        self.processor.progress.connect(self.progress_bar)
+        self.processor.progress.connect(self.progress_bar.setValue)
         self.processor.status.connect(self.status_label.setText)
         self.processor.frame_processed.connect(self.frame_viewer.update_frame)
         self.processor.no_bucket_frame.connect(self.frame_viewer.add_no_bucket_frame)
         self.processor.low_conf_frame.connect(self.frame_viewer.add_low_conf_frame)
-        self.processor.finished.connect(self._on_processing_done)
+        self.processor.finished.connect(self._on_processing_finished)
         self.annotate_button.setEnabled(True)
         self.review_button.setEnabled(True)
         self.config.update("last_project", self.project_dir)
@@ -269,7 +281,7 @@ class DeveloperModule(QMainWindow, ModuleInterface):
     def _toggle_annotation(self):
         self.frame_viewer.review_mode = False
         self.frame_viewer.annotation_mode = not self.frame_viewer.annotation_mode
-        status = "включён" if self.frame_viewer.annotation_mode else "выключен"
+        status = "включён" if self.frame_viewer.annotation_mode else "выключён"
         self.status_label.setText(f"Режим аннотации: {status}")
         if self.frame_viewer.annotation_mode and self.frame_viewer.no_bucket_frames:
             self.frame_viewer.show_frame(0, False)
@@ -281,7 +293,7 @@ class DeveloperModule(QMainWindow, ModuleInterface):
     def _toggle_review(self):
         self.frame_viewer.annotation_mode = False
         self.frame_viewer.review_mode = not self.frame_viewer.review_mode
-        status = "включён" if self.frame_viewer.review_mode else "выключен"
+        status = "включён" if self.frame_viewer.review_mode else "выключён"
         self.status_label.setText(f"Режим ревью: {status}")
         if self.frame_viewer.review_mode and self.frame_viewer.low_conf_frames:
             self.frame_viewer.show_frame(0, True)
@@ -292,8 +304,9 @@ class DeveloperModule(QMainWindow, ModuleInterface):
         self.frame_viewer.current_frame_index = -1
         self.frame_viewer.update_counter()
 
-    def _on_processing_done(self):
-        pass
+    def _on_processing_finished(self):
+        self.status_label.setText("Обработка видео завершена")
+        logging.info("Video processing finished")
 
     def start(self):
         self.show()

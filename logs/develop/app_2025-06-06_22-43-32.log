@@ -1,0 +1,344 @@
+2025-06-06 22:43:32,704 - INFO - Logging initialized
+2025-06-06 22:43:55,334 - INFO - YOLO model loaded: models/model.pt
+2025-06-06 22:43:55,334 - INFO - YOLO loaded
+2025-06-06 22:43:55,337 - INFO - Excavator: Экскаватор B, Bucket volume: 2.0 m³
+2025-06-06 22:43:55,342 - INFO - Project loaded: data/06.06 22_43
+2025-06-06 22:44:16,408 - INFO - Frames saved in data/06.06 22_43/frames
+2025-06-06 22:44:19,245 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0009.jpg
+2025-06-06 22:44:20,389 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0019.jpg
+2025-06-06 22:44:20,499 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0020.jpg
+2025-06-06 22:44:22,694 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0040.jpg
+2025-06-06 22:44:22,810 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0041.jpg
+2025-06-06 22:44:23,157 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0044.jpg
+2025-06-06 22:44:24,143 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0053.jpg
+2025-06-06 22:44:24,370 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0055.jpg
+2025-06-06 22:44:24,485 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0056.jpg
+2025-06-06 22:44:25,583 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0066.jpg
+2025-06-06 22:44:25,717 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0067.jpg
+2025-06-06 22:44:25,836 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0068.jpg
+2025-06-06 22:44:26,391 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0073.jpg
+2025-06-06 22:44:26,949 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0078.jpg
+2025-06-06 22:44:27,061 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0079.jpg
+2025-06-06 22:44:27,278 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0081.jpg
+2025-06-06 22:44:27,712 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0085.jpg
+2025-06-06 22:44:27,935 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0087.jpg
+2025-06-06 22:44:28,614 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0093.jpg
+2025-06-06 22:44:28,964 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0096.jpg
+2025-06-06 22:44:29,075 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0097.jpg
+2025-06-06 22:44:29,623 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0102.jpg
+2025-06-06 22:44:29,731 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0103.jpg
+2025-06-06 22:44:30,064 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0106.jpg
+2025-06-06 22:44:30,175 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0107.jpg
+2025-06-06 22:44:30,284 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0108.jpg
+2025-06-06 22:44:30,396 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0109.jpg
+2025-06-06 22:44:30,505 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0110.jpg
+2025-06-06 22:44:30,618 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0111.jpg
+2025-06-06 22:44:30,727 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0112.jpg
+2025-06-06 22:44:30,838 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0113.jpg
+2025-06-06 22:44:30,946 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0114.jpg
+2025-06-06 22:44:31,054 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0115.jpg
+2025-06-06 22:44:31,169 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0116.jpg
+2025-06-06 22:44:31,797 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0122.jpg
+2025-06-06 22:44:32,240 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0126.jpg
+2025-06-06 22:44:32,358 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0127.jpg
+2025-06-06 22:44:32,955 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0132.jpg
+2025-06-06 22:44:33,049 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0133.jpg
+2025-06-06 22:44:33,379 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0136.jpg
+2025-06-06 22:44:33,488 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0137.jpg
+2025-06-06 22:44:33,602 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0138.jpg
+2025-06-06 22:44:34,341 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0145.jpg
+2025-06-06 22:44:34,773 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0149.jpg
+2025-06-06 22:44:35,308 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0154.jpg
+2025-06-06 22:44:35,550 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0156.jpg
+2025-06-06 22:44:35,672 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0157.jpg
+2025-06-06 22:44:35,784 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0158.jpg
+2025-06-06 22:44:35,884 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0159.jpg
+2025-06-06 22:44:36,099 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0161.jpg
+2025-06-06 22:44:36,300 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0163.jpg
+2025-06-06 22:44:37,641 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0175.jpg
+2025-06-06 22:44:37,757 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0176.jpg
+2025-06-06 22:44:38,211 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0180.jpg
+2025-06-06 22:44:38,314 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0181.jpg
+2025-06-06 22:44:38,428 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0182.jpg
+2025-06-06 22:44:38,535 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0183.jpg
+2025-06-06 22:44:38,968 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0187.jpg
+2025-06-06 22:44:39,396 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0191.jpg
+2025-06-06 22:44:39,613 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0193.jpg
+2025-06-06 22:44:39,720 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0194.jpg
+2025-06-06 22:44:40,144 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0198.jpg
+2025-06-06 22:44:40,256 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0199.jpg
+2025-06-06 22:44:40,946 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0205.jpg
+2025-06-06 22:44:41,620 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0211.jpg
+2025-06-06 22:44:42,166 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0216.jpg
+2025-06-06 22:44:42,386 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0218.jpg
+2025-06-06 22:44:43,119 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0225.jpg
+2025-06-06 22:44:43,442 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0228.jpg
+2025-06-06 22:44:44,698 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0239.jpg
+2025-06-06 22:44:45,237 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0244.jpg
+2025-06-06 22:44:45,566 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0247.jpg
+2025-06-06 22:44:46,220 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0253.jpg
+2025-06-06 22:44:46,320 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0254.jpg
+2025-06-06 22:44:46,969 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0260.jpg
+2025-06-06 22:44:47,511 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0265.jpg
+2025-06-06 22:44:47,626 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0266.jpg
+2025-06-06 22:44:49,003 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0278.jpg
+2025-06-06 22:44:49,117 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0279.jpg
+2025-06-06 22:44:49,230 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0280.jpg
+2025-06-06 22:44:49,533 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0283.jpg
+2025-06-06 22:44:49,640 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0284.jpg
+2025-06-06 22:44:49,748 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0285.jpg
+2025-06-06 22:44:49,958 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0287.jpg
+2025-06-06 22:44:50,065 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0288.jpg
+2025-06-06 22:44:50,177 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0289.jpg
+2025-06-06 22:44:50,283 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0290.jpg
+2025-06-06 22:44:50,500 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0292.jpg
+2025-06-06 22:44:50,609 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0293.jpg
+2025-06-06 22:44:50,718 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0294.jpg
+2025-06-06 22:44:51,044 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0297.jpg
+2025-06-06 22:44:51,156 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0298.jpg
+2025-06-06 22:44:51,263 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0299.jpg
+2025-06-06 22:44:51,376 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0300.jpg
+2025-06-06 22:44:52,635 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0311.jpg
+2025-06-06 22:44:53,280 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0317.jpg
+2025-06-06 22:44:53,387 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0318.jpg
+2025-06-06 22:44:54,268 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0326.jpg
+2025-06-06 22:44:54,601 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0329.jpg
+2025-06-06 22:44:54,717 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0330.jpg
+2025-06-06 22:44:55,166 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0334.jpg
+2025-06-06 22:44:55,740 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0339.jpg
+2025-06-06 22:44:56,284 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0344.jpg
+2025-06-06 22:44:57,369 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0354.jpg
+2025-06-06 22:44:58,723 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0366.jpg
+2025-06-06 22:44:59,511 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0373.jpg
+2025-06-06 22:44:59,620 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0374.jpg
+2025-06-06 22:44:59,729 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0375.jpg
+2025-06-06 22:44:59,840 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0376.jpg
+2025-06-06 22:44:59,955 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0377.jpg
+2025-06-06 22:45:00,067 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0378.jpg
+2025-06-06 22:45:00,176 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0379.jpg
+2025-06-06 22:45:00,274 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0380.jpg
+2025-06-06 22:45:00,597 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0383.jpg
+2025-06-06 22:45:00,710 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0384.jpg
+2025-06-06 22:45:00,823 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0385.jpg
+2025-06-06 22:45:01,039 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0387.jpg
+2025-06-06 22:45:01,152 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0388.jpg
+2025-06-06 22:45:01,264 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0389.jpg
+2025-06-06 22:45:01,505 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0391.jpg
+2025-06-06 22:45:01,623 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0392.jpg
+2025-06-06 22:45:01,735 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0393.jpg
+2025-06-06 22:45:02,059 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0396.jpg
+2025-06-06 22:45:02,167 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0397.jpg
+2025-06-06 22:45:02,278 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0398.jpg
+2025-06-06 22:45:02,384 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0399.jpg
+2025-06-06 22:45:02,495 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0400.jpg
+2025-06-06 22:45:02,817 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0403.jpg
+2025-06-06 22:45:03,154 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0406.jpg
+2025-06-06 22:45:03,263 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0407.jpg
+2025-06-06 22:45:03,370 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0408.jpg
+2025-06-06 22:45:04,250 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0416.jpg
+2025-06-06 22:45:04,467 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0418.jpg
+2025-06-06 22:45:04,580 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0419.jpg
+2025-06-06 22:45:04,691 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0420.jpg
+2025-06-06 22:45:04,808 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0421.jpg
+2025-06-06 22:45:05,239 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0425.jpg
+2025-06-06 22:45:05,591 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0428.jpg
+2025-06-06 22:45:05,702 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0429.jpg
+2025-06-06 22:45:05,811 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0430.jpg
+2025-06-06 22:45:06,024 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0432.jpg
+2025-06-06 22:45:06,132 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0433.jpg
+2025-06-06 22:45:06,351 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0435.jpg
+2025-06-06 22:45:06,903 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0440.jpg
+2025-06-06 22:45:07,010 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0441.jpg
+2025-06-06 22:45:07,119 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0442.jpg
+2025-06-06 22:45:07,228 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0443.jpg
+2025-06-06 22:45:07,336 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0444.jpg
+2025-06-06 22:45:07,427 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0445.jpg
+2025-06-06 22:45:07,536 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0446.jpg
+2025-06-06 22:45:07,647 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0447.jpg
+2025-06-06 22:45:07,753 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0448.jpg
+2025-06-06 22:45:07,864 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0449.jpg
+2025-06-06 22:45:08,059 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0451.jpg
+2025-06-06 22:45:08,707 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0457.jpg
+2025-06-06 22:45:08,809 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0458.jpg
+2025-06-06 22:45:08,912 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0459.jpg
+2025-06-06 22:45:09,254 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0462.jpg
+2025-06-06 22:45:09,375 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0463.jpg
+2025-06-06 22:45:09,598 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0465.jpg
+2025-06-06 22:45:09,912 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0468.jpg
+2025-06-06 22:45:10,124 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0470.jpg
+2025-06-06 22:45:10,233 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0471.jpg
+2025-06-06 22:45:10,663 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0475.jpg
+2025-06-06 22:45:10,775 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0476.jpg
+2025-06-06 22:45:10,883 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0477.jpg
+2025-06-06 22:45:11,428 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0482.jpg
+2025-06-06 22:45:11,539 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0483.jpg
+2025-06-06 22:45:11,850 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0486.jpg
+2025-06-06 22:45:11,958 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0487.jpg
+2025-06-06 22:45:12,195 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0489.jpg
+2025-06-06 22:45:12,529 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0492.jpg
+2025-06-06 22:45:12,640 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0493.jpg
+2025-06-06 22:45:12,862 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0495.jpg
+2025-06-06 22:45:13,080 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0497.jpg
+2025-06-06 22:45:13,192 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0498.jpg
+2025-06-06 22:45:13,297 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0499.jpg
+2025-06-06 22:45:13,405 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0500.jpg
+2025-06-06 22:45:13,513 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0501.jpg
+2025-06-06 22:45:13,624 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0502.jpg
+2025-06-06 22:45:13,732 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0503.jpg
+2025-06-06 22:45:14,929 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0514.jpg
+2025-06-06 22:45:15,050 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0515.jpg
+2025-06-06 22:45:15,174 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0516.jpg
+2025-06-06 22:45:15,399 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0518.jpg
+2025-06-06 22:45:16,157 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0525.jpg
+2025-06-06 22:45:16,257 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0526.jpg
+2025-06-06 22:45:16,586 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0529.jpg
+2025-06-06 22:45:16,700 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0530.jpg
+2025-06-06 22:45:16,809 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0531.jpg
+2025-06-06 22:45:16,921 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0532.jpg
+2025-06-06 22:45:17,448 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0537.jpg
+2025-06-06 22:45:17,559 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0538.jpg
+2025-06-06 22:45:17,668 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0539.jpg
+2025-06-06 22:45:17,775 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0540.jpg
+2025-06-06 22:45:20,849 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0568.jpg
+2025-06-06 22:45:21,621 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0575.jpg
+2025-06-06 22:45:21,846 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0577.jpg
+2025-06-06 22:45:22,491 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0583.jpg
+2025-06-06 22:45:22,616 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0584.jpg
+2025-06-06 22:45:22,730 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0585.jpg
+2025-06-06 22:45:25,468 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0611.jpg
+2025-06-06 22:45:27,855 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0633.jpg
+2025-06-06 22:45:30,498 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0657.jpg
+2025-06-06 22:45:31,745 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0669.jpg
+2025-06-06 22:45:32,068 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0672.jpg
+2025-06-06 22:45:32,392 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0675.jpg
+2025-06-06 22:45:34,093 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0690.jpg
+2025-06-06 22:45:34,220 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0691.jpg
+2025-06-06 22:45:34,342 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0692.jpg
+2025-06-06 22:45:34,467 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0693.jpg
+2025-06-06 22:45:34,582 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0694.jpg
+2025-06-06 22:45:34,850 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0696.jpg
+2025-06-06 22:45:34,962 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0697.jpg
+2025-06-06 22:45:35,078 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0698.jpg
+2025-06-06 22:45:35,195 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0699.jpg
+2025-06-06 22:45:35,760 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0704.jpg
+2025-06-06 22:45:36,201 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0708.jpg
+2025-06-06 22:45:36,421 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0710.jpg
+2025-06-06 22:45:36,835 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0714.jpg
+2025-06-06 22:45:37,732 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0722.jpg
+2025-06-06 22:45:37,852 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0723.jpg
+2025-06-06 22:45:38,280 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0727.jpg
+2025-06-06 22:45:39,536 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0739.jpg
+2025-06-06 22:45:40,469 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0748.jpg
+2025-06-06 22:45:43,054 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0772.jpg
+2025-06-06 22:45:43,376 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0775.jpg
+2025-06-06 22:45:43,686 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0778.jpg
+2025-06-06 22:45:45,217 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0792.jpg
+2025-06-06 22:45:45,321 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0793.jpg
+2025-06-06 22:45:46,297 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0802.jpg
+2025-06-06 22:45:46,527 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0804.jpg
+2025-06-06 22:45:51,656 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0852.jpg
+2025-06-06 22:45:51,763 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0853.jpg
+2025-06-06 22:45:54,380 - INFO - Image scale set to 0.5146875000000001 for data/06.06 22_43/frames\frame_0877.jpg
+2025-06-06 22:45:57,622 - INFO - Processing completed
+2025-06-06 22:45:57,623 - INFO - Video processing finished
+2025-06-06 22:47:52,947 - INFO - Image scale set to 0.9998437499999999 for data/06.06 22_43/no_bucket\frame_0001.jpg
+2025-06-06 22:47:54,497 - INFO - Mouse press at PyQt5.QtCore.QPoint(570, 104) (scale: 0.9998437499999999, size: (1280, 720))
+2025-06-06 22:47:55,585 - INFO - Annotation added: x=648.6013439599938, y=185.0289107673074, w=157.0245350836068, h=162.0253164556962
+2025-06-06 22:47:55,594 - INFO - Mouse release at PyQt5.QtCore.QPoint(727, 266)
+2025-06-06 22:47:56,635 - INFO - Image scale set to 0.9998437499999999 for data/06.06 22_43/no_bucket\frame_0002.jpg
+2025-06-06 22:47:57,879 - INFO - Mouse press at PyQt5.QtCore.QPoint(573, 104) (scale: 0.9998437499999999, size: (1280, 720))
+2025-06-06 22:47:58,606 - INFO - Annotation added: x=645.1007969995312, y=185.0289107673074, w=144.02250351617442, h=162.0253164556962
+2025-06-06 22:47:58,614 - INFO - Mouse release at PyQt5.QtCore.QPoint(717, 266)
+2025-06-06 22:47:58,734 - INFO - Image scale set to 0.9998437499999999 for data/06.06 22_43/no_bucket\frame_0003.jpg
+2025-06-06 22:47:59,554 - INFO - Mouse press at PyQt5.QtCore.QPoint(557, 94) (scale: 0.9998437499999999, size: (1280, 720))
+2025-06-06 22:48:00,243 - INFO - Annotation added: x=637.5996249413971, y=175.52742616033757, w=161.02516018127835, h=163.02547273011413
+2025-06-06 22:48:00,252 - INFO - Mouse release at PyQt5.QtCore.QPoint(718, 257)
+2025-06-06 22:48:00,340 - INFO - Image scale set to 0.9998437499999999 for data/06.06 22_43/no_bucket\frame_0004.jpg
+2025-06-06 22:48:02,114 - INFO - Mouse press at PyQt5.QtCore.QPoint(747, 187) (scale: 0.9998437499999999, size: (1280, 720))
+2025-06-06 22:48:03,327 - INFO - Annotation added: x=667.6043131739334, y=91.51429910923584, w=159.02484763244263, h=191.02984841381468
+2025-06-06 22:48:03,336 - INFO - Mouse release at PyQt5.QtCore.QPoint(588, -4)
+2025-06-06 22:48:03,485 - INFO - Image scale set to 0.9998437499999999 for data/06.06 22_43/no_bucket\frame_0005.jpg
+2025-06-06 22:48:04,512 - INFO - Mouse press at PyQt5.QtCore.QPoint(636, 151) (scale: 0.9998437499999999, size: (1280, 720))
+2025-06-06 22:48:05,507 - INFO - Annotation added: x=743.1161118924832, y=71.01109548366934, w=214.03344272542586, h=160.02500390686046
+2025-06-06 22:48:05,516 - INFO - Mouse release at PyQt5.QtCore.QPoint(850, -9)
+2025-06-06 22:48:05,562 - INFO - Image scale set to 0.9998437499999999 for data/06.06 22_43/no_bucket\frame_0006.jpg
+2025-06-06 22:48:06,387 - INFO - Mouse press at PyQt5.QtCore.QPoint(649, 162) (scale: 0.9998437499999999, size: (1280, 720))
+2025-06-06 22:48:07,235 - INFO - Annotation added: x=760.1187685575871, y=77.01203313017659, w=222.03469292076886, h=170.02656665103925
+2025-06-06 22:48:07,245 - INFO - Mouse release at PyQt5.QtCore.QPoint(871, -8)
+2025-06-06 22:48:07,307 - INFO - Image scale set to 0.9998437499999999 for data/06.06 22_43/no_bucket\frame_0007.jpg
+2025-06-06 22:48:09,976 - INFO - Mouse press at PyQt5.QtCore.QPoint(649, 166) (scale: 0.9998437499999999, size: (1280, 720))
+2025-06-06 22:48:11,034 - INFO - Annotation added: x=753.617752773871, y=83.01297077668386, w=209.0326613533365, h=166.02594155336772
+2025-06-06 22:48:11,042 - INFO - Mouse release at PyQt5.QtCore.QPoint(858, 0)
+2025-06-06 22:48:11,200 - INFO - Image scale set to 0.9998437499999999 for data/06.06 22_43/no_bucket\frame_0008.jpg
+2025-06-06 22:48:12,515 - INFO - Annotations saved for frame_0001.jpg at data/06.06 22_43/annotations/frame_0001.jpg.txt
+2025-06-06 22:48:12,515 - INFO - Frame moved to data/06.06 22_43/frames/frame_0001.jpg
+2025-06-06 22:48:12,515 - INFO - Dataset updated: data\datasets\train\images/06.06_22_43_frame_0001.jpg, data\datasets\train\labels/06.06_22_43_frame_0001.jpg.txt
+2025-06-06 22:48:12,524 - INFO - Annotations saved for frame_0002.jpg at data/06.06 22_43/annotations/frame_0002.jpg.txt
+2025-06-06 22:48:12,524 - INFO - Frame moved to data/06.06 22_43/frames/frame_0002.jpg
+2025-06-06 22:48:12,524 - INFO - Dataset updated: data\datasets\train\images/06.06_22_43_frame_0002.jpg, data\datasets\train\labels/06.06_22_43_frame_0002.jpg.txt
+2025-06-06 22:48:12,533 - INFO - Annotations saved for frame_0003.jpg at data/06.06 22_43/annotations/frame_0003.jpg.txt
+2025-06-06 22:48:12,533 - INFO - Frame moved to data/06.06 22_43/frames/frame_0003.jpg
+2025-06-06 22:48:12,533 - INFO - Dataset updated: data\datasets\train\images/06.06_22_43_frame_0003.jpg, data\datasets\train\labels/06.06_22_43_frame_0003.jpg.txt
+2025-06-06 22:48:12,542 - INFO - Annotations saved for frame_0004.jpg at data/06.06 22_43/annotations/frame_0004.jpg.txt
+2025-06-06 22:48:12,542 - INFO - Frame moved to data/06.06 22_43/frames/frame_0004.jpg
+2025-06-06 22:48:12,542 - INFO - Dataset updated: data\datasets\train\images/06.06_22_43_frame_0004.jpg, data\datasets\train\labels/06.06_22_43_frame_0004.jpg.txt
+2025-06-06 22:48:12,550 - INFO - Annotations saved for frame_0005.jpg at data/06.06 22_43/annotations/frame_0005.jpg.txt
+2025-06-06 22:48:12,550 - INFO - Frame moved to data/06.06 22_43/frames/frame_0005.jpg
+2025-06-06 22:48:12,550 - INFO - Dataset updated: data\datasets\train\images/06.06_22_43_frame_0005.jpg, data\datasets\train\labels/06.06_22_43_frame_0005.jpg.txt
+2025-06-06 22:48:12,559 - INFO - Annotations saved for frame_0006.jpg at data/06.06 22_43/annotations/frame_0006.jpg.txt
+2025-06-06 22:48:12,559 - INFO - Frame moved to data/06.06 22_43/frames/frame_0006.jpg
+2025-06-06 22:48:12,559 - INFO - Dataset updated: data\datasets\train\images/06.06_22_43_frame_0006.jpg, data\datasets\train\labels/06.06_22_43_frame_0006.jpg.txt
+2025-06-06 22:48:12,567 - INFO - Annotations saved for frame_0007.jpg at data/06.06 22_43/annotations/frame_0007.jpg.txt
+2025-06-06 22:48:12,567 - INFO - Frame moved to data/06.06 22_43/frames/frame_0007.jpg
+2025-06-06 22:48:12,567 - INFO - Dataset updated: data\datasets\train\images/06.06_22_43_frame_0007.jpg, data\datasets\train\labels/06.06_22_43_frame_0007.jpg.txt
+2025-06-06 22:48:18,913 - INFO - Mouse press at PyQt5.QtCore.QPoint(618, 218) (scale: 0.9998437499999999, size: (1280, 720))
+2025-06-06 22:48:19,784 - INFO - Annotation added: x=719.6124394436631, y=138.02156586966714, w=203.0317237068292, h=160.02500390686046
+2025-06-06 22:48:19,793 - INFO - Mouse release at PyQt5.QtCore.QPoint(821, 58)
+2025-06-06 22:48:19,864 - INFO - Image scale set to 0.9998437499999999 for data/06.06 22_43/no_bucket\frame_0010.jpg
+2025-06-06 22:48:20,781 - INFO - Mouse press at PyQt5.QtCore.QPoint(573, 331) (scale: 0.9998437499999999, size: (1280, 720))
+2025-06-06 22:48:21,595 - INFO - Annotation added: x=655.602437880919, y=264.5413345835287, w=165.0257852789498, h=133.02078449757775
+2025-06-06 22:48:21,603 - INFO - Mouse release at PyQt5.QtCore.QPoint(738, 198)
+2025-06-06 22:48:21,701 - INFO - Image scale set to 0.9998437499999999 for data/06.06 22_43/no_bucket\frame_0011.jpg
+2025-06-06 22:48:22,753 - INFO - Mouse press at PyQt5.QtCore.QPoint(580, 222) (scale: 0.9998437499999999, size: (1280, 720))
+2025-06-06 22:48:23,486 - INFO - Annotation added: x=645.1007969995312, y=288.54508516955775, w=130.02031567432414, h=133.02078449757775
+2025-06-06 22:48:23,495 - INFO - Mouse release at PyQt5.QtCore.QPoint(710, 355)
+2025-06-06 22:48:24,846 - INFO - Image scale set to 0.9998437499999999 for data/06.06 22_43/no_bucket\frame_0012.jpg
+2025-06-06 22:48:25,814 - INFO - Mouse press at PyQt5.QtCore.QPoint(558, 374) (scale: 0.9998437499999999, size: (1280, 720))
+2025-06-06 22:48:26,750 - INFO - Annotation added: x=635.5993123925614, y=310.04844506954214, w=155.02422253477107, h=128.0200031254884
+2025-06-06 22:48:26,758 - INFO - Mouse release at PyQt5.QtCore.QPoint(713, 246)
+2025-06-06 22:48:28,335 - INFO - Annotations saved for frame_0008.jpg at data/06.06 22_43/annotations/frame_0008.jpg.txt
+2025-06-06 22:48:28,335 - INFO - Frame moved to data/06.06 22_43/frames/frame_0008.jpg
+2025-06-06 22:48:28,335 - INFO - Dataset updated: data\datasets\train\images/06.06_22_43_frame_0008.jpg, data\datasets\train\labels/06.06_22_43_frame_0008.jpg.txt
+2025-06-06 22:48:28,342 - INFO - Annotations saved for frame_0010.jpg at data/06.06 22_43/annotations/frame_0010.jpg.txt
+2025-06-06 22:48:28,342 - INFO - Frame moved to data/06.06 22_43/frames/frame_0010.jpg
+2025-06-06 22:48:28,342 - INFO - Dataset updated: data\datasets\train\images/06.06_22_43_frame_0010.jpg, data\datasets\train\labels/06.06_22_43_frame_0010.jpg.txt
+2025-06-06 22:48:28,350 - INFO - Annotations saved for frame_0011.jpg at data/06.06 22_43/annotations/frame_0011.jpg.txt
+2025-06-06 22:48:28,350 - INFO - Frame moved to data/06.06 22_43/frames/frame_0011.jpg
+2025-06-06 22:48:28,350 - INFO - Dataset updated: data\datasets\train\images/06.06_22_43_frame_0011.jpg, data\datasets\train\labels/06.06_22_43_frame_0011.jpg.txt
+2025-06-06 22:48:28,357 - INFO - Annotations saved for frame_0012.jpg at data/06.06 22_43/annotations/frame_0012.jpg.txt
+2025-06-06 22:48:28,357 - INFO - Frame moved to data/06.06 22_43/frames/frame_0012.jpg
+2025-06-06 22:48:28,357 - INFO - Dataset updated: data\datasets\train\images/06.06_22_43_frame_0012.jpg, data\datasets\train\labels/06.06_22_43_frame_0012.jpg.txt
+2025-06-06 22:48:28,361 - INFO - Image scale set to 0.9998437499999999 for data/06.06 22_43/no_bucket\frame_0013.jpg
+2025-06-06 22:48:29,568 - INFO - Mouse press at PyQt5.QtCore.QPoint(568, 301) (scale: 0.9998437499999999, size: (1280, 720))
+2025-06-06 22:48:30,416 - INFO - Annotation added: x=633.0989217065166, y=371.05797780903265, w=130.02031567432414, h=140.02187841850292
+2025-06-06 22:48:30,424 - INFO - Mouse release at PyQt5.QtCore.QPoint(698, 441)
+2025-06-06 22:48:31,313 - INFO - Annotations saved for frame_0013.jpg at data/06.06 22_43/annotations/frame_0013.jpg.txt
+2025-06-06 22:48:31,313 - INFO - Frame moved to data/06.06 22_43/frames/frame_0013.jpg
+2025-06-06 22:48:31,313 - INFO - Dataset updated: data\datasets\train\images/06.06_22_43_frame_0013.jpg, data\datasets\train\labels/06.06_22_43_frame_0013.jpg.txt
+2025-06-06 22:48:31,317 - INFO - Image scale set to 0.9998437499999999 for data/06.06 22_43/no_bucket\frame_0014.jpg
+2025-06-06 22:49:24,109 - WARNING - No frame or annotations to confirm
+2025-06-06 22:49:25,798 - WARNING - No frame or annotations to confirm
+2025-06-06 22:49:46,380 - INFO - Detection deleted for frame_0428.jpg at data/06.06 22_43/negative/frame_0428.jpg
+2025-06-06 22:49:53,503 - INFO - Detection deleted for frame_0853.jpg at data/06.06 22_43/negative/frame_0853.jpg
+2025-06-06 22:49:53,508 - INFO - Image scale set to 0.9998437499999999 for data/06.06 22_43/frames/frame_0002.jpg
+2025-06-06 22:49:55,508 - INFO - Image scale set to 0.9998437499999999 for data/06.06 22_43/frames/frame_0004.jpg
+2025-06-06 22:49:56,108 - INFO - Image scale set to 0.9998437499999999 for data/06.06 22_43/frames/frame_0006.jpg
+2025-06-06 22:49:56,363 - INFO - Image scale set to 0.9998437499999999 for data/06.06 22_43/frames/frame_0008.jpg
+2025-06-06 22:49:56,575 - INFO - Image scale set to 0.9998437499999999 for data/06.06 22_43/frames/frame_0011.jpg
+2025-06-06 22:49:56,779 - INFO - Image scale set to 0.9998437499999999 for data/06.06 22_43/frames/frame_0013.jpg
+2025-06-06 22:49:56,978 - INFO - Image scale set to 0.9998437499999999 for data/06.06 22_43/frames/frame_0012.jpg
+2025-06-06 22:49:57,181 - INFO - Image scale set to 0.9998437499999999 for data/06.06 22_43/frames/frame_0010.jpg
+2025-06-06 22:49:57,367 - INFO - Image scale set to 0.9998437499999999 for data/06.06 22_43/frames/frame_0007.jpg
+2025-06-06 22:49:57,562 - INFO - Image scale set to 0.9998437499999999 for data/06.06 22_43/frames/frame_0005.jpg
+2025-06-06 22:49:57,749 - INFO - Image scale set to 0.9998437499999999 for data/06.06 22_43/frames/frame_0003.jpg
+2025-06-06 22:49:57,948 - INFO - Image scale set to 0.9998437499999999 for data/06.06 22_43/frames/frame_0001.jpg
