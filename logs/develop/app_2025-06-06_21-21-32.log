@@ -1,0 +1,7 @@
+2025-06-06 21:21:32,894 - INFO - Logging initialized
+2025-06-06 21:21:47,876 - INFO - YOLO model loaded: models/model.pt
+2025-06-06 21:21:47,876 - INFO - YOLO loaded
+2025-06-06 21:21:47,880 - INFO - Excavator: Экскаватор B, Bucket volume: 2.0 m³
+2025-06-06 21:21:47,886 - INFO - Project loaded: C:/Users/Lev/Desktop/ZeroBlindSpot/data/06.06
+2025-06-06 21:21:49,104 - INFO - Frames saved in C:/Users/Lev/Desktop/ZeroBlindSpot/data/06.06/frames
+2025-06-06 21:21:51,034 - ERROR - Processing failed: [WinError 183] Невозможно создать файл, так как он уже существует: 'C:/Users/Lev/Desktop/ZeroBlindSpot/data/06.06/frames\\frame_0001.jpg' -> 'C:/Users/Lev/Desktop/ZeroBlindSpot/data/06.06/no_bucket\\frame_0001.jpg'

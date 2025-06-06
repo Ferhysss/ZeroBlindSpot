@@ -1,0 +1,37 @@
+2025-06-06 22:29:57,092 - INFO - Logging initialized
+2025-06-06 22:30:03,530 - INFO - YOLO model loaded: models/model.pt
+2025-06-06 22:30:03,530 - INFO - YOLO loaded
+2025-06-06 22:30:03,534 - INFO - Excavator: Экскаватор B, Bucket volume: 2.0 m³
+2025-06-06 22:30:03,539 - INFO - Project loaded: C:/Users/Lev/Desktop/ZeroBlindSpot/data/06.06 21_56
+2025-06-06 22:30:03,542 - INFO - Loaded 80 no_bucket, 0 low_conf frames
+2025-06-06 22:30:04,531 - INFO - Image scale set to 0.193125 for C:/Users/Lev/Desktop/ZeroBlindSpot/data/06.06 21_56\no_bucket\frame_0007.jpg
+2025-06-06 22:30:08,650 - INFO - Mouse press at PyQt5.QtCore.QPoint(86, 209) (scale: 0.193125, size: (1080, 1920))
+2025-06-06 22:30:09,448 - INFO - Annotation added: x=535.9223300970874, y=1139.15857605178, w=181.2297734627832, h=113.91585760517796
+2025-06-06 22:30:09,460 - INFO - Mouse release at PyQt5.QtCore.QPoint(121, 231)
+2025-06-06 22:30:09,798 - INFO - Image scale set to 0.38859375 for C:/Users/Lev/Desktop/ZeroBlindSpot/data/06.06 21_56\no_bucket\frame_0008.jpg
+2025-06-06 22:30:10,784 - INFO - Mouse press at PyQt5.QtCore.QPoint(170, 362) (scale: 0.38859375, size: (1080, 1920))
+2025-06-06 22:30:11,813 - INFO - Annotation added: x=572.5774024929633, y=1016.4857257740248, w=270.20506634499395, h=169.8431845597105
+2025-06-06 22:30:11,823 - INFO - Mouse release at PyQt5.QtCore.QPoint(275, 428)
+2025-06-06 22:30:12,560 - INFO - Image scale set to 0.38859375 for C:/Users/Lev/Desktop/ZeroBlindSpot/data/06.06 21_56\no_bucket\frame_0010.jpg
+2025-06-06 22:30:13,605 - INFO - Mouse press at PyQt5.QtCore.QPoint(160, 220) (scale: 0.38859375, size: (1080, 1920))
+2025-06-06 22:30:14,470 - INFO - Annotation added: x=567.4306393244873, y=665.2191395255327, w=311.3791716928026, h=198.15038198632885
+2025-06-06 22:30:14,480 - INFO - Mouse release at PyQt5.QtCore.QPoint(281, 297)
+2025-06-06 22:30:14,589 - INFO - Image scale set to 0.38859375 for C:/Users/Lev/Desktop/ZeroBlindSpot/data/06.06 21_56\no_bucket\frame_0012.jpg
+2025-06-06 22:30:15,395 - INFO - Mouse press at PyQt5.QtCore.QPoint(157, 209) (scale: 0.38859375, size: (1080, 1920))
+2025-06-06 22:30:16,246 - INFO - Annotation added: x=527.5432247687977, y=624.0450341777241, w=247.0446320868516, h=172.41656614394856
+2025-06-06 22:30:16,257 - INFO - Mouse release at PyQt5.QtCore.QPoint(253, 276)
+2025-06-06 22:30:16,373 - INFO - Image scale set to 0.38859375 for C:/Users/Lev/Desktop/ZeroBlindSpot/data/06.06 21_56\no_bucket\frame_0013.jpg
+2025-06-06 22:30:17,567 - INFO - Mouse press at PyQt5.QtCore.QPoint(154, 245) (scale: 0.38859375, size: (1080, 1920))
+2025-06-06 22:30:18,485 - INFO - Annotation added: x=503.0960997185364, y=693.5263369521512, w=213.59067149175712, h=126.09569762766387
+2025-06-06 22:30:18,495 - INFO - Mouse release at PyQt5.QtCore.QPoint(237, 294)
+2025-06-06 22:30:19,725 - INFO - Annotations saved for frame_0007.jpg at C:/Users/Lev/Desktop/ZeroBlindSpot/data/06.06 21_56/annotations/frame_0007.jpg.txt
+2025-06-06 22:30:19,725 - INFO - Frame moved to C:/Users/Lev/Desktop/ZeroBlindSpot/data/06.06 21_56/frames/frame_0007.jpg
+2025-06-06 22:30:19,733 - INFO - Annotations saved for frame_0008.jpg at C:/Users/Lev/Desktop/ZeroBlindSpot/data/06.06 21_56/annotations/frame_0008.jpg.txt
+2025-06-06 22:30:19,733 - INFO - Frame moved to C:/Users/Lev/Desktop/ZeroBlindSpot/data/06.06 21_56/frames/frame_0008.jpg
+2025-06-06 22:30:19,741 - INFO - Annotations saved for frame_0010.jpg at C:/Users/Lev/Desktop/ZeroBlindSpot/data/06.06 21_56/annotations/frame_0010.jpg.txt
+2025-06-06 22:30:19,741 - INFO - Frame moved to C:/Users/Lev/Desktop/ZeroBlindSpot/data/06.06 21_56/frames/frame_0010.jpg
+2025-06-06 22:30:19,748 - INFO - Annotations saved for frame_0012.jpg at C:/Users/Lev/Desktop/ZeroBlindSpot/data/06.06 21_56/annotations/frame_0012.jpg.txt
+2025-06-06 22:30:19,748 - INFO - Frame moved to C:/Users/Lev/Desktop/ZeroBlindSpot/data/06.06 21_56/frames/frame_0012.jpg
+2025-06-06 22:30:19,756 - INFO - Annotations saved for frame_0013.jpg at C:/Users/Lev/Desktop/ZeroBlindSpot/data/06.06 21_56/annotations/frame_0013.jpg.txt
+2025-06-06 22:30:19,756 - INFO - Frame moved to C:/Users/Lev/Desktop/ZeroBlindSpot/data/06.06 21_56/frames/frame_0013.jpg
+2025-06-06 22:30:19,764 - INFO - Image scale set to 0.38859375 for C:/Users/Lev/Desktop/ZeroBlindSpot/data/06.06 21_56\no_bucket\frame_0014.jpg

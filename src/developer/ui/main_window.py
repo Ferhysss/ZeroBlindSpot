@@ -12,13 +12,13 @@ import torch
 import logging
 import os
 import yaml
-from datetime import datetime
+from glob import glob
 
 class DeveloperModule(QMainWindow, ModuleInterface):
-    def __init__(self, project_dir: Optional[str] = None, video_path: Optional[str] = None):
+    def __init__(self, project_dir: str, video_path: str):
         super().__init__()
         self.setWindowTitle("ZeroBlindSpot - Developer")
-        self.setMinimumSize(1000, 600)  # Минимальный размер окна
+        self.setMinimumSize(1000, 600)
         self.config = Config()
         self.yolo_model: Optional[YoloModel] = None
         self.cnn_model: Optional[SimpleCNN] = None
@@ -32,8 +32,7 @@ class DeveloperModule(QMainWindow, ModuleInterface):
         }
         self._init_models()
         self._init_ui()
-        if self.project_dir and self.video_path:
-            self._load_project()
+        self._load_project()
 
     def _init_ui(self):
         central_widget = QWidget()
@@ -42,7 +41,7 @@ class DeveloperModule(QMainWindow, ModuleInterface):
 
         control_widget = QWidget()
         control_layout = QVBoxLayout(control_widget)
-        self.status_label = QLabel("Ожидание загрузки видео...")
+        self.status_label = QLabel("Загружен проект")
         control_layout.addWidget(self.status_label)
 
         self.progress_bar = QProgressBar()
@@ -66,10 +65,6 @@ class DeveloperModule(QMainWindow, ModuleInterface):
         self.class_combo.addItems(["bucket"])
         self.class_combo.currentTextChanged.connect(self._update_class)
         control_layout.addWidget(self.class_combo)
-
-        self.load_button = QPushButton("Загрузить видео")
-        self.load_button.clicked.connect(self._load_video)
-        control_layout.addWidget(self.load_button)
 
         self.annotate_button = QPushButton("Режим аннотации")
         self.annotate_button.setEnabled(False)
@@ -137,24 +132,14 @@ class DeveloperModule(QMainWindow, ModuleInterface):
         self.config.update("excavator", excavator)
         self.config.update("bucket_volume", self.excavators[excavator])
         logging.info(f"Excavator: {excavator}, Bucket volume: {self.excavators[excavator]} m³")
+        self._save_project_config()
 
     def _update_class(self, class_name: str):
         self.frame_viewer.class_id = {"bucket": 0}.get(class_name, 0)
         logging.info(f"Annotation class: {class_name}")
 
-    def _load_video(self):
-        file_name, _ = QFileDialog.getOpenFileName(self, "Выберите видео", "", "Video Files (*.mp4 *.avi)")
-        if file_name:
-            self.video_path = file_name
-            self.status_label.setText(f"Загружено: {file_name}")
-            self.progress_bar.setValue(0)
-            self.frame_viewer.update_frame("", [])
-            logging.info(f"Video: {file_name}")
-            self._process_video()
-
     def _load_project(self):
-        """Загружает существующий проект."""
-        if not self.project_dir or not os.path.exists(self.project_dir):
+        if not os.path.exists(self.project_dir):
             self.status_label.setText("Ошибка: проект не найден")
             return
         project_config_path = os.path.join(self.project_dir, "project.yaml")
@@ -166,15 +151,86 @@ class DeveloperModule(QMainWindow, ModuleInterface):
                 self.excavator_combo.setCurrentText(project_config.get("excavator", "Экскаватор A"))
             self.status_label.setText(f"Проект загружен: {self.project_dir}")
             logging.info(f"Project loaded: {self.project_dir}")
-            self._process_video()
+
+            frames_dir = os.path.join(self.project_dir, "frames")
+            no_bucket_dir = os.path.join(self.project_dir, "no_bucket")
+            annotations_dir = os.path.join(self.project_dir, "annotations")
+            negative_dir = os.path.join(self.project_dir, "negative")
+
+            self.frame_viewer.no_bucket_frames = []
+            self.frame_viewer.low_conf_frames = []
+
+            if os.path.exists(frames_dir):
+                # Собираем аннотированные кадры
+                annotated_frames = set()
+                if os.path.exists(annotations_dir):
+                    for ann_file in sorted(glob(os.path.join(annotations_dir, "*.txt"))):
+                        frame_name = os.path.basename(ann_file).replace(".txt", ".jpg")
+                        frame_path = os.path.join(frames_dir, frame_name)
+                        if os.path.exists(frame_path):
+                            annotations = []
+                            try:
+                                with open(ann_file, "r", encoding='utf-8') as f:
+                                    for line in f:
+                                        parts = line.strip().split()
+                                        if len(parts) == 5:
+                                            class_id, x_norm, y_norm, w_norm, h_norm = map(float, parts)
+                                            img = cv2.imread(frame_path)
+                                            if img is None:
+                                                continue
+                                            img_h, img_w = img.shape[:2]
+                                            x = x_norm * img_w
+                                            y = y_norm * img_h
+                                            w = w_norm * img_w
+                                            h = h_norm * img_h
+                                            annotations.append((x, y, w, h, 1.0))
+                                if annotations:
+                                    self.frame_viewer.low_conf_frames.append((frame_path, annotations))
+                                    self.frame_viewer.frame_annotations[frame_path] = annotations
+                                    annotated_frames.add(frame_name)
+                            except Exception as e:
+                                logging.error(f"Failed to load annotation {ann_file}: {str(e)}")
+
+                # Загружаем no_bucket_frames, исключая аннотированные
+                if os.path.exists(no_bucket_dir):
+                    for frame_path in sorted(glob(os.path.join(no_bucket_dir, "*.jpg"))):
+                        frame_name = os.path.basename(frame_path)
+                        if frame_name not in annotated_frames:
+                            self.frame_viewer.no_bucket_frames.append((frame_path, []))
+                        else:
+                            logging.info(f"Skipped annotated frame {frame_name} in no_bucket_dir")
+
+                # Проверяем negative
+                if os.path.exists(negative_dir):
+                    negative_frames = glob(os.path.join(negative_dir, "*.jpg"))
+                    for frame_path in negative_frames:
+                        self.frame_viewer.frame_annotations[frame_path] = []
+
+                if self.frame_viewer.no_bucket_frames or self.frame_viewer.low_conf_frames:
+                    self.annotate_button.setEnabled(True)
+                    self.review_button.setEnabled(True)
+                    self.frame_viewer.update_counter()
+                    logging.info(f"Loaded {len(self.frame_viewer.no_bucket_frames)} no_bucket, {len(self.frame_viewer.low_conf_frames)} low_conf frames")
+                else:
+                    self._process_video()
+            else:
+                self._process_video()
         else:
             self.status_label.setText("Ошибка: конфигурация проекта не найдена")
 
+    def _save_project_config(self):
+        project_config = {
+            "video_path": self.video_path,
+            "excavator": self.config.get("excavator", "Экскаватор A"),
+            "frame_rate": self.config.get("frame_rate", 1),
+            "project_dir": self.project_dir
+        }
+        with open(os.path.join(self.project_dir, "project.yaml"), "w", encoding='utf-8') as f:
+            yaml.safe_dump(project_config, f)
+
     def _extract_frames(self):
-        file_name, _ = QFileDialog.getOpenFileName(self, "Выберите видео", "", "Video Files (*.mp4 *.avi)")
-        if file_name:
-            self.status_label.setText(f"Извлечение кадров: {file_name}")
-            self.processor.extract_frames(file_name)
+        self.status_label.setText(f"Извлечение кадров: {self.video_path}")
+        self.processor.extract_frames(self.video_path)
 
     def _train_yolo(self):
         data_path, _ = QFileDialog.getOpenFileName(self, "Выберите data.yaml", "", "YAML Files (*.yaml)")
@@ -184,7 +240,7 @@ class DeveloperModule(QMainWindow, ModuleInterface):
             trainer = Trainer(self.config)
             try:
                 trainer.train_yolo(data_path, epochs=10)
-                self.status_label.setText("Обучение завершено!")
+                self.status_label.setText("Обучение завершено")
             except Exception as e:
                 self.status_label.setText(f"Ошибка обучения: {str(e)}")
             self.train_button.setEnabled(True)
@@ -193,58 +249,51 @@ class DeveloperModule(QMainWindow, ModuleInterface):
         if not self.yolo_model:
             self.status_label.setText("Ошибка: YOLO не загружен")
             return
-        if not self.project_dir:
-            self.project_dir = f"data/project_{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}"
         os.makedirs(self.project_dir, exist_ok=True)
         self.frame_viewer.no_bucket_frames = []
         self.frame_viewer.low_conf_frames = []
-        self.frame_viewer.current_frame_index = -1
+        self.frame_viewer.current_frame_index = 0
         self.processor = DeveloperProcessor(self.video_path, self.yolo_model, self.cnn_model, self.config, self.project_dir)
-        self.processor.progress.connect(self.progress_bar.setValue)
+        self.processor.progress.connect(self.progress_bar)
         self.processor.status.connect(self.status_label.setText)
         self.processor.frame_processed.connect(self.frame_viewer.update_frame)
         self.processor.no_bucket_frame.connect(self.frame_viewer.add_no_bucket_frame)
         self.processor.low_conf_frame.connect(self.frame_viewer.add_low_conf_frame)
-        self.processor.finished.connect(self._on_processing_finished)
-        self.load_button.setEnabled(False)
+        self.processor.finished.connect(self._on_processing_done)
         self.annotate_button.setEnabled(True)
         self.review_button.setEnabled(True)
         self.config.update("last_project", self.project_dir)
-        # Сохраняем конфигурацию проекта
-        project_config = {
-            "video_path": self.video_path,
-            "excavator": self.config.get("excavator", "Экскаватор A"),
-            "frame_rate": self.config.get("frame_rate", 1),
-            "project_dir": self.project_dir
-        }
-        with open(os.path.join(self.project_dir, "project.yaml"), "w", encoding='utf-8') as f:
-            yaml.safe_dump(project_config, f)
+        self._save_project_config()
         self.processor.start()
 
     def _toggle_annotation(self):
         self.frame_viewer.review_mode = False
         self.frame_viewer.annotation_mode = not self.frame_viewer.annotation_mode
-        status = "включён" if self.frame_viewer.annotation_mode else "выключён"
+        status = "включён" if self.frame_viewer.annotation_mode else "выключен"
         self.status_label.setText(f"Режим аннотации: {status}")
         if self.frame_viewer.annotation_mode and self.frame_viewer.no_bucket_frames:
             self.frame_viewer.show_frame(0, False)
             self.frame_viewer.annotate_frame()
         elif self.frame_viewer.annotation_mode:
             self.status_label.setText("Режим аннотации: нет кадров без ковша")
+        self.frame_viewer.update_counter()
 
     def _toggle_review(self):
         self.frame_viewer.annotation_mode = False
         self.frame_viewer.review_mode = not self.frame_viewer.review_mode
-        status = "включён" if self.frame_viewer.review_mode else "выключён"
+        status = "включён" if self.frame_viewer.review_mode else "выключен"
         self.status_label.setText(f"Режим ревью: {status}")
         if self.frame_viewer.review_mode and self.frame_viewer.low_conf_frames:
             self.frame_viewer.show_frame(0, True)
             self.frame_viewer.annotate_frame()
         elif self.frame_viewer.review_mode:
             self.status_label.setText("Режим ревью: нет низкоконфиденциальных кадров")
+        self.frame_viewer.current_frame_path = ""
+        self.frame_viewer.current_frame_index = -1
+        self.frame_viewer.update_counter()
 
-    def _on_processing_finished(self):
-        self.load_button.setEnabled(True)
+    def _on_processing_done(self):
+        pass
 
     def start(self):
         self.show()

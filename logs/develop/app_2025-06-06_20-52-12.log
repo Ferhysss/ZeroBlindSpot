@@ -1,0 +1,139 @@
+2025-06-06 20:52:12,708 - INFO - Logging initialized
+2025-06-06 20:52:52,854 - INFO - YOLO model loaded: models/model.pt
+2025-06-06 20:52:52,855 - INFO - YOLO loaded
+2025-06-06 20:52:52,865 - INFO - Excavator: Экскаватор B, Bucket volume: 2.0 m³
+2025-06-06 20:52:52,866 - INFO - Project loaded: data/06.06
+2025-06-06 20:52:54,347 - INFO - Frames saved in data/06.06/frames
+2025-06-06 20:53:11,473 - INFO - Processing completed
+2025-06-06 20:53:30,880 - INFO - Image scale set to 0.30375 for data/06.06/no_bucket\frame_0001.jpg
+2025-06-06 20:53:32,155 - INFO - Mouse press at PyQt5.QtCore.QPoint(333, 123)
+2025-06-06 20:53:32,503 - INFO - Annotations saved for frame_0001.jpg at data/06.06/annotations/frame_0001.jpg.txt
+2025-06-06 20:53:32,504 - INFO - Annotation added: x=1155.5555555555557, y=381.8930041152263, w=118.51851851851848, h=46.090534979423865
+2025-06-06 20:53:32,509 - INFO - Mouse release at PyQt5.QtCore.QPoint(369, 109)
+2025-06-06 20:53:37,348 - INFO - Mouse press at PyQt5.QtCore.QPoint(336, 136)
+2025-06-06 20:53:37,735 - INFO - Annotations saved for frame_0001.jpg at data/06.06/annotations/frame_0001.jpg.txt
+2025-06-06 20:53:37,735 - INFO - Annotation added: x=1178.6008230452674, y=391.76954732510285, w=144.85596707818922, h=111.93415637860085
+2025-06-06 20:53:37,741 - INFO - Mouse release at PyQt5.QtCore.QPoint(380, 102)
+2025-06-06 20:53:37,892 - INFO - Mouse press at PyQt5.QtCore.QPoint(349, 103)
+2025-06-06 20:53:38,152 - INFO - Annotations saved for frame_0001.jpg at data/06.06/annotations/frame_0001.jpg.txt
+2025-06-06 20:53:38,152 - INFO - Annotation added: x=1308.641975308642, y=386.8312757201646, w=319.34156378600824, h=95.4732510288066
+2025-06-06 20:53:38,157 - INFO - Mouse release at PyQt5.QtCore.QPoint(446, 132)
+2025-06-06 20:53:38,318 - INFO - Mouse press at PyQt5.QtCore.QPoint(334, 110)
+2025-06-06 20:53:38,492 - INFO - Annotations saved for frame_0001.jpg at data/06.06/annotations/frame_0001.jpg.txt
+2025-06-06 20:53:38,492 - INFO - Annotation added: x=1270.7818930041153, y=470.7818930041152, w=342.38683127572017, h=217.2839506172839
+2025-06-06 20:53:38,500 - INFO - Mouse release at PyQt5.QtCore.QPoint(438, 176)
+2025-06-06 20:53:40,903 - INFO - Mouse press at PyQt5.QtCore.QPoint(616, 376)
+2025-06-06 20:53:41,134 - INFO - Annotations saved for frame_0001.jpg at data/06.06/annotations/frame_0001.jpg.txt
+2025-06-06 20:53:41,134 - INFO - Annotation added: x=2156.3786008230454, y=1390.946502057613, w=256.7901234567903, h=306.17283950617275
+2025-06-06 20:53:41,140 - INFO - Mouse release at PyQt5.QtCore.QPoint(694, 469)
+2025-06-06 20:53:41,284 - INFO - Mouse press at PyQt5.QtCore.QPoint(644, 343)
+2025-06-06 20:53:41,453 - INFO - Annotations saved for frame_0001.jpg at data/06.06/annotations/frame_0001.jpg.txt
+2025-06-06 20:53:41,453 - INFO - Annotation added: x=2260.082304526749, y=1308.641975308642, w=279.83539094650223, h=358.8477366255145
+2025-06-06 20:53:41,459 - INFO - Mouse release at PyQt5.QtCore.QPoint(729, 452)
+2025-06-06 20:53:41,572 - INFO - Mouse press at PyQt5.QtCore.QPoint(744, 416)
+2025-06-06 20:53:41,793 - INFO - Annotations saved for frame_0001.jpg at data/06.06/annotations/frame_0001.jpg.txt
+2025-06-06 20:53:41,793 - INFO - Annotation added: x=2612.3456790123455, y=1134.156378600823, w=325.9259259259261, h=470.7818930041153
+2025-06-06 20:53:41,799 - INFO - Mouse release at PyQt5.QtCore.QPoint(843, 273)
+2025-06-06 20:53:42,016 - INFO - Mouse press at PyQt5.QtCore.QPoint(727, 313)
+2025-06-06 20:53:42,269 - INFO - Annotations saved for frame_0001.jpg at data/06.06/annotations/frame_0001.jpg.txt
+2025-06-06 20:53:42,269 - INFO - Annotation added: x=2559.670781893004, y=982.7160493827159, w=332.51028806584327, h=95.47325102880666
+2025-06-06 20:53:42,275 - INFO - Mouse release at PyQt5.QtCore.QPoint(828, 284)
+2025-06-06 20:53:42,423 - INFO - Mouse press at PyQt5.QtCore.QPoint(763, 281)
+2025-06-06 20:53:42,595 - INFO - Annotations saved for frame_0001.jpg at data/06.06/annotations/frame_0001.jpg.txt
+2025-06-06 20:53:42,595 - INFO - Annotation added: x=2592.592592592592, y=977.7777777777777, w=161.31687242798353, h=105.34979423868322
+2025-06-06 20:53:42,601 - INFO - Mouse release at PyQt5.QtCore.QPoint(812, 313)
+2025-06-06 20:53:48,624 - INFO - Mouse press at PyQt5.QtCore.QPoint(697, 441)
+2025-06-06 20:53:48,882 - INFO - Annotations saved for frame_0001.jpg at data/06.06/annotations/frame_0001.jpg.txt
+2025-06-06 20:53:48,883 - INFO - Annotation added: x=2480.6584362139915, y=1558.8477366255142, w=372.01646090534996, h=213.99176954732502
+2025-06-06 20:53:48,888 - INFO - Mouse release at PyQt5.QtCore.QPoint(810, 506)
+2025-06-06 20:53:49,074 - INFO - Mouse press at PyQt5.QtCore.QPoint(683, 325)
+2025-06-06 20:53:49,283 - INFO - Annotations saved for frame_0001.jpg at data/06.06/annotations/frame_0001.jpg.txt
+2025-06-06 20:53:49,283 - INFO - Annotation added: x=2408.2304526748967, y=1158.8477366255142, w=319.34156378600846, h=177.7777777777776
+2025-06-06 20:53:49,289 - INFO - Mouse release at PyQt5.QtCore.QPoint(780, 379)
+2025-06-06 20:53:50,981 - INFO - Image scale set to 0.5969531250000001 for data/06.06/no_bucket\frame_0002.jpg
+2025-06-06 20:53:52,180 - INFO - Image scale set to 0.5969531250000001 for data/06.06/no_bucket\frame_0006.jpg
+2025-06-06 20:53:53,162 - INFO - Mouse press at PyQt5.QtCore.QPoint(674, 269)
+2025-06-06 20:53:53,542 - INFO - Annotations saved for frame_0002.jpg at data/06.06/annotations/frame_0002.jpg.txt
+2025-06-06 20:53:53,542 - INFO - Annotation added: x=1259.7304017798715, y=381.9395367098547, w=261.3270514330584, h=137.3642193430179
+2025-06-06 20:53:53,549 - INFO - Mouse release at PyQt5.QtCore.QPoint(830, 187)
+2025-06-06 20:53:53,694 - INFO - Mouse press at PyQt5.QtCore.QPoint(690, 212)
+2025-06-06 20:53:53,927 - INFO - Annotations saved for frame_0002.jpg at data/06.06/annotations/frame_0002.jpg.txt
+2025-06-06 20:53:53,927 - INFO - Annotation added: x=1315.8487109017142, y=329.17157440125635, w=319.9581206648345, h=51.93037560528728
+2025-06-06 20:53:53,934 - INFO - Mouse release at PyQt5.QtCore.QPoint(881, 181)
+2025-06-06 20:53:54,050 - INFO - Mouse press at PyQt5.QtCore.QPoint(861, 181)
+2025-06-06 20:53:54,314 - INFO - Annotations saved for frame_0002.jpg at data/06.06/annotations/frame_0002.jpg.txt
+2025-06-06 20:53:54,315 - INFO - Annotation added: x=1301.6097369454258, y=365.18780264363295, w=281.4291323125244, h=123.96283209004054
+2025-06-06 20:53:54,321 - INFO - Mouse release at PyQt5.QtCore.QPoint(693, 255)
+2025-06-06 20:53:54,877 - INFO - Mouse press at PyQt5.QtCore.QPoint(662, 259)
+2025-06-06 20:53:55,099 - INFO - Annotations saved for frame_0006.jpg at data/06.06/annotations/frame_0006.jpg.txt
+2025-06-06 20:53:55,099 - INFO - Annotation added: x=1186.8603585918072, y=444.7585394581861, w=155.79112681586184, h=21.77725428608818
+2025-06-06 20:53:55,105 - INFO - Mouse release at PyQt5.QtCore.QPoint(755, 272)
+2025-06-06 20:53:55,560 - INFO - Mouse press at PyQt5.QtCore.QPoint(627, 114)
+2025-06-06 20:53:55,776 - INFO - Annotations saved for frame_0006.jpg at data/06.06/annotations/frame_0006.jpg.txt
+2025-06-06 20:53:55,777 - INFO - Annotation added: x=989.1898966103912, y=180.08114121188322, w=122.28765868341839, h=21.77725428608821
+2025-06-06 20:53:55,783 - INFO - Mouse release at PyQt5.QtCore.QPoint(554, 101)
+2025-06-06 20:53:55,879 - INFO - Mouse press at PyQt5.QtCore.QPoint(701, 119)
+2025-06-06 20:53:56,111 - INFO - Annotations saved for frame_0006.jpg at data/06.06/annotations/frame_0006.jpg.txt
+2025-06-06 20:53:56,111 - INFO - Annotation added: x=1088.0251276010993, y=203.5335689045936, w=172.54286088208357, h=8.375867033110865
+2025-06-06 20:53:56,117 - INFO - Mouse release at PyQt5.QtCore.QPoint(598, 124)
+2025-06-06 20:53:56,276 - INFO - Mouse press at PyQt5.QtCore.QPoint(619, 123)
+2025-06-06 20:53:56,455 - WARNING - Zero-sized annotation skipped
+2025-06-06 20:53:56,461 - INFO - Mouse release at PyQt5.QtCore.QPoint(619, 123)
+2025-06-06 20:53:58,501 - INFO - Image scale set to 0.5969531250000001 for data/06.06/frames\frame_0003.jpg
+2025-06-06 20:54:03,439 - INFO - Annotations saved for frame_0003.jpg at data/06.06/annotations/frame_0003.jpg.txt
+2025-06-06 20:54:12,325 - INFO - Mouse press at PyQt5.QtCore.QPoint(594, 452)
+2025-06-06 20:54:12,539 - INFO - Annotations saved for frame_0001.jpg at data/06.06/annotations/frame_0001.jpg.txt
+2025-06-06 20:54:12,539 - INFO - Annotation added: x=2227.1604938271603, y=1390.946502057613, w=543.2098765432099, h=194.23868312757213
+2025-06-06 20:54:12,545 - INFO - Mouse release at PyQt5.QtCore.QPoint(759, 393)
+2025-06-06 20:54:12,645 - INFO - Mouse press at PyQt5.QtCore.QPoint(745, 344)
+2025-06-06 20:54:12,945 - INFO - Annotations saved for frame_0001.jpg at data/06.06/annotations/frame_0001.jpg.txt
+2025-06-06 20:54:12,946 - INFO - Annotation added: x=2643.6213991769546, y=906.9958847736625, w=381.8930041152262, h=451.0288065843621
+2025-06-06 20:54:12,951 - INFO - Mouse release at PyQt5.QtCore.QPoint(861, 207)
+2025-06-06 20:54:13,093 - INFO - Mouse press at PyQt5.QtCore.QPoint(838, 227)
+2025-06-06 20:54:13,338 - INFO - Annotations saved for frame_0001.jpg at data/06.06/annotations/frame_0001.jpg.txt
+2025-06-06 20:54:13,338 - INFO - Annotation added: x=2469.1358024691353, y=839.5061728395061, w=579.4238683127573, h=184.36213991769546
+2025-06-06 20:54:13,343 - INFO - Mouse release at PyQt5.QtCore.QPoint(662, 283)
+2025-06-06 20:54:13,462 - INFO - Mouse press at PyQt5.QtCore.QPoint(662, 283)
+2025-06-06 20:54:13,653 - INFO - Annotations saved for frame_0001.jpg at data/06.06/annotations/frame_0001.jpg.txt
+2025-06-06 20:54:13,653 - INFO - Annotation added: x=2447.7366255144034, y=895.4732510288065, w=536.6255144032925, h=72.42798353909461
+2025-06-06 20:54:13,659 - INFO - Mouse release at PyQt5.QtCore.QPoint(825, 261)
+2025-06-06 20:54:13,755 - INFO - Mouse press at PyQt5.QtCore.QPoint(827, 261)
+2025-06-06 20:54:14,000 - INFO - Annotations saved for frame_0001.jpg at data/06.06/annotations/frame_0001.jpg.txt
+2025-06-06 20:54:14,000 - INFO - Annotation added: x=2516.8724279835387, y=939.917695473251, w=411.5226337448562, h=161.31687242798353
+2025-06-06 20:54:14,006 - INFO - Mouse release at PyQt5.QtCore.QPoint(702, 310)
+2025-06-06 20:54:14,173 - INFO - Mouse press at PyQt5.QtCore.QPoint(708, 302)
+2025-06-06 20:54:14,384 - INFO - Annotations saved for frame_0002.jpg at data/06.06/annotations/frame_0002.jpg.txt
+2025-06-06 20:54:14,384 - INFO - Annotation added: x=1264.7559219997381, y=468.2109671508964, w=157.46630022248382, h=75.38280329799761
+2025-06-06 20:54:14,391 - INFO - Mouse release at PyQt5.QtCore.QPoint(802, 257)
+2025-06-06 20:54:14,592 - INFO - Mouse press at PyQt5.QtCore.QPoint(679, 251)
+2025-06-06 20:54:14,822 - INFO - Annotations saved for frame_0002.jpg at data/06.06/annotations/frame_0002.jpg.txt
+2025-06-06 20:54:14,822 - INFO - Annotation added: x=1250.5169480434497, y=384.45229681978793, w=226.14840989399295, h=72.03245648475331
+2025-06-06 20:54:14,829 - INFO - Mouse release at PyQt5.QtCore.QPoint(814, 208)
+2025-06-06 20:54:15,068 - INFO - Image scale set to 0.5969531250000001 for data/06.06/no_bucket\frame_0007.jpg
+2025-06-06 20:54:15,230 - INFO - Image scale set to 0.5969531250000001 for data/06.06/no_bucket\frame_0008.jpg
+2025-06-06 20:54:15,408 - INFO - Image scale set to 0.5969531250000001 for data/06.06/no_bucket\frame_0009.jpg
+2025-06-06 20:54:15,593 - INFO - Image scale set to 0.5969531250000001 for data/06.06/no_bucket\frame_0012.jpg
+2025-06-06 20:54:15,771 - INFO - Image scale set to 0.5969531250000001 for data/06.06/no_bucket\frame_0014.jpg
+2025-06-06 20:54:15,948 - INFO - Image scale set to 0.5969531250000001 for data/06.06/no_bucket\frame_0016.jpg
+2025-06-06 20:54:18,485 - INFO - Mouse press at PyQt5.QtCore.QPoint(740, 274)
+2025-06-06 20:54:18,766 - INFO - Annotations saved for frame_0009.jpg at data/06.06/annotations/frame_0009.jpg.txt
+2025-06-06 20:54:18,766 - INFO - Annotation added: x=1139.9555032063863, y=331.6843345111896, w=199.3456353880381, h=254.6263578065698
+2025-06-06 20:54:18,772 - INFO - Mouse release at PyQt5.QtCore.QPoint(621, 122)
+2025-06-06 20:54:18,859 - INFO - Mouse press at PyQt5.QtCore.QPoint(543, 103)
+2025-06-06 20:54:19,130 - INFO - Annotations saved for frame_0009.jpg at data/06.06/annotations/frame_0009.jpg.txt
+2025-06-06 20:54:19,130 - INFO - Annotation added: x=856.8511974872397, y=161.65423373903937, w=105.53592461719666, h=21.77725428608818
+2025-06-06 20:54:19,135 - INFO - Mouse release at PyQt5.QtCore.QPoint(480, 90)
+2025-06-06 20:54:19,245 - INFO - Mouse press at PyQt5.QtCore.QPoint(495, 88)
+2025-06-06 20:54:19,432 - INFO - Annotations saved for frame_0009.jpg at data/06.06/annotations/frame_0009.jpg.txt
+2025-06-06 20:54:19,432 - INFO - Annotation added: x=896.2177725428608, y=162.49182044235044, w=134.0138725297736, h=30.153121319199073
+2025-06-06 20:54:19,439 - INFO - Mouse release at PyQt5.QtCore.QPoint(575, 106)
+2025-06-06 20:54:19,539 - INFO - Mouse press at PyQt5.QtCore.QPoint(607, 113)
+2025-06-06 20:54:19,806 - INFO - Annotations saved for frame_0009.jpg at data/06.06/annotations/frame_0009.jpg.txt
+2025-06-06 20:54:19,806 - INFO - Annotation added: x=950.6609082580812, y=175.89320769532782, w=132.3386991231514, h=26.802774505954716
+2025-06-06 20:54:19,812 - INFO - Mouse release at PyQt5.QtCore.QPoint(528, 97)
+2025-06-06 20:54:19,929 - INFO - Mouse press at PyQt5.QtCore.QPoint(528, 97)
+2025-06-06 20:54:20,174 - WARNING - Zero-sized annotation skipped
+2025-06-06 20:54:20,180 - INFO - Mouse release at PyQt5.QtCore.QPoint(528, 97)
+2025-06-06 20:54:20,802 - INFO - Mouse press at PyQt5.QtCore.QPoint(523, 99)
+2025-06-06 20:54:20,979 - WARNING - Zero-sized annotation skipped
+2025-06-06 20:54:20,985 - INFO - Mouse release at PyQt5.QtCore.QPoint(523, 99)

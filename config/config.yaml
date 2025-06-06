@@ -1,11 +1,11 @@
-bucket_volume: 1.5
+bucket_volume: 2.0
 cnn_input_size:
 - 224
 - 224
 device: auto
-excavator: Экскаватор A
+excavator: Экскаватор B
 frame_rate: 1.0
-last_project: data/1st try
+last_project: data/06.06 21_56
 project_name: default
 use_cnn: false
 yolo_conf_threshold: 0.5

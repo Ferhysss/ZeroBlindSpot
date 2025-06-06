@@ -1,0 +1,153 @@
+2025-06-06 21:56:09,396 - INFO - Logging initialized
+2025-06-06 21:56:52,127 - INFO - YOLO model loaded: models/model.pt
+2025-06-06 21:56:52,127 - INFO - YOLO loaded
+2025-06-06 21:56:52,130 - INFO - Excavator: Экскаватор B, Bucket volume: 2.0 m³
+2025-06-06 21:56:52,135 - INFO - Project loaded: data/06.06 21_56
+2025-06-06 21:56:58,497 - INFO - Frames saved in data/06.06 21_56/frames
+2025-06-06 21:57:16,422 - INFO - Processing completed
+2025-06-06 21:57:22,552 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0001.jpg
+2025-06-06 21:57:27,223 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/frames\frame_0011.jpg
+2025-06-06 21:57:30,771 - WARNING - No frame or annotations to confirm
+2025-06-06 21:57:31,877 - WARNING - No frame or annotations to confirm
+2025-06-06 21:57:32,170 - WARNING - No frame or annotations to confirm
+2025-06-06 21:57:35,229 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/frames\frame_0018.jpg
+2025-06-06 21:57:36,765 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/frames\frame_0050.jpg
+2025-06-06 21:57:37,107 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/frames\frame_0057.jpg
+2025-06-06 21:57:37,319 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/frames\frame_0062.jpg
+2025-06-06 21:57:37,537 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/frames\frame_0078.jpg
+2025-06-06 21:57:37,951 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/frames\frame_0089.jpg
+2025-06-06 21:57:38,166 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/frames\frame_0091.jpg
+2025-06-06 21:57:38,352 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/frames\frame_0101.jpg
+2025-06-06 21:57:38,514 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/frames\frame_0118.jpg
+2025-06-06 21:57:38,690 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/frames\frame_0125.jpg
+2025-06-06 21:57:57,302 - INFO - Mouse press at PyQt5.QtCore.QPoint(152, 369) (scale: 0.38859375, size: (1080, 1920))
+2025-06-06 21:57:58,256 - INFO - Annotation added: x=469.6421391234419, y=1029.352633695215, w=156.97627663852023, h=159.54965822275824
+2025-06-06 21:57:58,268 - INFO - Mouse release at PyQt5.QtCore.QPoint(213, 431)
+2025-06-06 21:57:59,601 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0004.jpg
+2025-06-06 21:58:00,527 - INFO - Mouse press at PyQt5.QtCore.QPoint(162, 400) (scale: 0.38859375, size: (1080, 1920))
+2025-06-06 21:58:01,988 - INFO - Annotation added: x=509.5295536791315, y=1089.827100924809, w=185.28347406513876, h=120.94893445918797
+2025-06-06 21:58:02,000 - INFO - Mouse release at PyQt5.QtCore.QPoint(234, 447)
+2025-06-06 21:58:02,273 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0005.jpg
+2025-06-06 21:58:02,990 - INFO - Mouse press at PyQt5.QtCore.QPoint(166, 419) (scale: 0.38859375, size: (1080, 1920))
+2025-06-06 21:58:03,670 - INFO - Annotation added: x=526.2565339766787, y=1129.7145154804984, w=198.15038198632897, h=102.93526336952141
+2025-06-06 21:58:03,681 - INFO - Mouse release at PyQt5.QtCore.QPoint(243, 459)
+2025-06-06 21:58:03,999 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0002.jpg
+2025-06-06 21:58:06,073 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0006.jpg
+2025-06-06 21:58:09,205 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0007.jpg
+2025-06-06 21:58:09,236 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0008.jpg
+2025-06-06 21:58:09,268 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0010.jpg
+2025-06-06 21:58:09,301 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0012.jpg
+2025-06-06 21:58:09,335 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0013.jpg
+2025-06-06 21:58:09,367 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0014.jpg
+2025-06-06 21:58:09,398 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0015.jpg
+2025-06-06 21:58:09,434 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0017.jpg
+2025-06-06 21:58:09,466 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0019.jpg
+2025-06-06 21:58:09,499 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0021.jpg
+2025-06-06 21:58:09,530 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0022.jpg
+2025-06-06 21:58:09,562 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0023.jpg
+2025-06-06 21:58:09,595 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0026.jpg
+2025-06-06 21:58:09,629 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0027.jpg
+2025-06-06 21:58:09,661 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0029.jpg
+2025-06-06 21:58:09,696 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0030.jpg
+2025-06-06 21:58:09,727 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0031.jpg
+2025-06-06 21:58:09,759 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0034.jpg
+2025-06-06 21:58:09,793 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0035.jpg
+2025-06-06 21:58:09,825 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0036.jpg
+2025-06-06 21:58:09,858 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0040.jpg
+2025-06-06 21:58:09,890 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0041.jpg
+2025-06-06 21:58:09,922 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0043.jpg
+2025-06-06 21:58:09,955 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0044.jpg
+2025-06-06 21:58:09,992 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0045.jpg
+2025-06-06 21:58:10,022 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0046.jpg
+2025-06-06 21:58:10,055 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0048.jpg
+2025-06-06 21:58:10,087 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0049.jpg
+2025-06-06 21:58:10,121 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0051.jpg
+2025-06-06 21:58:10,153 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0056.jpg
+2025-06-06 21:58:10,188 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0058.jpg
+2025-06-06 21:58:10,218 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0059.jpg
+2025-06-06 21:58:10,252 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0060.jpg
+2025-06-06 21:58:10,284 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0063.jpg
+2025-06-06 21:58:10,318 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0065.jpg
+2025-06-06 21:58:10,350 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0066.jpg
+2025-06-06 21:58:10,384 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0071.jpg
+2025-06-06 21:58:10,416 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0073.jpg
+2025-06-06 21:58:10,450 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0074.jpg
+2025-06-06 21:58:10,481 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0075.jpg
+2025-06-06 21:58:10,513 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0077.jpg
+2025-06-06 21:58:10,548 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0079.jpg
+2025-06-06 21:58:10,580 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0080.jpg
+2025-06-06 21:58:10,613 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0081.jpg
+2025-06-06 21:58:10,646 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0084.jpg
+2025-06-06 21:58:10,678 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0085.jpg
+2025-06-06 21:58:10,711 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0086.jpg
+2025-06-06 21:58:10,743 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0087.jpg
+2025-06-06 21:58:10,779 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0088.jpg
+2025-06-06 21:58:10,810 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0092.jpg
+2025-06-06 21:58:10,844 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0093.jpg
+2025-06-06 21:58:10,875 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0095.jpg
+2025-06-06 21:58:10,906 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0099.jpg
+2025-06-06 21:58:10,940 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0100.jpg
+2025-06-06 21:58:10,972 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0102.jpg
+2025-06-06 21:58:11,008 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0103.jpg
+2025-06-06 21:58:11,038 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0106.jpg
+2025-06-06 21:58:11,071 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0107.jpg
+2025-06-06 21:58:11,104 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0108.jpg
+2025-06-06 21:58:11,137 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0109.jpg
+2025-06-06 21:58:11,169 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0110.jpg
+2025-06-06 21:58:11,202 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0112.jpg
+2025-06-06 21:58:11,237 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0113.jpg
+2025-06-06 21:58:11,270 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0114.jpg
+2025-06-06 21:58:11,302 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0115.jpg
+2025-06-06 21:58:11,334 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0116.jpg
+2025-06-06 21:58:11,368 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0117.jpg
+2025-06-06 21:58:11,400 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0123.jpg
+2025-06-06 21:58:11,432 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0124.jpg
+2025-06-06 21:58:11,467 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0126.jpg
+2025-06-06 21:58:11,498 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0127.jpg
+2025-06-06 21:58:11,533 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0128.jpg
+2025-06-06 21:58:11,564 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0129.jpg
+2025-06-06 21:58:11,596 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0130.jpg
+2025-06-06 21:58:11,630 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0131.jpg
+2025-06-06 21:58:11,662 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0132.jpg
+2025-06-06 21:58:11,697 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0134.jpg
+2025-06-06 21:58:11,729 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0135.jpg
+2025-06-06 21:58:11,763 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0136.jpg
+2025-06-06 21:58:11,793 - INFO - Image scale set to 0.38859375 for data/06.06 21_56/no_bucket\frame_0142.jpg
+2025-06-06 21:58:16,734 - INFO - Mouse press at PyQt5.QtCore.QPoint(153, 365) (scale: 0.38859375, size: (1080, 1920))
+2025-06-06 21:58:17,319 - INFO - Annotation added: x=470.92882991556087, y=1019.059107358263, w=154.40289505428223, h=159.54965822275835
+2025-06-06 21:58:17,331 - INFO - Mouse release at PyQt5.QtCore.QPoint(213, 427)
+2025-06-06 21:58:18,630 - INFO - Mouse press at PyQt5.QtCore.QPoint(177, 424) (scale: 0.38859375, size: (1080, 1920))
+2025-06-06 21:58:19,248 - INFO - Annotation added: x=536.5500603136309, y=1141.2947326095698, w=162.12303980699636, h=100.36188178528346
+2025-06-06 21:58:19,259 - INFO - Mouse release at PyQt5.QtCore.QPoint(240, 463)
+2025-06-06 21:58:21,736 - INFO - Mouse press at PyQt5.QtCore.QPoint(168, 434) (scale: 0.38859375, size: (1080, 1920))
+2025-06-06 21:58:23,579 - INFO - Annotation added: x=537.8367511057498, y=1174.7486932046643, w=211.0172899075191, h=115.80217129071161
+2025-06-06 21:58:23,590 - INFO - Mouse release at PyQt5.QtCore.QPoint(250, 479)
+2025-06-06 21:58:27,285 - INFO - Mouse press at PyQt5.QtCore.QPoint(165, 216) (scale: 0.38859375, size: (1080, 1920))
+2025-06-06 21:58:28,165 - INFO - Annotation added: x=576.4374748693205, y=662.6457579412947, w=303.6590269400884, h=213.59067149175712
+2025-06-06 21:58:28,176 - INFO - Mouse release at PyQt5.QtCore.QPoint(283, 299)
+2025-06-06 21:58:29,685 - INFO - Mouse press at PyQt5.QtCore.QPoint(155, 201) (scale: 0.38859375, size: (1080, 1920))
+2025-06-06 21:58:30,954 - INFO - Annotation added: x=531.4032971451547, y=613.751507840772, w=265.0583031765179, h=193.00361881785284
+2025-06-06 21:58:30,965 - INFO - Mouse release at PyQt5.QtCore.QPoint(258, 276)
+2025-06-06 21:58:32,019 - INFO - Mouse press at PyQt5.QtCore.QPoint(152, 241) (scale: 0.38859375, size: (1080, 1920))
+2025-06-06 21:58:32,603 - INFO - Annotation added: x=509.5295536791315, y=687.092882991556, w=236.7511057498994, h=133.81584238037794
+2025-06-06 21:58:32,613 - INFO - Mouse release at PyQt5.QtCore.QPoint(244, 293)
+2025-06-06 21:58:33,888 - INFO - Mouse press at PyQt5.QtCore.QPoint(147, 246) (scale: 0.38859375, size: (1080, 1920))
+2025-06-06 21:58:34,886 - INFO - Annotation added: x=468.3554483313229, y=706.3932448733414, w=180.1367108966627, h=146.68275030156815
+2025-06-06 21:58:34,896 - INFO - Mouse release at PyQt5.QtCore.QPoint(217, 303)
+2025-06-06 21:58:37,209 - INFO - Mouse press at PyQt5.QtCore.QPoint(149, 219) (scale: 0.38859375, size: (1080, 1920))
+2025-06-06 21:58:38,246 - INFO - Annotation added: x=464.4953759549658, y=639.4853236831524, w=162.12303980699642, h=151.82951347004428
+2025-06-06 21:58:38,257 - INFO - Mouse release at PyQt5.QtCore.QPoint(212, 278)
+2025-06-06 21:58:41,567 - INFO - Annotations saved for frame_0001.jpg at data/06.06 21_56/annotations/frame_0001.jpg.txt
+2025-06-06 21:58:41,576 - INFO - Annotations saved for frame_0004.jpg at data/06.06 21_56/annotations/frame_0004.jpg.txt
+2025-06-06 21:58:41,584 - INFO - Annotations saved for frame_0005.jpg at data/06.06 21_56/annotations/frame_0005.jpg.txt
+2025-06-06 21:58:41,593 - INFO - Annotations saved for frame_0002.jpg at data/06.06 21_56/annotations/frame_0002.jpg.txt
+2025-06-06 21:58:41,602 - INFO - Annotations saved for frame_0007.jpg at data/06.06 21_56/annotations/frame_0007.jpg.txt
+2025-06-06 21:58:41,610 - INFO - Annotations saved for frame_0006.jpg at data/06.06 21_56/annotations/frame_0006.jpg.txt
+2025-06-06 21:58:41,618 - INFO - Annotations saved for frame_0010.jpg at data/06.06 21_56/annotations/frame_0010.jpg.txt
+2025-06-06 21:58:41,626 - INFO - Annotations saved for frame_0012.jpg at data/06.06 21_56/annotations/frame_0012.jpg.txt
+2025-06-06 21:58:41,634 - INFO - Annotations saved for frame_0013.jpg at data/06.06 21_56/annotations/frame_0013.jpg.txt
+2025-06-06 21:58:41,641 - INFO - Annotations saved for frame_0014.jpg at data/06.06 21_56/annotations/frame_0014.jpg.txt
+2025-06-06 21:58:41,649 - INFO - Annotations saved for frame_0015.jpg at data/06.06 21_56/annotations/frame_0015.jpg.txt
+2025-06-06 21:58:44,438 - INFO - Mouse press at PyQt5.QtCore.QPoint(167, 361) (scale: 0.38859375, size: (1080, 1920))
+2025-06-06 21:58:45,354 - INFO - Annotation added: x=562.2838761560113, y=1016.485725774025, w=265.0583031765178, h=174.98994772818662
+2025-06-06 21:58:45,365 - INFO - Mouse release at PyQt5.QtCore.QPoint(270, 429)
