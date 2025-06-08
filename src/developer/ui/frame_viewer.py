@@ -381,14 +381,13 @@ class FrameViewer(QWidget):
 
     def show_next_frame(self):
         if self.annotation_mode:
-            total = len(self.no_bucket_frames)
-            if total == 0:
+            if not self.no_bucket_frames:
                 self.update_status.emit("Режим аннотации: нет кадров")
                 self.current_frame_path = ""
                 self.display_frame()
                 self.update_counter()
                 return
-            self.current_frame_index = min(self.current_frame_index + 1, total - 1)
+            self.current_frame_index = min(self.current_frame_index + 1, len(self.no_bucket_frames) - 1)
             self.current_frame_path, self.current_annotations = self.no_bucket_frames[self.current_frame_index]
             self.frame_annotations[self.current_frame_path] = self.current_annotations
             self.display_frame()

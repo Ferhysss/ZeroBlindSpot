@@ -354,7 +354,12 @@ class DeveloperModule(QMainWindow, ModuleInterface):
             self.status_label.setText("Режим аннотации: нет кадров без ковша")
         self.frame_viewer.update_counter()
 
-    def _toggle_review(self):
+    def _toggle_review(self, checked):
+        if checked and not self.frame_viewer.low_conf_frames:
+            self.status_label.setText("Нет низкоконфиденциальных кадров")
+            return
+        self.frame_viewer.review_mode = checked
+        self.frame_viewer.show_frame(0, checked)
         self.frame_viewer.annotation_mode = False
         self.frame_viewer.review_mode = not self.frame_viewer.review_mode
         status = "включён" if self.frame_viewer.review_mode else "выключён"
@@ -418,9 +423,14 @@ class DeveloperModule(QMainWindow, ModuleInterface):
     def _init_processor(self):
         yolo_model = YoloModel("models/yolo.pt")
         cnn_model = SimpleCNN().to("cuda" if torch.cuda.is_available() else "cpu")
-        cnn_model.load_state_dict(torch.load("models/cnn.pt", map_location=cnn_model.device))
-        cnn_model.eval()
-        self.processor = DeveloperProcessor(self.video_path, yolo_model, cnn_model, self.config, self.project_dir)
+        try:
+            cnn_model.load_state_dict(torch.load("models/bucket_cnn.pth", map_location=cnn_model.device))
+            cnn_model.eval()
+        except FileNotFoundError:
+            logging.error("CNN model file not found: models/cnn.pth")
+            self.status_label.setText("Ошибка: CNN модель не найдена")
+            return
+        self.processor = Processor(self.video_path, yolo_model, cnn_model, self.config, self.project_dir)
         self.processor.progress.connect(self._update_progress)
         self.processor.status.connect(self.status_label.setText)
         self.processor.frame_processed.connect(self.frame_viewer.update_frame)
