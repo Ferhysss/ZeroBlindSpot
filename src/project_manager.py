@@ -1,82 +1,6 @@
-from PyQt5.QtWidgets import QMainWindow, QWidget, QVBoxLayout, QPushButton, QDialog, QLineEdit, QLabel, QFileDialog, QApplication
-from PyQt5.QtCore import Qt
+from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QVBoxLayout, QWidget
 from developer.ui.main_window import DeveloperModule
-import os
-import yaml
-import sys
 import logging
-from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QVBoxLayout, QWidget, QFileDialog, QLineEdit, QComboBox, QLabel, QDialog
-from developer.ui.main_window import DeveloperModule
-import os
-import logging
-
-class CreateProjectDialog(QDialog):
-    def __init__(self):
-        super().__init__()
-        self.setWindowTitle("Создать проект")
-        self.setGeometry(200, 200, 400, 300)
-        layout = QVBoxLayout()
-
-        self.status_label = QLabel("Введите данные проекта")
-        layout.addWidget(self.status_label)
-
-        self.project_name_input = QLineEdit()
-        self.project_name_input.setPlaceholderText("Имя проекта")
-        layout.addWidget(self.project_name_input)
-
-        self.video_button = QPushButton("Выбрать видео")
-        self.video_button.clicked.connect(self.select_video)
-        layout.addWidget(self.video_button)
-
-        self.frame_rate_input = QLineEdit("1")
-        self.frame_rate_input.setPlaceholderText("Частота кадров (fps)")
-        layout.addWidget(self.frame_rate_input)
-
-        self.confirm_button = QPushButton("Создать")
-        self.confirm_button.clicked.connect(self.accept)
-        self.confirm_button.setEnabled(False)
-        layout.addWidget(self.confirm_button)
-
-        self.video_path = ""
-        self.setLayout(layout)
-
-    def select_video(self):
-        file_name, _ = QFileDialog.getOpenFileName(self, "Выберите видео", "", "Video Files (*.mp4 *.avi)")
-        if file_name:
-            self.video_path = file_name
-            self.status_label.setText(f"Видео: {os.path.basename(file_name)}")
-            self.confirm_button.setEnabled(bool(self.project_name_input.text()))
-
-class OpenProjectDialog(QDialog):
-    def __init__(self):
-        super().__init__()
-        self.setWindowTitle("Открыть проект")
-        self.setGeometry(200, 200, 400, 200)
-        layout = QVBoxLayout()
-
-        self.status_label = QLabel("Выберите папку проекта")
-        layout.addWidget(self.status_label)
-
-        self.open_button = QPushButton("Выбрать папку")
-        self.open_button.clicked.connect(self.select_project)
-        layout.addWidget(self.open_button)
-
-        self.confirm_button = QPushButton("Открыть")
-        self.confirm_button.clicked.connect(self.accept)
-        self.confirm_button.setEnabled(False)
-        layout.addWidget(self.confirm_button)
-
-        self.project_dir = ""
-        self.setLayout(layout)
-
-    def select_project(self):
-        project_dir = QFileDialog.getExistingDirectory(self, "Выберите папку проекта", "data")
-        if project_dir and os.path.exists(os.path.join(project_dir, "project.yaml")):
-            self.project_dir = project_dir
-            self.status_label.setText(f"Проект: {os.path.basename(project_dir)}")
-            self.confirm_button.setEnabled(True)
-        else:
-            self.status_label.setText("Ошибка: конфигурация проекта не найдена")
 
 class ProjectManager(QMainWindow):
     def __init__(self):
@@ -92,35 +16,15 @@ class ProjectManager(QMainWindow):
         developer_button = QPushButton("Developer Mode")
         developer_button.clicked.connect(self._start_developer)
         layout.addWidget(developer_button)
+        operator_button = QPushButton("Operator Mode")
+        operator_button.clicked.connect(self._start_operator)
+        layout.addWidget(operator_button)
 
     def _start_developer(self):
-        self.developer_module = DeveloperModule()  # Без параметров, создание проекта в main_window.py
+        self.developer_module = DeveloperModule()
         self.developer_module.show()
-        self.hide()
+        self.close()  # Закрываем ProjectManager
 
-    def create_project(self, project_dir: str, video_path: str):
-        if not os.path.exists(project_dir):
-            os.makedirs(project_dir, exist_ok=True)
-        self.developer_module = DeveloperModule(project_dir=project_dir, video_path=video_path)
-        self.developer_module.show()
-        self.hide()
-
-    def open_project(self):
-        dialog = OpenProjectDialog()
-        if dialog.exec_() and dialog.project_dir:
-            project_config_path = os.path.join(dialog.project_dir, "project.yaml")
-            with open(project_config_path, "r", encoding='utf-8') as f:
-                project_config = yaml.safe_load(f)
-            video_path = project_config.get("video_path")
-            if video_path and os.path.exists(video_path):
-                self.developer_module = DeveloperModule(project_dir=dialog.project_dir, video_path=video_path)
-                self.developer_module.start()
-                self.hide()
-            else:
-                dialog.status_label.setText("Ошибка: видео не найдено")
-
-if __name__ == "__main__":
-    app = QApplication(sys.argv)
-    manager = ProjectManager()
-    manager.show()
-    sys.exit(app.exec_())
+    def _start_operator(self):
+        logging.info("Operator mode not implemented")
+        self.status_label.setText("Operator mode not available")

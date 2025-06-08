@@ -198,14 +198,17 @@ class DeveloperModule(QMainWindow, ModuleInterface):
 
 
     def _select_video(self):
-        video_path, _ = QFileDialog.getOpenFileName(self, "Выбрать видео", "", "Video Files (*.mp4 *.avi)")
-        if video_path:
+        video_path, _ = QFileDialog.getOpenFileName(self, "Select Video", "", "Video Files (*.mp4 *.avi)")
+        if video_path and self.project_dir:  # Проверка project_dir
             self.video_path = video_path
             self.config.update("video_path", video_path)
             self.video_label.setText(os.path.basename(video_path))
             self._save_project_config()
             self._init_models()
             self._process_video()
+        elif not self.project_dir:
+            QMessageBox.critical(self, "Error", "Create a project first")
+            logging.error("Video selected without project")
 
     
         
@@ -394,8 +397,13 @@ class DeveloperModule(QMainWindow, ModuleInterface):
             self.train_button.setEnabled(True)
 
     def _process_video(self):
+        if not self.project_dir:
+            self.status_label.setText("Error: project not created")
+            logging.error("Process video called without project")
+            return
         if not self.yolo_model:
-            self.status_label.setText("Ошибка: YOLO не загружен")
+            self.status_label.setText("Error: YOLO not loaded")
+            logging.error("YOLO model not loaded")
             return
         os.makedirs(self.project_dir, exist_ok=True)
         self.frame_viewer.no_bucket_frames = []
@@ -410,6 +418,8 @@ class DeveloperModule(QMainWindow, ModuleInterface):
         self.processor.finished.connect(self._on_processing_finished)
         self.annotate_button.setEnabled(True)
         self.review_button.setEnabled(True)
+        self.cnn_annotate_button.setEnabled(True)
+        self.cnn_review_button.setEnabled(True)
         self.config.update("last_project", self.project_dir)
         self._save_project_config()
         self.processor.start()
