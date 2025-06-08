@@ -7,7 +7,7 @@ import sqlite3
 from datetime import datetime
 from PyQt5.QtCore import QThread, pyqtSignal
 from core.config import Config
-from core.models.yolo import YoloModel
+from core.models.yolo_model import YoloModel
 from core.models.cnn import SimpleCNN
 from typing import Optional, List, Tuple
 import logging

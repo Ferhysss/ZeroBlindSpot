@@ -3,7 +3,7 @@ import cv2
 import os
 import logging
 from typing import List, Tuple, Optional
-from core.models.yolo import YoloModel
+from core.models.yolo_model import YoloModel
 from core.models.cnn import SimpleCNN
 from core.config import Config
 import torch

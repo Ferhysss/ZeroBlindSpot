@@ -5,7 +5,7 @@ from core.interfaces.module import ModuleInterface
 from core.config import Config
 from operator_module.ui.result_viewer import ResultViewer
 from operator_module.processor import OperatorProcessor
-from core.models.yolo import YoloModel
+from core.models.yolo_model import YoloModel
 from core.models.cnn import SimpleCNN
 import torch
 import logging

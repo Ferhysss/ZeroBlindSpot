@@ -6,7 +6,7 @@ from core.config import Config
 from developer.ui.frame_viewer import FrameViewer
 from developer.processor import DeveloperProcessor
 from developer.trainer import Trainer
-from core.models.yolo import YoloModel
+from core.models.yolo_model import YoloModel
 from core.models.cnn import SimpleCNN
 import torch
 import logging
@@ -103,6 +103,15 @@ class DeveloperModule(QMainWindow, ModuleInterface):
         results_layout.addWidget(self.results_label)
         self.tab_widget.addTab(results_widget, "Результаты")
 
+        settings_widget = QWidget()
+        settings_layout = QVBoxLayout(settings_widget)
+        self.excavator_combo = QComboBox()
+        self.excavator_combo.addItems(["Экскаватор A (1.5 м³)", "Экскаватор B (2.0 м³)", "Экскаватор C (2.5 м³)"])
+        self.excavator_combo.currentTextChanged.connect(self._update_excavator)
+        settings_layout.addWidget(QLabel("Экскаватор:"))
+        settings_layout.addWidget(self.excavator_combo)
+        self.tab_widget.addTab(settings_widget, "Настройки")
+
         # Вкладка Настройки
         settings_widget = QWidget()
         settings_layout = QVBoxLayout(settings_widget)
@@ -133,6 +142,8 @@ class DeveloperModule(QMainWindow, ModuleInterface):
 
         self.setContextMenuPolicy(Qt.CustomContextMenu)
         self.customContextMenuRequested.connect(self._show_context_menu)
+
+        
 
     def _show_context_menu(self, pos):
         menu = QMenu(self)
@@ -182,10 +193,10 @@ class DeveloperModule(QMainWindow, ModuleInterface):
         logging.info(f"Device updated: {self.device}")
 
     def _update_excavator(self, excavator: str):
-        self.config.update("excavator", excavator)
-        self.config.update("bucket_volume", self.excavators[excavator])
-        logging.info(f"Excavator: {excavator}, Bucket volume: {self.excavators[excavator]} m³")
-        self._save_project_config()
+        volumes = {"Экскаватор A (1.5 м³)": 1.5, "Экскаватор B (2.0 м³)": 2.0, "Экскаватор C (2.5 м³)": 2.5}
+        self.config["excavator"] = excavator.split(" ")[0]
+        self.config["bucket_volume"] = volumes[excavator]
+        logging.info(f"Selected excavator: {excavator}, volume: {self.config['bucket_volume']} m³")
 
     def _update_class(self, class_name: str):
         self.frame_viewer.class_id = {"bucket": 0}.get(class_name, 0)
@@ -403,6 +414,19 @@ class DeveloperModule(QMainWindow, ModuleInterface):
     def _update_cnn_class(self, class_name: str):
         self.frame_viewer.class_id = {"Нейтральный": 0, "Зачерпывание": 1, "Высыпание": 2}.get(class_name, 0)
         logging.info(f"CNN annotation class: {class_name}")
+
+    def _init_processor(self):
+        yolo_model = YoloModel("models/yolo.pt")
+        cnn_model = SimpleCNN().to("cuda" if torch.cuda.is_available() else "cpu")
+        cnn_model.load_state_dict(torch.load("models/cnn.pt", map_location=cnn_model.device))
+        cnn_model.eval()
+        self.processor = DeveloperProcessor(self.video_path, yolo_model, cnn_model, self.config, self.project_dir)
+        self.processor.progress.connect(self._update_progress)
+        self.processor.status.connect(self.status_label.setText)
+        self.processor.frame_processed.connect(self.frame_viewer.update_frame)
+        self.processor.no_bucket_frame.connect(self.frame_viewer.add_no_bucket_frame)
+        self.processor.low_conf_frame.connect(self.frame_viewer.add_low_conf_frame)
+        self.processor.finished.connect(self._on_processing_finished)
 
     
 
