@@ -1,5 +1,5 @@
 from typing import Optional
-from PyQt5.QtWidgets import QMainWindow, QWidget, QVBoxLayout, QHBoxLayout, QPushButton, QFileDialog, QLabel, QComboBox, QProgressBar, QTabWidget, QMenu, QAction
+from PyQt5.QtWidgets import QMainWindow, QWidget, QVBoxLayout, QHBoxLayout, QPushButton, QFileDialog, QLabel, QComboBox, QProgressBar, QTabWidget, QMenu, QAction, QLineEdit, QMessageBox
 from PyQt5.QtCore import Qt
 from core.interfaces.module import ModuleInterface
 from core.config import Config
@@ -13,9 +13,10 @@ import logging
 import os
 import yaml
 from glob import glob
+import cv2
 
 class DeveloperModule(QMainWindow, ModuleInterface):
-    def __init__(self, project_dir: str, video_path: str):
+    def __init__(self, project_dir: str = "", video_path: str = ""):
         super().__init__()
         self.setWindowTitle("ZeroBlindSpot - Developer")
         self.setMinimumSize(1000, 600)
@@ -30,9 +31,10 @@ class DeveloperModule(QMainWindow, ModuleInterface):
             "Экскаватор B": 2.0,
             "Экскаватор C": 2.5
         }
-        self._init_models()
         self._init_ui()
-        self._load_project()
+        if self.project_dir and self.video_path:
+            self._init_models()
+            self._load_project()
 
     def _init_ui(self):
         central_widget = QWidget()
@@ -43,6 +45,42 @@ class DeveloperModule(QMainWindow, ModuleInterface):
         control_widget = QWidget()
         control_layout = QVBoxLayout(control_widget)
 
+        # Панель создания проекта
+        project_widget = QWidget()
+        project_layout = QVBoxLayout(project_widget)
+        self.project_name_input = QLineEdit()
+        project_layout.addWidget(QLabel("Project name:"))
+        project_layout.addWidget(self.project_name_input)
+
+        # Выбор режима извлечения кадров
+        self.frame_extraction_combo = QComboBox()
+        self.frame_extraction_combo.addItems(["Every frame", "Every 2nd frame", "Every 5th frame", "Every 10th frame"])
+        project_layout.addWidget(QLabel("Frame extraction mode:"))
+        project_layout.addWidget(self.frame_extraction_combo)
+
+        # Выбор CPU/GPU
+        self.device_combo = QComboBox()
+        self.device_combo.addItems(["CPU", "GPU"])
+        self.device_combo.setCurrentText("GPU" if torch.cuda.is_available() else "CPU")
+        project_layout.addWidget(QLabel("Device mode:"))
+        project_layout.addWidget(self.device_combo)
+
+        create_project_button = QPushButton("Create Project")
+        create_project_button.clicked.connect(self._create_project)
+        project_layout.addWidget(create_project_button)
+
+        control_layout.addWidget(project_widget)
+
+        # Панель выбора видео
+        video_widget = QWidget()
+        video_layout = QHBoxLayout(video_widget)
+        select_video_button = QPushButton("Select Video")
+        select_video_button.clicked.connect(self._select_video)
+        video_layout.addWidget(select_video_button)
+        self.video_label = QLabel("No video selected")
+        video_layout.addWidget(self.video_label)
+        control_layout.addWidget(video_widget)
+
         # Вкладки
         self.tab_widget = QTabWidget()
         control_layout.addWidget(self.tab_widget)
@@ -50,7 +88,7 @@ class DeveloperModule(QMainWindow, ModuleInterface):
         # Вкладка YOLO
         yolo_widget = QWidget()
         yolo_layout = QVBoxLayout(yolo_widget)
-        self.status_label = QLabel("Загружен проект")
+        self.status_label = QLabel("Ready")
         yolo_layout.addWidget(self.status_label)
         self.progress_bar = QProgressBar()
         yolo_layout.addWidget(self.progress_bar)
@@ -58,76 +96,56 @@ class DeveloperModule(QMainWindow, ModuleInterface):
         self.class_combo.addItems(["bucket"])
         self.class_combo.currentTextChanged.connect(self._update_class)
         yolo_layout.addWidget(self.class_combo)
-        self.annotate_button = QPushButton("Режим аннотации")
+        self.annotate_button = QPushButton("Annotation mode")
         self.annotate_button.setEnabled(False)
         self.annotate_button.clicked.connect(self._toggle_annotation)
         yolo_layout.addWidget(self.annotate_button)
-        self.review_button = QPushButton("Режим ревью")
-        self.review_button.setEnabled(False)
+        self.review_button = QPushButton("Review mode")
+        self.review_button.setCheckable(True)
         self.review_button.clicked.connect(self._toggle_review)
         yolo_layout.addWidget(self.review_button)
-        self.train_button = QPushButton("Обучить YOLO")
+        self.train_button = QPushButton("Train YOLO")
         self.train_button.clicked.connect(self._train_yolo)
         yolo_layout.addWidget(self.train_button)
         self.tab_widget.addTab(yolo_widget, "YOLO")
 
-        # Вкладка CNN (заглушка)
+        # Вкладка CNN
         cnn_widget = QWidget()
         cnn_layout = QVBoxLayout(cnn_widget)
-        cnn_label = QLabel("CNN: В разработке")
-        cnn_layout.addWidget(cnn_label)
-        self.cnn_annotate_button = QPushButton("Режим аннотации CNN")
+        self.cnn_class_combo = QComboBox()
+        self.cnn_class_combo.addItems(["Neutral", "Scooping", "Dumping"])
+        self.cnn_class_combo.currentTextChanged.connect(self._update_cnn_class)
+        cnn_layout.addWidget(QLabel("CNN class:"))
+        cnn_layout.addWidget(self.cnn_class_combo)
+        self.cnn_annotate_button = QPushButton("CNN annotation mode")
         self.cnn_annotate_button.setEnabled(False)
-        cnn_layout.addWidget(self.cnn_annotate_button)
-        self.cnn_review_button = QPushButton("Режим ревью CNN")
-        self.cnn_review_button.setEnabled(False)
-        cnn_layout.addWidget(self.cnn_review_button)
-        self.tab_widget.addTab(cnn_widget, "CNN")
-
         self.cnn_annotate_button.clicked.connect(self._toggle_cnn_annotation)
+        cnn_layout.addWidget(self.cnn_annotate_button)
+        self.cnn_review_button = QPushButton("CNN review mode")
+        self.cnn_review_button.setEnabled(False)
         self.cnn_review_button.clicked.connect(self._toggle_cnn_review)
-
-        self.cnn_train_button = QPushButton("Обучить CNN")
+        cnn_layout.addWidget(self.cnn_review_button)
+        self.cnn_train_button = QPushButton("Train CNN")
         self.cnn_train_button.clicked.connect(self._train_cnn)
         cnn_layout.addWidget(self.cnn_train_button)
-
-        self.cnn_class_combo = QComboBox()
-        self.cnn_class_combo.addItems(["Нейтральный", "Зачерпывание", "Высыпание"])
-        self.cnn_class_combo.currentTextChanged.connect(self._update_cnn_class)
-        cnn_layout.addWidget(self.cnn_class_combo)
+        self.tab_widget.addTab(cnn_widget, "CNN")
 
         # Вкладка Результаты
         results_widget = QWidget()
-        results_layout = QVBoxLayout(results_widget)
-        self.results_label = QLabel("Результаты: нет данных")
+        results_layout = QHBoxLayout(results_widget)
+        self.results_label = QLabel("Results: no data")
         results_layout.addWidget(self.results_label)
-        self.tab_widget.addTab(results_widget, "Результаты")
+        self.tab_widget.addTab(results_widget, "Results")
 
+        # Вкладка Настройки (только экскаватор)
         settings_widget = QWidget()
         settings_layout = QVBoxLayout(settings_widget)
         self.excavator_combo = QComboBox()
-        self.excavator_combo.addItems(["Экскаватор A (1.5 м³)", "Экскаватор B (2.0 м³)", "Экскаватор C (2.5 м³)"])
+        self.excavator_combo.addItems(["Excavator A (1.5 m³)", "Excavator B (2.0 m³)", "Excavator C (2.5 m³)"])
         self.excavator_combo.currentTextChanged.connect(self._update_excavator)
-        settings_layout.addWidget(QLabel("Экскаватор:"))
+        settings_layout.addWidget(QLabel("Excavator:"))
         settings_layout.addWidget(self.excavator_combo)
-        self.tab_widget.addTab(settings_widget, "Настройки")
-
-        # Вкладка Настройки
-        settings_widget = QWidget()
-        settings_layout = QVBoxLayout(settings_widget)
-        self.device_combo = QComboBox()
-        self.device_combo.addItems(["auto", "cpu"])
-        if torch.cuda.is_available():
-            self.device_combo.addItem("cuda")
-        self.device_combo.currentTextChanged.connect(self._update_device)
-        settings_layout.addWidget(self.device_combo)
-        self.excavator_combo = QComboBox()
-        self.excavator_combo.addItems(self.excavators.keys())
-        self.excavator_combo.currentTextChanged.connect(self._update_excavator)
-        excavator = self.config.get("excavator", "Экскаватор A")
-        self.excavator_combo.setCurrentText(excavator)
-        settings_layout.addWidget(self.excavator_combo)
-        self.tab_widget.addTab(settings_widget, "Настройки")
+        self.tab_widget.addTab(settings_widget, "Settings")
 
         main_layout.addWidget(control_widget, 1)
         self.frame_viewer = FrameViewer()
@@ -143,6 +161,52 @@ class DeveloperModule(QMainWindow, ModuleInterface):
         self.setContextMenuPolicy(Qt.CustomContextMenu)
         self.customContextMenuRequested.connect(self._show_context_menu)
 
+    def _create_project(self):
+        try:
+            project_name = self.project_name_input.text().strip()
+            if not project_name:
+                raise ValueError("Project name not specified")
+            self.project_dir = os.path.join("data", project_name)
+            os.makedirs(self.project_dir, exist_ok=True)
+
+            # Сохранение режима извлечения кадров
+            frame_rates = {"Every frame": 1, "Every 2nd frame": 2, "Every 5th frame": 5, "Every 10th frame": 10}
+            self.config.update("frame_rate", frame_rates[self.frame_extraction_combo.currentText()])
+
+            # Сохранение CPU/GPU
+            device = "cuda" if self.device_combo.currentText() == "GPU" and torch.cuda.is_available() else "cpu"
+            self.config.update("device", device)
+            self.device = torch.device(device)
+
+            # Сохранение конфига
+            project_config = {
+                "video_path": "",
+                "excavator": self.config.get("excavator", "Excavator A"),
+                "bucket_volume": self.config.get("bucket_volume", 1.5),
+                "frame_rate": self.config["frame_rate"],
+                "device": self.config["device"]
+            }
+            with open(os.path.join(self.project_dir, "project.yaml"), "w", encoding='utf-8') as f:
+                yaml.safe_dump(project_config, f)
+
+            self.status_label.setText(f"Project created: {project_name}")
+            logging.info(f"Project created: {project_name}, frame_rate: {self.config['frame_rate']}, device: {self.config['device']}")
+        except Exception as e:
+            QMessageBox.critical(self, "Error", f"Failed to create project: {str(e)}")
+            logging.error(f"Project creation failed: {str(e)}")
+
+
+    def _select_video(self):
+        video_path, _ = QFileDialog.getOpenFileName(self, "Выбрать видео", "", "Video Files (*.mp4 *.avi)")
+        if video_path:
+            self.video_path = video_path
+            self.config.update("video_path", video_path)
+            self.video_label.setText(os.path.basename(video_path))
+            self._save_project_config()
+            self._init_models()
+            self._process_video()
+
+    
         
 
     def _show_context_menu(self, pos):
@@ -194,8 +258,9 @@ class DeveloperModule(QMainWindow, ModuleInterface):
 
     def _update_excavator(self, excavator: str):
         volumes = {"Экскаватор A (1.5 м³)": 1.5, "Экскаватор B (2.0 м³)": 2.0, "Экскаватор C (2.5 м³)": 2.5}
-        self.config["excavator"] = excavator.split(" ")[0]
-        self.config["bucket_volume"] = volumes[excavator]
+        self.config.update("excavator", excavator.split(" ")[0])
+        self.config.update("bucket_volume", volumes[excavator])
+        self._save_project_config()
         logging.info(f"Selected excavator: {excavator}, volume: {self.config['bucket_volume']} m³")
 
     def _update_class(self, class_name: str):
@@ -211,8 +276,14 @@ class DeveloperModule(QMainWindow, ModuleInterface):
             with open(project_config_path, "r", encoding='utf-8') as f:
                 project_config = yaml.safe_load(f)
                 self.config.update("excavator", project_config.get("excavator", "Экскаватор A"))
+                self.config.update("bucket_volume", project_config.get("bucket_volume", 1.5))
                 self.config.update("frame_rate", project_config.get("frame_rate", 1))
-                self.excavator_combo.setCurrentText(project_config.get("excavator", "Экскаватор A"))
+                self.config.update("device", project_config.get("device", "cpu"))
+                self.config.update("video_path", project_config.get("video_path", ""))
+                self.excavator_combo.setCurrentText(f"{project_config.get('excavator', 'Экскаватор A')} ({project_config.get('bucket_volume', 1.5)} м³)")
+                self.device = torch.device(self.config["device"])
+                self.video_path = self.config["video_path"]
+                self.video_label.setText(os.path.basename(self.video_path) if self.video_path else "Видео не выбрано")
             self.status_label.setText(f"Проект загружен: {self.project_dir}")
             logging.info(f"Project loaded: {self.project_dir}")
 
@@ -236,8 +307,8 @@ class DeveloperModule(QMainWindow, ModuleInterface):
                                 with open(ann_file, "r", encoding='utf-8') as f:
                                     for line in f:
                                         parts = line.strip().split()
-                                        if len(parts) == 5:
-                                            class_id, x_norm, y_norm, w_norm, h_norm = map(float, parts)
+                                        if len(parts) >= 5:  # Учитываем class_id
+                                            class_id, x_norm, y_norm, w_norm, h_norm = map(float, parts[:5])
                                             img = cv2.imread(frame_path)
                                             if img is None:
                                                 continue
@@ -246,7 +317,7 @@ class DeveloperModule(QMainWindow, ModuleInterface):
                                             y = y_norm * img_h
                                             w = w_norm * img_w
                                             h = h_norm * img_h
-                                            annotations.append((x, y, w, h, 1.0))
+                                            annotations.append((x, y, w, h, 1.0, int(class_id)))
                                 if annotations:
                                     self.frame_viewer.low_conf_frames.append((frame_path, annotations))
                                     self.frame_viewer.frame_annotations[frame_path] = annotations
@@ -270,14 +341,14 @@ class DeveloperModule(QMainWindow, ModuleInterface):
                 if self.frame_viewer.no_bucket_frames or self.frame_viewer.low_conf_frames:
                     self.annotate_button.setEnabled(True)
                     self.review_button.setEnabled(True)
+                    self.cnn_annotate_button.setEnabled(True)
+                    self.cnn_review_button.setEnabled(True)
                     self.frame_viewer.update_counter()
                     logging.info(f"Loaded {len(self.frame_viewer.no_bucket_frames)} no_bucket, {len(self.frame_viewer.low_conf_frames)} low_conf frames")
                 else:
                     self._process_video()
-            else:
-                self._process_video()
         else:
-            self.status_label.setText("Ошибка: конфигурация проекта не найдена")
+            self.status_label.setText("Конфигурация проекта не найдена")
 
     def _save_project_config(self):
         project_config = {
@@ -421,17 +492,22 @@ class DeveloperModule(QMainWindow, ModuleInterface):
         logging.info(f"CNN annotation class: {class_name}")
 
     def _init_processor(self):
-        yolo_model = YoloModel("models/yolo.pt")
-        cnn_model = SimpleCNN().to("cuda" if torch.cuda.is_available() else "cpu")
-        try:
-            cnn_model.load_state_dict(torch.load("models/bucket_cnn.pth", map_location=cnn_model.device))
-            cnn_model.eval()
-        except FileNotFoundError:
-            logging.error("CNN model file not found: models/cnn.pth")
-            self.status_label.setText("Ошибка: CNN модель не найдена")
+        if not self.project_dir or not self.video_path:
+            self.status_label.setText("Ошибка: проект или видео не выбраны")
             return
-        self.processor = Processor(self.video_path, yolo_model, cnn_model, self.config, self.project_dir)
-        self.processor.progress.connect(self._update_progress)
+        if not self.yolo_model:
+            self.yolo_model = YoloModel("models/yolo.pt")
+        if not self.cnn_model:
+            self.cnn_model = SimpleCNN().to(self.device)
+            try:
+                self.cnn_model.load_state_dict(torch.load("models/bucket_cnn.pth", map_location=self.device))
+                self.cnn_model.eval()
+            except FileNotFoundError:
+                logging.error("CNN model file not found: models/bucket_cnn.pth")
+                self.status_label.setText("Ошибка: CNN модель не найдена")
+                return
+        self.processor = DeveloperProcessor(self.video_path, self.yolo_model, self.cnn_model, self.config, self.project_dir)
+        self.processor.progress.connect(self.progress_bar.setValue)
         self.processor.status.connect(self.status_label.setText)
         self.processor.frame_processed.connect(self.frame_viewer.update_frame)
         self.processor.no_bucket_frame.connect(self.frame_viewer.add_no_bucket_frame)
