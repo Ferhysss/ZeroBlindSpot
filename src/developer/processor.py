@@ -8,23 +8,29 @@ from core.models.cnn import SimpleCNN
 from core.config import Config
 import torch
 from ultralytics import YOLO
+from PyQt5.QtCore import QObject, pyqtSignal
+import cv2
+import torch
+import numpy as np
+import os
+import logging
+from typing import List, Tuple, Optional
 
-class DeveloperProcessor(QThread):
+class DeveloperProcessor(QObject):
     progress = pyqtSignal(int)
     status = pyqtSignal(str)
-    frame_processed = pyqtSignal(str, list)
-    no_bucket_frame = pyqtSignal(str)
-    low_conf_frame = pyqtSignal(str, list)
+    frame_processed = pyqtSignal(int, np.ndarray)
+    no_bucket_frame = pyqtSignal(int, np.ndarray)
+    low_conf_frame = pyqtSignal(int, np.ndarray, list)  # Добавлен третий аргумент (list)
     finished = pyqtSignal()
 
-    def __init__(self, video_path: str, yolo_model: YoloModel, cnn_model: Optional[SimpleCNN], config: Config, project_dir: str):
+    def __init__(self, video_path: str, yolo_model, cnn_model, config, project_dir: str):
         super().__init__()
         self.video_path = video_path
         self.yolo_model = yolo_model
         self.cnn_model = cnn_model
         self.config = config
         self.project_dir = project_dir
-        self.is_running = True
 
     def run(self):
         cap = cv2.VideoCapture(self.video_path)
@@ -49,8 +55,7 @@ class DeveloperProcessor(QThread):
             results = self.yolo_model.predict(frame)
             bucket_detected = False
 
-            # Адаптация под формат [boxes]
-            for box in results[0]:  # results[0] — список кортежей (x, y, w, h, conf, class_id)
+            for box in results[0]:  # results[0] — список кортежей
                 x, y, w, h, conf, class_id = box
                 if conf < self.config.get("yolo_conf_threshold", 0.5):
                     self.low_conf_frame.emit(frame_idx, frame, [(x, y, w, h, conf, class_id)])
@@ -79,7 +84,7 @@ class DeveloperProcessor(QThread):
                         cycles.append(current_cycle)
                         current_cycle = None
                         self.status.emit(f"Cycle detected: {len(cycles)}")
-                break  # Обрабатываем только первый ковш
+                break
 
             if not bucket_detected:
                 self.no_bucket_frame.emit(frame_idx, frame)
@@ -91,6 +96,17 @@ class DeveloperProcessor(QThread):
         cap.release()
         self._save_results(cycles)
         self.finished.emit()
+
+    def _save_results(self, cycles: List[dict]):
+        os.makedirs(os.path.join(self.project_dir, "results"), exist_ok=True)
+        bucket_volume = self.config.get("bucket_volume", 1.5)
+        total_volume = len(cycles) * bucket_volume
+        with open(os.path.join(self.project_dir, "results", "summary.txt"), "w", encoding='utf-8') as f:
+            f.write(f"Excavator: {self.config.get('excavator', 'Excavator A')}\n")
+            f.write(f"Bucket volume: {bucket_volume} m³\n")
+            f.write(f"Total cycles: {len(cycles)}\n")
+            f.write(f"Total volume: {total_volume} m³\n")
+        logging.info(f"Results saved: {len(cycles)} cycles, {total_volume} m³")
 
     def extract_frames(self, video_path: str):
         cap = cv2.VideoCapture(video_path)
