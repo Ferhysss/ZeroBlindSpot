@@ -29,79 +29,67 @@ class DeveloperProcessor(QThread):
     def run(self):
         cap = cv2.VideoCapture(self.video_path)
         if not cap.isOpened():
-            self.status.emit("Ошибка: не удалось открыть видео")
+            self.status.emit("Error: failed to open video")
+            logging.error(f"Failed to open video: {self.video_path}")
             return
-        total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
+
+        frame_count = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
+        fps = int(cap.get(cv2.CAP_PROP_FPS))
         frame_rate = self.config.get("frame_rate", 1)
-        frame_count = 0
-        os.makedirs(os.path.join(self.project_dir, "frames"), exist_ok=True)
-        os.makedirs(os.path.join(self.project_dir, "no_bucket"), exist_ok=True)
-        os.makedirs(os.path.join(self.project_dir, "annotations"), exist_ok=True)
-        os.makedirs(os.path.join(self.project_dir, "cnn_annotations"), exist_ok=True)
-        os.makedirs(os.path.join(self.project_dir, "results"), exist_ok=True)
+        cycles = []
+        current_cycle = None
 
-        cycles = 0
-        prev_state = None
-
-        while self.is_running and cap.isOpened():
+        for frame_idx in range(frame_count):
             ret, frame = cap.read()
             if not ret:
                 break
-            if frame_count % frame_rate == 0:
-                frame_path = os.path.join(self.project_dir, "frames", f"frame_{frame_count:04d}.jpg")
+            if frame_idx % frame_rate != 0:
+                continue
+
+            results = self.yolo_model.predict(frame)
+            bucket_detected = False
+
+            # Адаптация под формат [boxes]
+            for box in results[0]:  # results[0] — список кортежей (x, y, w, h, conf, class_id)
+                x, y, w, h, conf, class_id = box
+                if conf < self.config.get("yolo_conf_threshold", 0.5):
+                    self.low_conf_frame.emit(frame_idx, frame, [(x, y, w, h, conf, class_id)])
+                    logging.info(f"Low confidence frame: {frame_idx}, conf: {conf}")
+                    continue
+                bucket_detected = True
+                frame_path = os.path.join(self.project_dir, "frames", f"{frame_idx:06d}.jpg")
                 cv2.imwrite(frame_path, frame)
-                results = self.yolo_model.predict(frame)  # YOLOv8 predict
-                annotations = []
-                for box in results[0].boxes:  # results[0] — первый результат батча
-                    x, y, w, h = box.xywh[0].cpu().numpy()  # Центр, ширина, высота
-                    conf = box.conf[0].cpu().numpy()  # Уверенность
-                    class_id = int(box.cls[0].cpu().numpy())  # ID класса
-                    annotations.append((x, y, w, h, conf, class_id))
-                self.frame_processed.emit(frame_path, annotations)
-                if not annotations:
-                    no_bucket_path = os.path.join(self.project_dir, "no_bucket", f"frame_{frame_count:04d}.jpg")
-                    cv2.imwrite(no_bucket_path, frame)
-                    self.no_bucket_frame.emit(no_bucket_path)
-                elif any(conf < 0.5 for _, _, _, _, conf, _ in annotations):
-                    self.low_conf_frame.emit(frame_path, annotations)
-                if self.cnn_model and annotations:
-                    cnn_annotation_path = os.path.join(self.project_dir, "cnn_annotations", f"frame_{frame_count:04d}.jpg.txt")
-                    for x, y, w, h, _, _ in annotations:
-                        x1 = int(x - w / 2)
-                        y1 = int(y - h / 2)
-                        x2 = int(x + w / 2)
-                        y2 = int(y + h / 2)
-                        region = frame[y1:y2, x1:x2]
-                        if region.size == 0:
-                            continue
-                        region = cv2.resize(region, (224, 224))
-                        region = region / 255.0
-                        region = region.transpose((2, 0, 1))
-                        region_tensor = torch.tensor(region, dtype=torch.float32).unsqueeze(0).to(self.cnn_model.device)
-                        with torch.no_grad():
-                            output = self.cnn_model(region_tensor)
-                            class_id = torch.argmax(output, dim=1).item()
-                        with open(cnn_annotation_path, "a", encoding='utf-8') as f:
-                            f.write(f"{class_id}\n")
-                        logging.info(f"CNN predicted class {class_id} for {frame_path}")
-                        # Подсчёт циклов
-                        if class_id == 2 and prev_state == 1:  # Высыпание после Зачерпывания
-                            cycles += 1
-                        prev_state = class_id
-                self.progress.emit(int((frame_count / total_frames) * 100))
-            frame_count += 1
+
+                if self.cnn_model:
+                    crop = frame[int(y - h / 2):int(y + h / 2), int(x - w / 2):int(x + w / 2)]
+                    if crop.size == 0:
+                        continue
+                    crop = cv2.resize(crop, (224, 224)) / 255.0
+                    crop = crop.transpose((2, 0, 1))
+                    crop_tensor = torch.tensor(crop, dtype=torch.float32).unsqueeze(0).to(self.cnn_model.device)
+                    with torch.no_grad():
+                        output = self.cnn_model(crop_tensor)
+                        class_id = output.argmax(dim=1).item()
+                        logging.info(f"CNN predicted class: {class_id} for frame {frame_idx}")
+                    if class_id == 1:  # Зачерпывание
+                        if current_cycle is None:
+                            current_cycle = {"start": frame_idx, "excavator": self.config.get("excavator", "Excavator A")}
+                    elif class_id == 2 and current_cycle:  # Высыпание
+                        current_cycle["end"] = frame_idx
+                        cycles.append(current_cycle)
+                        current_cycle = None
+                        self.status.emit(f"Cycle detected: {len(cycles)}")
+                break  # Обрабатываем только первый ковш
+
+            if not bucket_detected:
+                self.no_bucket_frame.emit(frame_idx, frame)
+                logging.info(f"No bucket detected in frame {frame_idx}")
+
+            progress = int((frame_idx + 1) / frame_count * 100)
+            self.progress.emit(progress)
+
         cap.release()
-        excavator = self.config.get("excavator", "Экскаватор A")
-        bucket_volume = self.config.get("bucket_volume", 1.5)
-        total_volume = cycles * bucket_volume
-        result_path = os.path.join(self.project_dir, "results", "summary.txt")
-        with open(result_path, "w", encoding='utf-8') as f:
-            f.write(f"Экскаватор: {excavator}\n")
-            f.write(f"Объём ковша: {bucket_volume} м³\n")
-            f.write(f"Циклов (Зачерпывание → Высыпание): {cycles}\n")
-            f.write(f"Общий объём грунта: {total_volume} м³\n")
-        logging.info(f"Results saved to {result_path}")
-        self.status.emit(f"Обработка завершена: {cycles} циклов, {total_volume} м³")
+        self._save_results(cycles)
         self.finished.emit()
 
     def extract_frames(self, video_path: str):

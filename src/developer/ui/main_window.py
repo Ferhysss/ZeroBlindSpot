@@ -187,11 +187,11 @@ class DeveloperModule(QMainWindow, ModuleInterface):
                 "frame_rate": frame_rate,
                 "device": device
             }
-            with open(os.path.join(self.project_dir, "stats.yaml"), "w", encoding='utf-8') as f:
+            with open(os.path.join(self.project_dir, "project.yaml"), "w", encoding='utf-8') as f:
                 yaml.safe_dump(project_config, f)
 
             self.status_label.setText(f"Project created: {project_name}")
-            logging.info(f"Project created: {project_name}, frame_rate: {frame_rate}, device: {device}")
+            logging.info(f"Project created: {project_name}")
         except Exception as e:
             QMessageBox.critical(self, "Error", f"Failed to create project: {str(e)}")
             logging.error(f"Project creation failed: {str(e)}")

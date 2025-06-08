@@ -5,6 +5,10 @@ import os
 import yaml
 import sys
 import logging
+from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QVBoxLayout, QWidget, QFileDialog, QLineEdit, QComboBox, QLabel, QDialog
+from developer.ui.main_window import DeveloperModule
+import os
+import logging
 
 class CreateProjectDialog(QDialog):
     def __init__(self):
@@ -77,46 +81,29 @@ class OpenProjectDialog(QDialog):
 class ProjectManager(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("ZeroBlindSpot - Управление проектами")
-        self.setGeometry(200, 200, 300, 150)
+        self.setWindowTitle("ZeroBlindSpot - Project Manager")
+        self.developer_module = None
+        self._init_ui()
 
+    def _init_ui(self):
         central_widget = QWidget()
         self.setCentralWidget(central_widget)
         layout = QVBoxLayout(central_widget)
+        developer_button = QPushButton("Developer Mode")
+        developer_button.clicked.connect(self._start_developer)
+        layout.addWidget(developer_button)
 
-        self.new_project_button = QPushButton("Создать новый проект")
-        self.new_project_button.clicked.connect(self.create_project)
-        layout.addWidget(self.new_project_button)
+    def _start_developer(self):
+        self.developer_module = DeveloperModule()  # Без параметров, создание проекта в main_window.py
+        self.developer_module.show()
+        self.hide()
 
-        self.open_project_button = QPushButton("Открыть существующий проект")
-        self.open_project_button.clicked.connect(self.open_project)
-        layout.addWidget(self.open_project_button)
-
-        try:
-            with open("config/styles.qss", "r", encoding='utf-8') as f:
-                self.setStyleSheet(f.read())
-        except FileNotFoundError:
-            pass
-
-    def create_project(self):
-        dialog = CreateProjectDialog()
-        if dialog.exec_():
-            project_name = dialog.project_name_input.text().strip()
-            if not project_name or not dialog.video_path:
-                return
-            project_dir = f"data/{project_name}"
+    def create_project(self, project_dir: str, video_path: str):
+        if not os.path.exists(project_dir):
             os.makedirs(project_dir, exist_ok=True)
-            project_config = {
-                "video_path": dialog.video_path,
-                "excavator": "Экскаватор A",  # Значение по умолчанию
-                "frame_rate": float(dialog.frame_rate_input.text()),
-                "project_dir": project_dir
-            }
-            with open(os.path.join(project_dir, "project.yaml"), "w", encoding='utf-8') as f:
-                yaml.safe_dump(project_config, f)
-            self.developer_module = DeveloperModule(project_dir=project_dir, video_path=dialog.video_path)
-            self.developer_module.start()
-            self.hide()
+        self.developer_module = DeveloperModule(project_dir=project_dir, video_path=video_path)
+        self.developer_module.show()
+        self.hide()
 
     def open_project(self):
         dialog = OpenProjectDialog()
