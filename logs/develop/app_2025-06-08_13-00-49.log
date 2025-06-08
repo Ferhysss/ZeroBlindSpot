@@ -1,0 +1,5 @@
+2025-06-08 13:00:49,276 - INFO - Logging initialized
+2025-06-08 13:01:03,854 - INFO - YOLO model loaded: models/model.pt
+2025-06-08 13:01:03,855 - INFO - YOLO loaded
+2025-06-08 13:01:03,858 - INFO - Excavator: Экскаватор B, Bucket volume: 2.0 m³
+2025-06-08 13:01:03,871 - INFO - Project loaded: data/08.06 13_00

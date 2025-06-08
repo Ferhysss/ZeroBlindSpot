@@ -1,0 +1,8 @@
+2025-06-08 13:00:17,913 - INFO - Logging initialized
+2025-06-08 13:00:28,621 - INFO - YOLO model loaded: models/model.pt
+2025-06-08 13:00:28,621 - INFO - YOLO loaded
+2025-06-08 13:00:28,626 - INFO - Excavator: Экскаватор B, Bucket volume: 2.0 m³
+2025-06-08 13:00:28,632 - INFO - Project loaded: C:/Users/Lev/Desktop/ZeroBlindSpot/data/08.06 12_26
+2025-06-08 13:00:28,636 - INFO - Loaded 507 no_bucket, 0 low_conf frames
+2025-06-08 13:00:39,803 - INFO - CNN annotation class: Зачерпывание
+2025-06-08 13:00:41,777 - INFO - CNN annotation class: Нейтральный

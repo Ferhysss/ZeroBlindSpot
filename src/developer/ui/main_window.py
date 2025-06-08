@@ -1,5 +1,5 @@
 from typing import Optional
-from PyQt5.QtWidgets import QMainWindow, QWidget, QVBoxLayout, QHBoxLayout, QPushButton, QFileDialog, QLabel, QComboBox, QProgressBar
+from PyQt5.QtWidgets import QMainWindow, QWidget, QVBoxLayout, QHBoxLayout, QPushButton, QFileDialog, QLabel, QComboBox, QProgressBar, QTabWidget, QMenu, QAction
 from PyQt5.QtCore import Qt
 from core.interfaces.module import ModuleInterface
 from core.config import Config
@@ -39,54 +39,88 @@ class DeveloperModule(QMainWindow, ModuleInterface):
         self.setCentralWidget(central_widget)
         main_layout = QHBoxLayout(central_widget)
 
+        # Панель управления
         control_widget = QWidget()
         control_layout = QVBoxLayout(control_widget)
+
+        # Вкладки
+        self.tab_widget = QTabWidget()
+        control_layout.addWidget(self.tab_widget)
+
+        # Вкладка YOLO
+        yolo_widget = QWidget()
+        yolo_layout = QVBoxLayout(yolo_widget)
         self.status_label = QLabel("Загружен проект")
-        control_layout.addWidget(self.status_label)
-
+        yolo_layout.addWidget(self.status_label)
         self.progress_bar = QProgressBar()
-        control_layout.addWidget(self.progress_bar)
+        yolo_layout.addWidget(self.progress_bar)
+        self.class_combo = QComboBox()
+        self.class_combo.addItems(["bucket"])
+        self.class_combo.currentTextChanged.connect(self._update_class)
+        yolo_layout.addWidget(self.class_combo)
+        self.annotate_button = QPushButton("Режим аннотации")
+        self.annotate_button.setEnabled(False)
+        self.annotate_button.clicked.connect(self._toggle_annotation)
+        yolo_layout.addWidget(self.annotate_button)
+        self.review_button = QPushButton("Режим ревью")
+        self.review_button.setEnabled(False)
+        self.review_button.clicked.connect(self._toggle_review)
+        yolo_layout.addWidget(self.review_button)
+        self.train_button = QPushButton("Обучить YOLO")
+        self.train_button.clicked.connect(self._train_yolo)
+        yolo_layout.addWidget(self.train_button)
+        self.tab_widget.addTab(yolo_widget, "YOLO")
 
+        # Вкладка CNN (заглушка)
+        cnn_widget = QWidget()
+        cnn_layout = QVBoxLayout(cnn_widget)
+        cnn_label = QLabel("CNN: В разработке")
+        cnn_layout.addWidget(cnn_label)
+        self.cnn_annotate_button = QPushButton("Режим аннотации CNN")
+        self.cnn_annotate_button.setEnabled(False)
+        cnn_layout.addWidget(self.cnn_annotate_button)
+        self.cnn_review_button = QPushButton("Режим ревью CNN")
+        self.cnn_review_button.setEnabled(False)
+        cnn_layout.addWidget(self.cnn_review_button)
+        self.tab_widget.addTab(cnn_widget, "CNN")
+
+        self.cnn_annotate_button.clicked.connect(self._toggle_cnn_annotation)
+        self.cnn_review_button.clicked.connect(self._toggle_cnn_review)
+
+        self.cnn_train_button = QPushButton("Обучить CNN")
+        self.cnn_train_button.clicked.connect(self._train_cnn)
+        cnn_layout.addWidget(self.cnn_train_button)
+
+        self.cnn_class_combo = QComboBox()
+        self.cnn_class_combo.addItems(["Нейтральный", "Зачерпывание", "Высыпание"])
+        self.cnn_class_combo.currentTextChanged.connect(self._update_cnn_class)
+        cnn_layout.addWidget(self.cnn_class_combo)
+
+        # Вкладка Результаты
+        results_widget = QWidget()
+        results_layout = QVBoxLayout(results_widget)
+        self.results_label = QLabel("Результаты: нет данных")
+        results_layout.addWidget(self.results_label)
+        self.tab_widget.addTab(results_widget, "Результаты")
+
+        # Вкладка Настройки
+        settings_widget = QWidget()
+        settings_layout = QVBoxLayout(settings_widget)
         self.device_combo = QComboBox()
         self.device_combo.addItems(["auto", "cpu"])
         if torch.cuda.is_available():
             self.device_combo.addItem("cuda")
         self.device_combo.currentTextChanged.connect(self._update_device)
-        control_layout.addWidget(self.device_combo)
-
+        settings_layout.addWidget(self.device_combo)
         self.excavator_combo = QComboBox()
         self.excavator_combo.addItems(self.excavators.keys())
         self.excavator_combo.currentTextChanged.connect(self._update_excavator)
         excavator = self.config.get("excavator", "Экскаватор A")
         self.excavator_combo.setCurrentText(excavator)
-        control_layout.addWidget(self.excavator_combo)
-
-        self.class_combo = QComboBox()
-        self.class_combo.addItems(["bucket"])
-        self.class_combo.currentTextChanged.connect(self._update_class)
-        control_layout.addWidget(self.class_combo)
-
-        self.annotate_button = QPushButton("Режим аннотации")
-        self.annotate_button.setEnabled(False)
-        self.annotate_button.clicked.connect(self._toggle_annotation)
-        control_layout.addWidget(self.annotate_button)
-
-        self.review_button = QPushButton("Режим ревью")
-        self.review_button.setEnabled(False)
-        self.review_button.clicked.connect(self._toggle_review)
-        control_layout.addWidget(self.review_button)
-
-        self.extract_button = QPushButton("Извлечь кадры")
-        self.extract_button.setToolTip("Извлечь все кадры из видео для ручной аннотации")
-        self.extract_button.clicked.connect(self._extract_frames)
-        control_layout.addWidget(self.extract_button)
-
-        self.train_button = QPushButton("Обучить YOLO")
-        self.train_button.clicked.connect(self._train_yolo)
-        control_layout.addWidget(self.train_button)
+        settings_layout.addWidget(self.excavator_combo)
+        self.tab_widget.addTab(settings_widget, "Настройки")
 
         main_layout.addWidget(control_widget, 1)
-
         self.frame_viewer = FrameViewer()
         self.frame_viewer.update_status.connect(self.status_label.setText)
         main_layout.addWidget(self.frame_viewer, 3)
@@ -96,6 +130,25 @@ class DeveloperModule(QMainWindow, ModuleInterface):
                 self.setStyleSheet(f.read())
         except FileNotFoundError:
             logging.warning("styles.qss not found")
+
+        self.setContextMenuPolicy(Qt.CustomContextMenu)
+        self.customContextMenuRequested.connect(self._show_context_menu)
+
+    def _show_context_menu(self, pos):
+        menu = QMenu(self)
+        yolo_action = QAction("Перейти к YOLO", self)
+        yolo_action.triggered.connect(lambda: self.tab_widget.setCurrentIndex(0))
+        menu.addAction(yolo_action)
+        cnn_action = QAction("Перейти к CNN", self)
+        cnn_action.triggered.connect(lambda: self.tab_widget.setCurrentIndex(1))
+        menu.addAction(cnn_action)
+        settings_action = QAction("Перейти к Настройкам", self)
+        settings_action.triggered.connect(lambda: self.tab_widget.setCurrentIndex(2))
+        menu.addAction(settings_action)
+        extract_action = QAction("Извлечь кадры (заморожено)", self)
+        extract_action.triggered.connect(self._extract_frames)
+        menu.addAction(extract_action)
+        menu.exec_(self.mapToGlobal(pos))
 
     def _init_models(self):
         try:
@@ -304,9 +357,62 @@ class DeveloperModule(QMainWindow, ModuleInterface):
         self.frame_viewer.current_frame_index = -1
         self.frame_viewer.update_counter()
 
+    def _toggle_cnn_annotation(self):
+        self.frame_viewer.review_mode = False
+        self.frame_viewer.annotation_mode = False
+        self.frame_viewer.cnn_review_mode = False
+        self.frame_viewer.cnn_annotation_mode = not self.frame_viewer.cnn_annotation_mode
+        status = "включён" if self.frame_viewer.cnn_annotation_mode else "выключён"
+        self.status_label.setText(f"Режим аннотации CNN: {status}")
+        if self.frame_viewer.cnn_annotation_mode and self.frame_viewer.no_bucket_frames:
+            self.frame_viewer.show_next_frame()
+            self.frame_viewer.annotate_frame()
+        elif self.frame_viewer.cnn_annotation_mode:
+            self.status_label.setText("Режим аннотации CNN: нет кадров")
+        self.frame_viewer.update_counter()
+
+    def _toggle_cnn_review(self):
+        self.frame_viewer.annotation_mode = False
+        self.frame_viewer.review_mode = False
+        self.frame_viewer.cnn_annotation_mode = False
+        self.frame_viewer.cnn_review_mode = not self.frame_viewer.cnn_review_mode
+        status = "включён" if self.frame_viewer.cnn_review_mode else "выключён"
+        self.status_label.setText(f"Режим ревью CNN: {status}")
+        if self.frame_viewer.cnn_review_mode and self.frame_viewer.cnn_annotations:
+            self.frame_viewer.show_next_frame()
+            self.frame_viewer.annotate_frame()
+        elif self.frame_viewer.cnn_review_mode:
+            self.status_label.setText("Режим ревью CNN: нет аннотаций")
+        self.frame_viewer.current_frame_path = ""
+        self.frame_viewer.current_frame_index = -1
+        self.frame_viewer.update_counter()
+
+    def _train_cnn(self):
+        data_dir = QFileDialog.getExistingDirectory(self, "Выберите папку с CNN аннотациями")
+        if data_dir:
+            self.status_label.setText("Обучение CNN...")
+            self.cnn_annotate_button.setEnabled(False)
+            try:
+                # Заглушка для обучения CNN
+                logging.info(f"Training CNN with data from {data_dir}")
+                self.status_label.setText("Обучение CNN завершено")
+            except Exception as e:
+                self.status_label.setText(f"Ошибка обучения CNN: {str(e)}")
+            self.cnn_annotate_button.setEnabled(True)
+
+    def _update_cnn_class(self, class_name: str):
+        self.frame_viewer.class_id = {"Нейтральный": 0, "Зачерпывание": 1, "Высыпание": 2}.get(class_name, 0)
+        logging.info(f"CNN annotation class: {class_name}")
+
+    
+
     def _on_processing_finished(self):
         self.status_label.setText("Обработка видео завершена")
         logging.info("Video processing finished")
+        result_path = os.path.join(self.project_dir, "results", "summary.txt")
+        if os.path.exists(result_path):
+            with open(result_path, "r", encoding='utf-8') as f:
+                self.results_label.setText(f.read().replace("\n", "<br>"))
 
     def start(self):
         self.show()

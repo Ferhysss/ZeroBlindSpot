@@ -1,0 +1,59 @@
+2025-06-08 12:25:38,248 - INFO - Logging initialized
+2025-06-08 12:26:15,523 - INFO - YOLO model loaded: models/model.pt
+2025-06-08 12:26:15,524 - INFO - YOLO loaded
+2025-06-08 12:26:15,528 - INFO - Excavator: Экскаватор B, Bucket volume: 2.0 m³
+2025-06-08 12:26:15,541 - INFO - Project loaded: data/08.06 12_26
+2025-06-08 12:26:32,929 - INFO - Frames saved in data/08.06 12_26/frames
+2025-06-08 12:28:04,664 - INFO - Processing completed
+2025-06-08 12:28:04,665 - INFO - Video processing finished
+2025-06-08 12:30:21,872 - INFO - Image scale set to 0.5146875000000001 for data/08.06 12_26/no_bucket\frame_0016.jpg
+2025-06-08 12:30:23,056 - INFO - Mouse press at PyQt5.QtCore.QPoint(324, 186) (scale: 0.5146875000000001, size: (1280, 720))
+2025-06-08 12:30:23,681 - INFO - Annotation added: x=709.1681845780206, y=391.4996964177291, w=159.31997571341833, h=60.23072252580448
+2025-06-08 12:30:23,688 - INFO - Mouse release at PyQt5.QtCore.QPoint(406, 217)
+2025-06-08 12:30:26,687 - INFO - Image scale set to 0.5146875000000001 for data/08.06 12_26/no_bucket\frame_0017.jpg
+2025-06-08 12:30:27,618 - INFO - Mouse press at PyQt5.QtCore.QPoint(322, 154) (scale: 0.5146875000000001, size: (1280, 720))
+2025-06-08 12:30:28,503 - INFO - Annotation added: x=746.0837887067394, y=374.0133576199149, w=240.92289010321792, h=149.60534304796596
+2025-06-08 12:30:28,508 - INFO - Mouse release at PyQt5.QtCore.QPoint(446, 231)
+2025-06-08 12:30:28,808 - INFO - Image scale set to 0.5146875000000001 for data/08.06 12_26/no_bucket\frame_0018.jpg
+2025-06-08 12:30:29,634 - INFO - Mouse press at PyQt5.QtCore.QPoint(319, 66) (scale: 0.5146875000000001, size: (1280, 720))
+2025-06-08 12:30:30,254 - INFO - Annotation added: x=749.9696417729203, y=223.43655130540373, w=260.35215543412255, h=190.40680024286576
+2025-06-08 12:30:30,259 - INFO - Mouse release at PyQt5.QtCore.QPoint(453, 164)
+2025-06-08 12:30:30,441 - INFO - Image scale set to 0.5146875000000001 for data/08.06 12_26/no_bucket\frame_0020.jpg
+2025-06-08 12:30:31,328 - INFO - Mouse press at PyQt5.QtCore.QPoint(263, 55) (scale: 0.5146875000000001, size: (1280, 720))
+2025-06-08 12:30:32,096 - INFO - Annotation added: x=575.1062537947782, y=161.2629022465088, w=128.2331511839708, h=108.80388585306618
+2025-06-08 12:30:32,103 - INFO - Mouse release at PyQt5.QtCore.QPoint(329, 111)
+2025-06-08 12:30:32,929 - INFO - Image scale set to 0.5146875000000001 for data/08.06 12_26/no_bucket\frame_0021.jpg
+2025-06-08 12:30:34,219 - INFO - Annotations saved for frame_0016.jpg at data/08.06 12_26/annotations/frame_0016.jpg.txt
+2025-06-08 12:30:34,219 - INFO - Frame moved to data/08.06 12_26/frames/frame_0016.jpg
+2025-06-08 12:30:34,219 - INFO - Dataset updated: data\datasets\train\images/08.06_12_26_frame_0016.jpg, data\datasets\train\labels/08.06_12_26_frame_0016.jpg.txt
+2025-06-08 12:30:34,226 - INFO - Annotations saved for frame_0017.jpg at data/08.06 12_26/annotations/frame_0017.jpg.txt
+2025-06-08 12:30:34,226 - INFO - Frame moved to data/08.06 12_26/frames/frame_0017.jpg
+2025-06-08 12:30:34,226 - INFO - Dataset updated: data\datasets\train\images/08.06_12_26_frame_0017.jpg, data\datasets\train\labels/08.06_12_26_frame_0017.jpg.txt
+2025-06-08 12:30:34,234 - INFO - Annotations saved for frame_0018.jpg at data/08.06 12_26/annotations/frame_0018.jpg.txt
+2025-06-08 12:30:34,234 - INFO - Frame moved to data/08.06 12_26/frames/frame_0018.jpg
+2025-06-08 12:30:34,234 - INFO - Dataset updated: data\datasets\train\images/08.06_12_26_frame_0018.jpg, data\datasets\train\labels/08.06_12_26_frame_0018.jpg.txt
+2025-06-08 12:30:34,242 - INFO - Annotations saved for frame_0020.jpg at data/08.06 12_26/annotations/frame_0020.jpg.txt
+2025-06-08 12:30:34,242 - INFO - Frame moved to data/08.06 12_26/frames/frame_0020.jpg
+2025-06-08 12:30:34,242 - INFO - Dataset updated: data\datasets\train\images/08.06_12_26_frame_0020.jpg, data\datasets\train\labels/08.06_12_26_frame_0020.jpg.txt
+2025-06-08 12:30:37,282 - INFO - Image scale set to 0.5146875000000001 for data/08.06 12_26/frames\frame_0046.jpg
+2025-06-08 12:30:40,250 - WARNING - No frame or annotations to confirm
+2025-06-08 12:30:43,862 - INFO - Image scale set to 0.5146875000000001 for data/08.06 12_26/frames\frame_0066.jpg
+2025-06-08 12:30:44,717 - INFO - Image scale set to 0.5146875000000001 for data/08.06 12_26/frames\frame_0120.jpg
+2025-06-08 12:30:45,272 - INFO - Image scale set to 0.5146875000000001 for data/08.06 12_26/frames\frame_0130.jpg
+2025-06-08 12:30:45,890 - INFO - Image scale set to 0.5146875000000001 for data/08.06 12_26/frames\frame_0198.jpg
+2025-06-08 12:30:46,407 - INFO - Image scale set to 0.5146875000000001 for data/08.06 12_26/frames\frame_0415.jpg
+2025-06-08 12:30:48,263 - INFO - Detection deleted for frame_0415.jpg at data/08.06 12_26/negative/frame_0415.jpg
+2025-06-08 12:30:48,266 - INFO - Image scale set to 0.5146875000000001 for data/08.06 12_26/frames\frame_0675.jpg
+2025-06-08 12:30:49,904 - INFO - Image scale set to 0.5146875000000001 for data/08.06 12_26/frames\frame_0765.jpg
+2025-06-08 12:30:50,661 - INFO - Image scale set to 0.5146875000000001 for data/08.06 12_26/frames/frame_0017.jpg
+2025-06-08 12:30:51,327 - INFO - Image scale set to 0.5146875000000001 for data/08.06 12_26/frames/frame_0020.jpg
+2025-06-08 12:30:52,312 - INFO - Image scale set to 0.5146875000000001 for data/08.06 12_26/frames/frame_0018.jpg
+2025-06-08 12:30:54,105 - INFO - Image scale set to 0.5146875000000001 for data/08.06 12_26/frames/frame_0016.jpg
+2025-06-08 12:30:55,636 - INFO - Image scale set to 0.5146875000000001 for data/08.06 12_26/frames\frame_0716.jpg
+2025-06-08 12:30:56,089 - INFO - Image scale set to 0.5146875000000001 for data/08.06 12_26/frames\frame_0590.jpg
+2025-06-08 12:30:56,512 - INFO - Image scale set to 0.5146875000000001 for data/08.06 12_26/frames\frame_0359.jpg
+2025-06-08 12:30:58,128 - INFO - Detection deleted for frame_0359.jpg at data/08.06 12_26/negative/frame_0359.jpg
+2025-06-08 12:30:58,132 - INFO - Image scale set to 0.5146875000000001 for data/08.06 12_26/frames\frame_0165.jpg
+2025-06-08 12:30:59,347 - INFO - Image scale set to 0.5146875000000001 for data/08.06 12_26/frames\frame_0122.jpg
+2025-06-08 12:31:00,008 - INFO - Image scale set to 0.5146875000000001 for data/08.06 12_26/frames\frame_0086.jpg
+2025-06-08 12:31:00,559 - INFO - Image scale set to 0.5146875000000001 for data/08.06 12_26/frames\frame_0061.jpg
