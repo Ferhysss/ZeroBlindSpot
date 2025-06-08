@@ -171,7 +171,8 @@ class DeveloperModule(QMainWindow, ModuleInterface):
 
             # Сохранение режима извлечения кадров
             frame_rates = {"Every frame": 1, "Every 2nd frame": 2, "Every 5th frame": 5, "Every 10th frame": 10}
-            self.config.update("frame_rate", frame_rates[self.frame_extraction_combo.currentText()])
+            frame_rate = frame_rates[self.frame_extraction_combo.currentText()]
+            self.config.update("frame_rate", frame_rate)
 
             # Сохранение CPU/GPU
             device = "cuda" if self.device_combo.currentText() == "GPU" and torch.cuda.is_available() else "cpu"
@@ -183,14 +184,14 @@ class DeveloperModule(QMainWindow, ModuleInterface):
                 "video_path": "",
                 "excavator": self.config.get("excavator", "Excavator A"),
                 "bucket_volume": self.config.get("bucket_volume", 1.5),
-                "frame_rate": self.config["frame_rate"],
-                "device": self.config["device"]
+                "frame_rate": frame_rate,
+                "device": device
             }
-            with open(os.path.join(self.project_dir, "project.yaml"), "w", encoding='utf-8') as f:
+            with open(os.path.join(self.project_dir, "stats.yaml"), "w", encoding='utf-8') as f:
                 yaml.safe_dump(project_config, f)
 
             self.status_label.setText(f"Project created: {project_name}")
-            logging.info(f"Project created: {project_name}, frame_rate: {self.config['frame_rate']}, device: {self.config['device']}")
+            logging.info(f"Project created: {project_name}, frame_rate: {frame_rate}, device: {device}")
         except Exception as e:
             QMessageBox.critical(self, "Error", f"Failed to create project: {str(e)}")
             logging.error(f"Project creation failed: {str(e)}")
@@ -269,22 +270,22 @@ class DeveloperModule(QMainWindow, ModuleInterface):
 
     def _load_project(self):
         if not os.path.exists(self.project_dir):
-            self.status_label.setText("Ошибка: проект не найден")
+            self.status_label.setText("Error: project not found")
             return
         project_config_path = os.path.join(self.project_dir, "project.yaml")
         if os.path.exists(project_config_path):
             with open(project_config_path, "r", encoding='utf-8') as f:
                 project_config = yaml.safe_load(f)
-                self.config.update("excavator", project_config.get("excavator", "Экскаватор A"))
+                self.config.update("excavator", project_config.get("excavator", "Excavator A"))
                 self.config.update("bucket_volume", project_config.get("bucket_volume", 1.5))
                 self.config.update("frame_rate", project_config.get("frame_rate", 1))
                 self.config.update("device", project_config.get("device", "cpu"))
                 self.config.update("video_path", project_config.get("video_path", ""))
-                self.excavator_combo.setCurrentText(f"{project_config.get('excavator', 'Экскаватор A')} ({project_config.get('bucket_volume', 1.5)} м³)")
-                self.device = torch.device(self.config["device"])
-                self.video_path = self.config["video_path"]
-                self.video_label.setText(os.path.basename(self.video_path) if self.video_path else "Видео не выбрано")
-            self.status_label.setText(f"Проект загружен: {self.project_dir}")
+                self.excavator_combo.setCurrentText(f"{project_config.get('excavator', 'Excavator A')} ({project_config.get('bucket_volume', 1.5)} m³)")
+                self.device = torch.device(self.config.get("device", "cpu"))
+                self.video_path = self.config.get("video_path", "")
+                self.video_label.setText(os.path.basename(self.video_path) if self.video_path else "No video selected")
+            self.status_label.setText(f"Project loaded: {self.project_dir}")
             logging.info(f"Project loaded: {self.project_dir}")
 
             frames_dir = os.path.join(self.project_dir, "frames")
@@ -307,7 +308,7 @@ class DeveloperModule(QMainWindow, ModuleInterface):
                                 with open(ann_file, "r", encoding='utf-8') as f:
                                     for line in f:
                                         parts = line.strip().split()
-                                        if len(parts) >= 5:  # Учитываем class_id
+                                        if len(parts) >= 5:
                                             class_id, x_norm, y_norm, w_norm, h_norm = map(float, parts[:5])
                                             img = cv2.imread(frame_path)
                                             if img is None:
@@ -329,9 +330,9 @@ class DeveloperModule(QMainWindow, ModuleInterface):
                     for frame_path in sorted(glob(os.path.join(no_bucket_dir, "*.jpg"))):
                         frame_name = os.path.basename(frame_path)
                         if frame_name not in annotated_frames:
-                            self.frame_viewer.no_bucket_frames.append((frame_path, []))
+                            self.frame_viewer.no_bucket_frames.append((frame_path, ""))
                         else:
-                            logging.info(f"Skipped annotated frame {frame_name} in no_bucket_dir")
+                            logging.info(f"Skipped annotated frame {frame_name} in no_bucket")
 
                 if os.path.exists(negative_dir):
                     negative_frames = glob(os.path.join(negative_dir, "*.jpg"))
@@ -340,15 +341,15 @@ class DeveloperModule(QMainWindow, ModuleInterface):
 
                 if self.frame_viewer.no_bucket_frames or self.frame_viewer.low_conf_frames:
                     self.annotate_button.setEnabled(True)
-                    self.review_button.setEnabled(True)
+                    self.re_button.setEnabled(True)
                     self.cnn_annotate_button.setEnabled(True)
                     self.cnn_review_button.setEnabled(True)
                     self.frame_viewer.update_counter()
-                    logging.info(f"Loaded {len(self.frame_viewer.no_bucket_frames)} no_bucket, {len(self.frame_viewer.low_conf_frames)} low_conf frames")
+                    logging.info(f"Loaded {len(self.frame_viewer.no_bucket_frames)} no_bucket, {len(self.frame_viewer.low_conf_frames)} low_conf")
                 else:
                     self._process_video()
         else:
-            self.status_label.setText("Конфигурация проекта не найдена")
+            self.status_label.setText("Project configuration not found")
 
     def _save_project_config(self):
         project_config = {

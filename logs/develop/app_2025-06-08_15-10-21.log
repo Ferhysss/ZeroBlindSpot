@@ -1,0 +1,5 @@
+2025-06-08 15:10:21,963 - INFO - Logging initialized
+2025-06-08 15:10:47,771 - INFO - YOLO loaded
+2025-06-08 15:10:47,785 - INFO - Project loaded: data/08.06 15_10
+2025-06-08 15:11:18,562 - INFO - Project created: 08.06 15_11, frame_rate: 1, device: cpu
+2025-06-08 15:11:27,059 - INFO - YOLO loaded
