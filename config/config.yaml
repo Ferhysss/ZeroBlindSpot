@@ -4,8 +4,8 @@ cnn_input_size:
 - 224
 device: cpu
 excavator: Экскаватор A
-frame_rate: 1
-last_project: data\08.06 15_39
+frame_rate: 5
+last_project: data\09.06 20_43
 project_name: default
 use_cnn: false
 video_path: C:/Users/Lev/Desktop/covsh/test/videos/11.mp4

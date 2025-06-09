@@ -14,26 +14,36 @@ import os
 import yaml
 from glob import glob
 import cv2
+from PyQt5.QtWidgets import QMainWindow, QWidget, QVBoxLayout, QHBoxLayout, QPushButton, QFileDialog, QLabel, QComboBox, QProgressBar, QTabWidget, QAction, QLineEdit, QMessageBox
+from PyQt5.QtCore import Qt
+from core.config import Config
+from developer.ui import FrameWidget
+from developer import YoloPredictor, Worker
+from torch import cv2, torch
+import logging
+import os
+import yaml
+from glob import glob
+import cv2
 
-class DeveloperModule(QMainWindow, ModuleInterface):
-    def __init__(self, project_dir: str = "", video_path: str = ""):
+class DeveloperModule(QMainWindow):
+    def __init__(self, project_dir=None, video_path=None):
         super().__init__()
         self.setWindowTitle("ZeroBlindSpot - Developer")
         self.setMinimumSize(1000, 600)
         self.config = Config()
-        self.yolo_model: Optional[YoloModel] = None
-        self.cnn_model: Optional[SimpleCNN] = None
+        self.yolo_model = None
+        self.cnn_model = None
         self.device = self._get_device()
-        self.project_dir = project_dir
-        self.video_path = video_path
+        self.project_dir = project_dir or ""
+        self.video_path = video_path or ""
         self.excavators = {
             "Экскаватор A": 1.5,
             "Экскаватор B": 2.0,
             "Экскаватор C": 2.5
         }
         self._init_ui()
-        if self.project_dir and self.video_path:
-            self._init_models()
+        if project_dir and video_path:
             self._load_project()
 
     def _init_ui(self):
@@ -49,37 +59,37 @@ class DeveloperModule(QMainWindow, ModuleInterface):
         project_widget = QWidget()
         project_layout = QVBoxLayout(project_widget)
         self.project_name_input = QLineEdit()
-        project_layout.addWidget(QLabel("Project name:"))
+        project_layout.addWidget(QLabel("Имя проекта:"))
         project_layout.addWidget(self.project_name_input)
+
+        # Выбор видео
+        video_widget = QWidget()
+        video_layout = QHBoxLayout(video_widget)
+        select_video_button = QPushButton("Выбрать видео")
+        select_video_button.clicked.connect(self._select_video)
+        video_layout.addWidget(select_video_button)
+        self.video_label = QLabel("Видео не выбрано")
+        video_layout.addWidget(self.video_label)
+        project_layout.addWidget(video_widget)
 
         # Выбор режима извлечения кадров
         self.frame_extraction_combo = QComboBox()
-        self.frame_extraction_combo.addItems(["Every frame", "Every 2nd frame", "Every 5th frame", "Every 10th frame"])
-        project_layout.addWidget(QLabel("Frame extraction mode:"))
+        self.frame_extraction_combo.addItems(["Каждый кадр", "Каждый 2-й кадр", "Каждый 5-й кадр", "Каждый 10-й кадр"])
+        project_layout.addWidget(QLabel("Режим извлечения кадров:"))
         project_layout.addWidget(self.frame_extraction_combo)
 
         # Выбор CPU/GPU
         self.device_combo = QComboBox()
         self.device_combo.addItems(["CPU", "GPU"])
         self.device_combo.setCurrentText("GPU" if torch.cuda.is_available() else "CPU")
-        project_layout.addWidget(QLabel("Device mode:"))
+        project_layout.addWidget(QLabel("Режим работы:"))
         project_layout.addWidget(self.device_combo)
 
-        create_project_button = QPushButton("Create Project")
+        create_project_button = QPushButton("Создать проект")
         create_project_button.clicked.connect(self._create_project)
         project_layout.addWidget(create_project_button)
 
         control_layout.addWidget(project_widget)
-
-        # Панель выбора видео
-        video_widget = QWidget()
-        video_layout = QHBoxLayout(video_widget)
-        select_video_button = QPushButton("Select Video")
-        select_video_button.clicked.connect(self._select_video)
-        video_layout.addWidget(select_video_button)
-        self.video_label = QLabel("No video selected")
-        video_layout.addWidget(self.video_label)
-        control_layout.addWidget(video_widget)
 
         # Вкладки
         self.tab_widget = QTabWidget()
@@ -88,7 +98,7 @@ class DeveloperModule(QMainWindow, ModuleInterface):
         # Вкладка YOLO
         yolo_widget = QWidget()
         yolo_layout = QVBoxLayout(yolo_widget)
-        self.status_label = QLabel("Ready")
+        self.status_label = QLabel("Готов")
         yolo_layout.addWidget(self.status_label)
         self.progress_bar = QProgressBar()
         yolo_layout.addWidget(self.progress_bar)
@@ -96,15 +106,15 @@ class DeveloperModule(QMainWindow, ModuleInterface):
         self.class_combo.addItems(["bucket"])
         self.class_combo.currentTextChanged.connect(self._update_class)
         yolo_layout.addWidget(self.class_combo)
-        self.annotate_button = QPushButton("Annotation mode")
+        self.annotate_button = QPushButton("Режим аннотации")
         self.annotate_button.setEnabled(False)
         self.annotate_button.clicked.connect(self._toggle_annotation)
         yolo_layout.addWidget(self.annotate_button)
-        self.review_button = QPushButton("Review mode")
-        self.review_button.setCheckable(True)
+        self.review_button = QPushButton("Режим ревью")
+        self.review_button.setEnabled(False)
         self.review_button.clicked.connect(self._toggle_review)
         yolo_layout.addWidget(self.review_button)
-        self.train_button = QPushButton("Train YOLO")
+        self.train_button = QPushButton("Обучить YOLO")
         self.train_button.clicked.connect(self._train_yolo)
         yolo_layout.addWidget(self.train_button)
         self.tab_widget.addTab(yolo_widget, "YOLO")
@@ -113,42 +123,42 @@ class DeveloperModule(QMainWindow, ModuleInterface):
         cnn_widget = QWidget()
         cnn_layout = QVBoxLayout(cnn_widget)
         self.cnn_class_combo = QComboBox()
-        self.cnn_class_combo.addItems(["Neutral", "Scooping", "Dumping"])
+        self.cnn_class_combo.addItems(["Нейтральный", "Зачерпывание", "Высыпание"])
         self.cnn_class_combo.currentTextChanged.connect(self._update_cnn_class)
-        cnn_layout.addWidget(QLabel("CNN class:"))
+        cnn_layout.addWidget(QLabel("CNN класс:"))
         cnn_layout.addWidget(self.cnn_class_combo)
-        self.cnn_annotate_button = QPushButton("CNN annotation mode")
+        self.cnn_annotate_button = QPushButton("Режим аннотации CNN")
         self.cnn_annotate_button.setEnabled(False)
         self.cnn_annotate_button.clicked.connect(self._toggle_cnn_annotation)
         cnn_layout.addWidget(self.cnn_annotate_button)
-        self.cnn_review_button = QPushButton("CNN review mode")
+        self.cnn_review_button = QPushButton("Режим ревью CNN")
         self.cnn_review_button.setEnabled(False)
         self.cnn_review_button.clicked.connect(self._toggle_cnn_review)
         cnn_layout.addWidget(self.cnn_review_button)
-        self.cnn_train_button = QPushButton("Train CNN")
+        self.cnn_train_button = QPushButton("Обучить CNN")
         self.cnn_train_button.clicked.connect(self._train_cnn)
         cnn_layout.addWidget(self.cnn_train_button)
         self.tab_widget.addTab(cnn_widget, "CNN")
 
         # Вкладка Результаты
         results_widget = QWidget()
-        results_layout = QHBoxLayout(results_widget)
-        self.results_label = QLabel("Results: no data")
+        results_layout = QVBoxLayout(results_widget)
+        self.results_label = QLabel("Результаты: нет данных")
         results_layout.addWidget(self.results_label)
-        self.tab_widget.addTab(results_widget, "Results")
+        self.tab_widget.addTab(results_widget, "Результаты")
 
-        # Вкладка Настройки (только экскаватор)
+        # Вкладка Настройки
         settings_widget = QWidget()
         settings_layout = QVBoxLayout(settings_widget)
         self.excavator_combo = QComboBox()
-        self.excavator_combo.addItems(["Excavator A (1.5 m³)", "Excavator B (2.0 m³)", "Excavator C (2.5 m³)"])
+        self.excavator_combo.addItems(["Экскаватор A (1.5 м³)", "Экскаватор B (2.0 м³)", "Экскаватор C (2.5 м³)"])
         self.excavator_combo.currentTextChanged.connect(self._update_excavator)
-        settings_layout.addWidget(QLabel("Excavator:"))
+        settings_layout.addWidget(QLabel("Экскаватор:"))
         settings_layout.addWidget(self.excavator_combo)
-        self.tab_widget.addTab(settings_widget, "Settings")
+        self.tab_widget.addTab(settings_widget, "Настройки")
 
         main_layout.addWidget(control_widget, 1)
-        self.frame_viewer = FrameViewer()
+        self.frame_viewer = FrameWidget()
         self.frame_viewer.update_status.connect(self.status_label.setText)
         main_layout.addWidget(self.frame_viewer, 3)
 
@@ -161,16 +171,25 @@ class DeveloperModule(QMainWindow, ModuleInterface):
         self.setContextMenuPolicy(Qt.CustomContextMenu)
         self.customContextMenuRequested.connect(self._show_context_menu)
 
+    def _select_video(self):
+        video_path, _ = QFileDialog.getOpenFileName(self, "Выбрать видео", "", "Video Files (*.mp4 *.avi)")
+        if video_path:
+            self.video_path = video_path
+            self.video_label.setText(os.path.basename(video_path))
+            logging.info(f"Video selected: {video_path}")
+
     def _create_project(self):
         try:
             project_name = self.project_name_input.text().strip()
             if not project_name:
-                raise ValueError("Project name not specified")
+                raise ValueError("Имя проекта не указано")
+            if not self.video_path:
+                raise ValueError("Видео не выбрано")
             self.project_dir = os.path.join("data", project_name)
             os.makedirs(self.project_dir, exist_ok=True)
 
             # Сохранение режима извлечения кадров
-            frame_rates = {"Every frame": 1, "Every 2nd frame": 2, "Every 5th frame": 5, "Every 10th frame": 10}
+            frame_rates = {"Каждый кадр": 1, "Каждый 2-й кадр": 2, "Каждый 5-й кадр": 5, "Каждый 10-й кадр": 10}
             frame_rate = frame_rates[self.frame_extraction_combo.currentText()]
             self.config.update("frame_rate", frame_rate)
 
@@ -181,8 +200,8 @@ class DeveloperModule(QMainWindow, ModuleInterface):
 
             # Сохранение конфига
             project_config = {
-                "video_path": "",
-                "excavator": self.config.get("excavator", "Excavator A"),
+                "video_path": self.video_path,
+                "excavator": self.config.get("excavator", "Экскаватор A"),
                 "bucket_volume": self.config.get("bucket_volume", 1.5),
                 "frame_rate": frame_rate,
                 "device": device
@@ -190,12 +209,41 @@ class DeveloperModule(QMainWindow, ModuleInterface):
             with open(os.path.join(self.project_dir, "project.yaml"), "w", encoding='utf-8') as f:
                 yaml.safe_dump(project_config, f)
 
-            self.status_label.setText(f"Project created: {project_name}")
-            logging.info(f"Project created: {project_name}")
+            self.status_label.setText(f"Проект создан: {project_name}")
+            logging.info(f"Проект создан: {project_name}")
+            self._init_models()
+            self._process_video()
         except Exception as e:
-            QMessageBox.critical(self, "Error", f"Failed to create project: {str(e)}")
+            QMessageBox.critical(self, "Ошибка", f"Не удалось создать проект: {str(e)}")
             logging.error(f"Project creation failed: {str(e)}")
 
+    def _process_video(self):
+        if not self.project_dir or not self.video_path:
+            self.status_label.setText("Ошибка: проект или видео не выбраны")
+            logging.error("Process video called without project or video")
+            return
+        if not self.yolo_model:
+            self.status_label.setText("Ошибка: YOLO не загружен")
+            logging.error("YOLO model not loaded")
+            return
+        os.makedirs(self.project_dir, exist_ok=True)
+        self.frame_viewer.no_bucket_frames = []
+        self.frame_viewer.low_conf_frames = []
+        self.frame_viewer.current_frame_index = -1
+        self.processor = YoloPredictor(self.video_path, self.yolo_model, self.cnn_model, self.config, self.project_dir)
+        self.processor.progress.connect(self.progress_bar.setValue)
+        self.processor.status.connect(self.status_label.setText)
+        self.processor.frame_processed.connect(self.frame_viewer.update_frame)
+        self.processor.no_bucket_frame.connect(self.frame_viewer.add_no_bucket_frame)
+        self.processor.low_conf_frame.connect(self.frame_viewer.add_low_conf_frame)
+        self.processor.finished.connect(self._on_processing_finished)
+        self.annotate_button.setEnabled(True)
+        self.review_button.setEnabled(True)
+        self.cnn_annotate_button.setEnabled(True)
+        self.cnn_review_button.setEnabled(True)
+        self.config.update("last_project", self.project_dir)
+        self._save_project_config()
+        self.processor.start()
 
     def _select_video(self):
         video_path, _ = QFileDialog.getOpenFileName(self, "Select Video", "", "Video Files (*.mp4 *.avi)")

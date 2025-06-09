@@ -129,3 +129,11 @@ class DeveloperProcessor(QObject):
 
     def stop(self):
         self.is_running = False
+
+class YoloPredictor(QObject):
+    progress = pyqtSignal(int)
+    status = pyqtSignal(str)
+    frame_processed = pyqtSignal(int, np.ndarray)
+    no_bucket_frame = pyqtSignal(int, np.ndarray)
+    low_conf_frame = pyqtSignal(int, np.ndarray, list)  # Подтверждаем сигнатуру
+    finished = pyqtSignal()
