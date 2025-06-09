@@ -23,7 +23,7 @@ class ProjectManager(QMainWindow):
     def _start_developer(self):
         self.developer_module = DeveloperModule()
         self.developer_module.show()
-        self.close()  # Закрываем окно
+        self.close()
 
     def _start_operator(self):
         logging.info("Operator mode not implemented")

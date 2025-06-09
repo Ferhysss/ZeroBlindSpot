@@ -25,6 +25,7 @@ import os
 import yaml
 from glob import glob
 import cv2
+from developer.ui.frame_viewer import FrameViewer
 
 class DeveloperModule(QMainWindow):
     def __init__(self, project_dir=None, video_path=None):
@@ -158,7 +159,7 @@ class DeveloperModule(QMainWindow):
         self.tab_widget.addTab(settings_widget, "Настройки")
 
         main_layout.addWidget(control_widget, 1)
-        self.frame_viewer = FrameWidget()
+        self.frame_viewer = FrameViewer()  # Исправлено
         self.frame_viewer.update_status.connect(self.status_label.setText)
         main_layout.addWidget(self.frame_viewer, 3)
 
@@ -244,7 +245,7 @@ class DeveloperModule(QMainWindow):
         self.config.update("last_project", self.project_dir)
         self._save_project_config()
         self.processor.start()
-
+        
     def _select_video(self):
         video_path, _ = QFileDialog.getOpenFileName(self, "Select Video", "", "Video Files (*.mp4 *.avi)")
         if video_path and self.project_dir:  # Проверка project_dir
